@@ -1,24 +1,45 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { QuoteProvider } from "@/components/site/QuoteProvider";
+import { Navbar } from "@/components/site/Navbar";
+import { Hero } from "@/components/site/Hero";
+import { Catalog } from "@/components/site/Catalog";
+import { HowTo } from "@/components/site/HowTo";
+import { LogoPreview } from "@/components/site/LogoPreview";
+import { ValueProps } from "@/components/site/ValueProps";
+import { Footer } from "@/components/site/Footer";
+import { WhatsappFab } from "@/components/site/WhatsappFab";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "Sublinovena | Merchandising corporativo personalizado";
+const description =
+  "Merchandising corporativo personalizado en Chile: tazas, poleras, mochilas, botellas y accesorios tech desde 1.000 unidades con tu logo.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <QuoteProvider>
+      <Navbar />
+      <main>
+        <Hero />
+        <Catalog />
+        <HowTo />
+        <LogoPreview />
+        <ValueProps />
+      </main>
+      <Footer />
+      <WhatsappFab />
+    </QuoteProvider>
   );
 }
