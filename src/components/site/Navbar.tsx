@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/sublinovena-icon.png";
 import { waLink } from "@/lib/site-config";
@@ -18,18 +18,23 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menu, setMenu] = useState(false);
   const { open } = useQuote();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isHome = pathname === "/";
 
   useEffect(() => {
+    if (!isHome) return;
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [isHome]);
+
+  const solid = scrolled || !isHome;
 
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled
+        solid
           ? "bg-ink/90 shadow-[0_10px_40px_-24px_rgba(0,0,0,0.9)] backdrop-blur-xl"
           : "bg-transparent"
       }`}
