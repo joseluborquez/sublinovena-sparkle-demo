@@ -1,5 +1,5 @@
 import { Instagram, Mail, MapPin } from "lucide-react";
-import logo from "@/assets/sublinovena-logo.png.asset.json";
+import logo from "@/assets/sublinovena-icon.png";
 import { siteConfig, waLink } from "@/lib/site-config";
 import { WhatsappIcon } from "./WhatsappIcon";
 import { Reveal } from "./Reveal";
@@ -11,7 +11,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 lg:grid-cols-4 lg:px-8">
         <Reveal className="lg:col-span-2">
           <img
-            src={logo.url}
+            src={logo}
             alt="Sublinovena Merchandising"
             width={72}
             height={72}

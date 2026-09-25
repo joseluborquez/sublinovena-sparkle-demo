@@ -23,6 +23,10 @@ dist-ssr
 # Fuente del catálogo (94MB, no debe vivir en git — ver src/data/products.ts)
 Catálogo Sublinovena .pdf
 
+# Logo original adjuntado suelto en la raíz — ya copiado a
+# src/assets/sublinovena-logo-full.png y public/og-image.png
+Copia de Copia de Logo sublinovena.png
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
