@@ -1,5 +1,5 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ChevronRight } from "lucide-react";
+import { createFileRoute, Link, notFound, useRouter } from "@tanstack/react-router";
+import { ArrowLeft, ChevronRight } from "lucide-react";
 import { blogPosts, type BlogBlock } from "@/data/blog-posts";
 import { products } from "@/data/products";
 import { siteConfig } from "@/lib/site-config";
@@ -108,25 +108,34 @@ function BlogPostPage() {
   const related = products
     .filter((p) => (post.relatedCategories as string[]).includes(p.category))
     .slice(0, 4);
+  const router = useRouter();
 
   return (
     <QuoteProvider>
       <Navbar />
-      <main className="mx-auto max-w-3xl px-5 py-10 lg:px-8 lg:py-16">
-        <nav
-          aria-label="Breadcrumb"
-          className="flex flex-wrap items-center gap-1 text-xs text-muted-foreground"
-        >
-          <Link to="/" className="hover:text-foreground">
-            Inicio
-          </Link>
-          <ChevronRight size={12} />
-          <Link to="/blog" className="hover:text-foreground">
-            Blog
-          </Link>
-          <ChevronRight size={12} />
-          <span className="text-foreground">{post.title}</span>
-        </nav>
+      <main className="mx-auto max-w-3xl px-5 pb-10 pt-28 lg:px-8 lg:pb-16 lg:pt-32">
+        <div className="flex flex-wrap items-center gap-3">
+          <button
+            onClick={() => router.history.back()}
+            className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-lavender hover:text-foreground"
+          >
+            <ArrowLeft size={13} /> Volver
+          </button>
+          <nav
+            aria-label="Breadcrumb"
+            className="flex flex-wrap items-center gap-1 text-xs text-muted-foreground"
+          >
+            <Link to="/" className="hover:text-foreground">
+              Inicio
+            </Link>
+            <ChevronRight size={12} />
+            <Link to="/blog" className="hover:text-foreground">
+              Blog
+            </Link>
+            <ChevronRight size={12} />
+            <span className="text-foreground">{post.title}</span>
+          </nav>
+        </div>
 
         <article className="mt-6">
           <span className="w-fit rounded-full bg-muted px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-lavender">

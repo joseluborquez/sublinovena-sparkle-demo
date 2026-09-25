@@ -1,5 +1,5 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ChevronRight } from "lucide-react";
+import { createFileRoute, Link, notFound, useRouter } from "@tanstack/react-router";
+import { ArrowLeft, ChevronRight } from "lucide-react";
 import { products, type Product } from "@/data/products";
 import { siteConfig, waLink } from "@/lib/site-config";
 import { QuoteProvider } from "@/components/site/QuoteProvider";
@@ -95,22 +95,31 @@ function ProductPage() {
     product.tiers[0]?.price ?? 0,
   );
   const waMessage = `Hola, quiero cotizar: ${product.name}${product.sku ? ` (${product.sku})` : ""}`;
+  const router = useRouter();
 
   return (
     <QuoteProvider>
       <Navbar />
-      <main className="mx-auto max-w-6xl px-5 py-10 lg:px-8 lg:py-16">
-        <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-1 text-xs text-muted-foreground">
-          <Link to="/" className="hover:text-foreground">
-            Inicio
-          </Link>
-          <ChevronRight size={12} />
-          <Link to="/" hash="catalogo" className="hover:text-foreground">
-            {product.category}
-          </Link>
-          <ChevronRight size={12} />
-          <span className="text-foreground">{product.name}</span>
-        </nav>
+      <main className="mx-auto max-w-6xl px-5 pb-10 pt-28 lg:px-8 lg:pb-16 lg:pt-32">
+        <div className="flex flex-wrap items-center gap-3">
+          <button
+            onClick={() => router.history.back()}
+            className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-lavender hover:text-foreground"
+          >
+            <ArrowLeft size={13} /> Volver
+          </button>
+          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-1 text-xs text-muted-foreground">
+            <Link to="/" className="hover:text-foreground">
+              Inicio
+            </Link>
+            <ChevronRight size={12} />
+            <Link to="/" hash="catalogo" className="hover:text-foreground">
+              {product.category}
+            </Link>
+            <ChevronRight size={12} />
+            <span className="text-foreground">{product.name}</span>
+          </nav>
+        </div>
 
         <div className="mt-6 grid gap-10 lg:grid-cols-2">
           <div className="aspect-square overflow-hidden rounded-3xl border border-border bg-white">
