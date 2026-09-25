@@ -20,6 +20,9 @@ dist-ssr
 .wrangler/
 .dev.vars
 
+# Fuente del catálogo (94MB, no debe vivir en git — ver src/data/products.ts)
+Catálogo Sublinovena .pdf
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

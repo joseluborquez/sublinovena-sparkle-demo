@@ -11,6 +11,33 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { siteConfig } from "../lib/site-config";
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": `${siteConfig.url}/#organization`,
+  name: siteConfig.name,
+  legalName: siteConfig.legalName,
+  url: siteConfig.url,
+  logo: `${siteConfig.url}/favicon.png`,
+  image: `${siteConfig.url}/favicon.png`,
+  description: siteConfig.description,
+  email: siteConfig.email,
+  telephone: siteConfig.phone,
+  priceRange: "$$",
+  sameAs: [siteConfig.instagram],
+  address: siteConfig.addresses.map((a) => ({
+    "@type": "PostalAddress",
+    streetAddress: a.street,
+    addressLocality: a.city,
+    addressCountry: "CL",
+  })),
+  areaServed: {
+    "@type": "Country",
+    name: "Chile",
+  },
+};
 
 function NotFoundComponent() {
   return (
@@ -77,15 +104,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Sublinovena | Merchandising corporativo" },
-      {
-        name: "description",
-        content:
-          "Merchandising corporativo personalizado en Chile, desde 1.000 unidades con tu logo.",
-      },
-      { name: "author", content: "Sublinovena" },
+      { title: "Sublinovena | Merchandising corporativo personalizado en Chile" },
+      { name: "description", content: siteConfig.description },
+      { name: "author", content: siteConfig.legalName },
+      { property: "og:site_name", content: siteConfig.name },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: siteConfig.url },
+      { property: "og:image", content: `${siteConfig.url}/favicon.png` },
+      { property: "og:locale", content: "es_CL" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "geo.region", content: "CL-AR" },
+      { name: "geo.placename", content: "Temuco" },
     ],
     links: [
       {
@@ -100,6 +129,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(organizationJsonLd),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -109,7 +144,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="es-CL">
       <head>
         <HeadContent />
       </head>

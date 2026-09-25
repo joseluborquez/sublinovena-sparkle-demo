@@ -1,9 +1,10 @@
+import { waLink } from "@/lib/site-config";
 import { WhatsappIcon } from "./WhatsappIcon";
 
 export function WhatsappFab() {
   return (
     <a
-      href="https://wa.me/56900000000"
+      href={waLink()}
       target="_blank"
       rel="noreferrer"
       aria-label="Escríbenos por WhatsApp"

@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/sublinovena-logo.png.asset.json";
+import { waLink } from "@/lib/site-config";
 import { useQuote } from "./QuoteProvider";
 import { WhatsappIcon } from "./WhatsappIcon";
 
 const links = [
-  { href: "#catalogo", label: "Catálogo" },
-  { href: "#como-cotizar", label: "Cómo cotizar" },
-  { href: "#nosotros", label: "Nosotros" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "/#catalogo", label: "Catálogo" },
+  { href: "/#como-cotizar", label: "Cómo cotizar" },
+  { href: "/#nosotros", label: "Nosotros" },
+  { href: "/blog", label: "Blog" },
+  { href: "/#contacto", label: "Contacto" },
 ];
 
 export function Navbar() {
@@ -32,7 +35,7 @@ export function Navbar() {
       }`}
     >
       <nav className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-3 lg:px-8">
-        <a href="#top" className="flex min-w-0 items-center gap-3">
+        <a href="/#top" className="flex min-w-0 items-center gap-3">
           <img
             src={logo.url}
             alt="Sublinovena Merchandising"
@@ -60,7 +63,7 @@ export function Navbar() {
           </ul>
 
           <a
-            href="https://wa.me/56900000000"
+            href={waLink()}
             target="_blank"
             rel="noreferrer"
             aria-label="Escríbenos por WhatsApp"
