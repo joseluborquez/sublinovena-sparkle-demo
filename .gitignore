@@ -22,6 +22,8 @@ dist-ssr
 
 # Fuente del catálogo (94MB, no debe vivir en git — ver src/data/products.ts)
 Catálogo Sublinovena .pdf
+Catálogo Sublinovena (para trabajar).pdf
+Catálogo Sublinovena (para trabajar)/
 
 # Logo original adjuntado suelto en la raíz — ya copiado a
 # src/assets/sublinovena-logo-full.png y public/og-image.png

@@ -17,7 +17,7 @@ const cards: BentoCardProps[] = [
   {
     color: "#1A1625",
     label: "Catálogo",
-    title: "+120 productos con precio real",
+    title: "+150 productos con precio real",
     description: "Cada producto tiene su tabla de precios por tramo de cantidad, sin \"cotizar para saber\".",
   },
   {

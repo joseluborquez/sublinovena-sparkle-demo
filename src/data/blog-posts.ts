@@ -94,7 +94,7 @@ export const blogPosts: BlogPost[] = [
     tag: "Guía de compra",
     publishedAt: "2026-09-18",
     readingMinutes: 5,
-    relatedCategories: ["Vestuario y Ropa de Trabajo", "Tazones y Mugs", "Chapitas, Llaveros y Pulseras"],
+    relatedCategories: ["Vestuario y Ropa de Trabajo", "Tazones y Mugs", "Chapitas y Pulseras"],
     blocks: [
       {
         type: "p",

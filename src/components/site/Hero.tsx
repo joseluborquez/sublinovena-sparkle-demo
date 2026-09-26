@@ -9,22 +9,22 @@ import DriftWall from "./DriftWall";
 // los bordes disimulan cualquier imperfección, así que hay más margen que en
 // el carrusel principal.
 const bgIds = [
-  "s-001",
-  "s-002",
-  "s-003",
-  "s-013a-b",
-  "s-016",
-  "s-017",
-  "s-018",
-  "s-020",
-  "s-022",
-  "s-025",
-  "s-028",
-  "s-031",
-  "s-034",
-  "s-037",
-  "s-040",
-  "s-044",
+  "lanyard-sublimado",
+  "lanyard-sublimado-con-broche-tip-top",
+  "lanyard-texturizado",
+  "kit-de-identificacion-n1",
+  "libreta-ecologica-con-boligrafo-9x14-cm",
+  "libreta-ecologica-con-boligrafo-15x21-cm",
+  "libreta-ecologica-compost-14-5x21-cm",
+  "boligrafo-plastico-wind-satin",
+  "tazon-blanco-325cc",
+  "tazon-clear-325cc",
+  "tazon-con-cuchara-320cc-full-color",
+  "tazon-ceramico-de-color-350-cc",
+  "tazon-ceramico-330cc-fluorescente",
+  "tazon-de-bamboo-350cc",
+  "mug-termico-plastico-400cc",
+  'mug-metalico-plastico-synna-350cc',
 ];
 
 const bgItems = bgIds
@@ -100,9 +100,9 @@ export function Hero() {
           <Reveal delay={400}>
             <dl className="mt-16 grid max-w-3xl grid-cols-2 gap-x-6 gap-y-8 border-t border-white/10 pt-10 sm:grid-cols-4 lg:max-w-none">
               {[
-                ["+120", "productos en catálogo"],
+                ["+150", "productos en catálogo"],
                 ["4", "unidades mínimas desde"],
-                ["11", "categorías de productos"],
+                ["13", "categorías de productos"],
                 ["100%", "personalizable"],
               ].map(([big, small]) => (
                 <div key={small}>
