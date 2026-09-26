@@ -2,27 +2,62 @@ import { ArrowRight } from "lucide-react";
 import { products } from "@/data/products";
 import { useQuote } from "./QuoteProvider";
 import { Reveal } from "./Reveal";
-import DepthCarousel from "./DepthCarousel";
+import DriftWall from "./DriftWall";
 
-const showcaseIds = [
+// Selección amplia de fotos en buena resolución (no las 44 marcadas como baja
+// calidad) para la textura de fondo — acá el tamaño chico y el desenfoque de
+// los bordes disimulan cualquier imperfección, así que hay más margen que en
+// el carrusel principal.
+const bgIds = [
+  "s-001",
   "s-002",
+  "s-003",
+  "s-013a-b",
+  "s-016",
+  "s-017",
+  "s-018",
+  "s-020",
   "s-022",
-  "s-067",
-  "s-091",
-  "chapita-con-alfiler-metalico-de-37-56-o-58-mm",
-  "mochila-tipo-morral-de-tnt",
+  "s-025",
+  "s-028",
+  "s-031",
+  "s-034",
+  "s-037",
+  "s-040",
+  "s-044",
 ];
 
-const showcaseItems = showcaseIds
+const bgItems = bgIds
   .map((id) => products.find((p) => p.id === id))
   .filter((p): p is NonNullable<typeof p> => Boolean(p))
-  .map((p) => ({ image: p.image, alt: p.name }));
+  .map((p) => ({ image: p.image }));
 
 export function Hero() {
   const { open } = useQuote();
 
   return (
     <section id="top" className="relative overflow-hidden bg-ink pb-28 pt-36 sm:pb-36 sm:pt-44">
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <DriftWall
+          items={bgItems}
+          columns={7}
+          tileWidth={170}
+          tileHeight={115}
+          gap={14}
+          tilt={12}
+          turn={-10}
+          perspective={1000}
+          depth={100}
+          speed={16}
+          direction="up"
+          variance={0.4}
+          parallax={0}
+          lift={0}
+          fade={0.7}
+          dim={0.3}
+          overlayColor="#0F0D26"
+        />
+      </div>
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div className="blob animate-drift-a left-[-10%] top-[-15%] size-[38rem] bg-[var(--brand-violet)]" />
         <div className="blob animate-drift-b right-[-12%] top-[-5%] size-[30rem] bg-[var(--brand-cyan)]" />
@@ -31,7 +66,7 @@ export function Hero() {
       </div>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,var(--ink)_92%)]" />
 
-      <div className="relative mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-8 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
         <div>
           <Reveal>
             <p className="eyebrow">Merchandising corporativo · Chile</p>
@@ -78,19 +113,6 @@ export function Hero() {
             </dl>
           </Reveal>
         </div>
-
-        <Reveal delay={250} className="lg:pl-4">
-          <div className="h-[420px] sm:h-[480px] lg:h-[520px]">
-            <DepthCarousel
-              items={showcaseItems}
-              cardWidth={240}
-              cardHeight={300}
-              autoplay
-              autoplayDelay={3400}
-              tint="#151029"
-            />
-          </div>
-        </Reveal>
       </div>
     </section>
   );
