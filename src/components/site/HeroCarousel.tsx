@@ -96,6 +96,7 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
                     className={`display-title mt-5 text-3xl text-white transition-all delay-200 duration-700 sm:text-5xl lg:text-6xl ${
                       active ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
                     }`}
+                    style={{ lineHeight: 1.2 }}
                   >
                     {slide.title}
                   </h1>
