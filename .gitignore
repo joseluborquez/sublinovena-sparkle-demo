@@ -29,6 +29,9 @@ Catálogo Sublinovena (para trabajar)/
 # src/assets/sublinovena-logo-full.png y public/og-image.png
 Copia de Copia de Logo sublinovena.png
 
+# Reporte de trabajo para el cliente, no es contenido del sitio
+productos-pendientes-foto-proveedor.pdf
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
