@@ -4,27 +4,44 @@ import { useQuote } from "./QuoteProvider";
 import { Reveal } from "./Reveal";
 import DriftWall from "./DriftWall";
 
-// Selección amplia de fotos en buena resolución (no las 44 marcadas como baja
-// calidad) para la textura de fondo — acá el tamaño chico y el desenfoque de
-// los bordes disimulan cualquier imperfección, así que hay más margen que en
-// el carrusel principal.
+// Solo productos con foto real de proveedor (900px+), no las extraídas del
+// PDF en baja resolución — esta lista se debe mantener sincronizada a mano
+// con las rondas de reemplazo de fotos en src/assets/products.
 const bgIds = [
-  "lanyard-sublimado",
-  "lanyard-sublimado-con-broche-tip-top",
   "lanyard-texturizado",
-  "kit-de-identificacion-n1",
-  "libreta-ecologica-con-boligrafo-9x14-cm",
-  "libreta-ecologica-con-boligrafo-15x21-cm",
-  "libreta-ecologica-compost-14-5x21-cm",
-  "boligrafo-plastico-wind-satin",
-  "tazon-blanco-325cc",
-  "tazon-clear-325cc",
-  "tazon-con-cuchara-320cc-full-color",
+  "porta-credencial-de-acrilico",
+  "yo-yo-portacredencial",
+  "credencial-horizontal-o-vertical",
+  "llavero-huincha-1-metro",
+  "llavero-con-porta-foto-acrilico",
+  "boligrafo-plastico-wind-stella",
+  "tazon-de-bamboo-350cc",
+  "tazon-mango-y-borde-de-color-325cc",
+  "tazon-glass-empavonado-325cc",
   "tazon-ceramico-de-color-350-cc",
   "tazon-ceramico-330cc-fluorescente",
-  "tazon-de-bamboo-350cc",
+  "mug-de-bamboo-con-asa-plastica-400cc",
   "mug-termico-plastico-400cc",
-  'mug-metalico-plastico-synna-350cc',
+  "mug-de-acero-inoxidable-400cc",
+  "mug-metalico-plastico-synna-350cc",
+  "mug-termico-big-800cc",
+  "mug-shaker",
+  "botella-bs-nino-aluminio-500cc",
+  "botella-deportiva-aluminio-600cc",
+  "botella-deportiva-aluminio-750cc",
+  "botella-vidrio-borosilicato-tapa-bamboo-500cc",
+  "botella-pet-600cc",
+  "caramayola-deportiva-acero-inoxidable-800cc",
+  "polera-algodon-unisex-variedad-de-colores",
+  "polera-pique-unisex",
+  "gorro-jockey-malla-ajustable",
+  "gorro-jockey-algodon-full-color",
+  "chapita-con-iman-y-destapador",
+  "chapita-espejo-56-mm",
+  "mochila-tipo-morral-sublimado",
+  "mochila-tipo-morral-de-tnt",
+  "bolsa-tnt-reutilizable-36-x-40-x-10-cm",
+  "shopero-premium-empavonado-473cc",
 ];
 
 const bgItems = bgIds
