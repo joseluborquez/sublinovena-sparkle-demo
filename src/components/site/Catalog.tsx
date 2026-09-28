@@ -29,7 +29,7 @@ export function Catalog() {
     <section id="catalogo" className="bg-background py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal>
-          <p className="eyebrow text-magenta">Vitrina</p>
+          <p className="eyebrow text-magenta">Catálogo</p>
           <h2 className="display-title mt-3 text-3xl sm:text-5xl">Productos que se personalizan</h2>
           <p className="mt-4 max-w-xl text-muted-foreground">
             Una selección de nuestro catálogo. Cada pieza se produce con tu logo, tus colores y tu

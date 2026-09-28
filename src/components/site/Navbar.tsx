@@ -9,7 +9,6 @@ import { WhatsappIcon } from "./WhatsappIcon";
 const links = [
   { href: "/#catalogo", label: "Catálogo" },
   { href: "/#como-cotizar", label: "Cómo cotizar" },
-  { href: "/#nosotros", label: "Nosotros" },
   { href: "/blog", label: "Blog" },
   { href: "/#contacto", label: "Contacto" },
 ];

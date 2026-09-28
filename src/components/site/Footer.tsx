@@ -30,7 +30,6 @@ export function Footer() {
             {[
               ["/#catalogo", "Catálogo"],
               ["/#como-cotizar", "Cómo cotizar"],
-              ["/#nosotros", "Nosotros"],
               ["/blog", "Blog"],
               ["/#top", "Inicio"],
             ].map(([href, label]) => (
