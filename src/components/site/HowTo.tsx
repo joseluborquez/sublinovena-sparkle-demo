@@ -57,10 +57,10 @@ export function HowTo() {
   if (!step) return null;
 
   return (
-    <section id="como-cotizar" className="relative overflow-hidden bg-background py-24 sm:py-32">
+    <section id="como-cotizar" className="relative overflow-hidden bg-ink py-24 sm:py-32">
       <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
         <Reveal>
-          <h2 className="display-title mt-3 max-w-2xl text-4xl text-ink sm:text-6xl">
+          <h2 className="display-title mt-3 max-w-2xl text-4xl text-white sm:text-6xl">
             Un proceso de compra simple
           </h2>
         </Reveal>
@@ -81,7 +81,7 @@ export function HowTo() {
                     <span
                       className={`flex size-12 shrink-0 items-center justify-center rounded-full border-2 text-base font-bold transition-colors sm:size-16 sm:text-lg ${
                         state === "upcoming"
-                          ? "border-border text-ink/40 group-hover:border-ink/30"
+                          ? "border-white/20 text-white/40 group-hover:border-white/40"
                           : "animate-sheen border-transparent bg-[image:var(--gradient-brand)] text-ink"
                       }`}
                     >
@@ -89,7 +89,7 @@ export function HowTo() {
                     </span>
                     <span
                       className={`hidden max-w-[9rem] text-center text-sm font-medium sm:block ${
-                        state === "upcoming" ? "text-ink/40" : "text-ink/85"
+                        state === "upcoming" ? "text-white/40" : "text-white/85"
                       }`}
                     >
                       {s.title}
@@ -98,7 +98,7 @@ export function HowTo() {
                   {i < steps.length - 1 && (
                     <span
                       className={`mx-2 h-0.5 flex-1 rounded-full transition-colors sm:mx-4 ${
-                        i < active ? "bg-[image:var(--gradient-brand)]" : "bg-border"
+                        i < active ? "bg-[image:var(--gradient-brand)]" : "bg-white/15"
                       }`}
                     />
                   )}
@@ -109,7 +109,7 @@ export function HowTo() {
         </Reveal>
 
         <Reveal delay={200}>
-          <div className="card-lift mt-12 grid gap-10 rounded-3xl border border-white/10 bg-ink p-8 shadow-[0_30px_70px_-30px_rgba(15,13,38,0.5)] sm:grid-cols-[280px_1fr] sm:items-center sm:p-12">
+          <div className="card-lift mt-12 grid gap-10 rounded-3xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur sm:grid-cols-[280px_1fr] sm:items-center sm:p-12">
             <div
               className={`mx-auto flex size-[220px] shrink-0 items-center justify-center overflow-hidden rounded-2xl sm:size-[280px] ${
                 step.fill ? "bg-ink" : "bg-white p-7"
