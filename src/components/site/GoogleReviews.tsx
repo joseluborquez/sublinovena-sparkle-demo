@@ -60,8 +60,7 @@ export function GoogleReviews() {
     <section className="bg-background py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal>
-          <p className="eyebrow text-magenta">Opiniones de nuestros clientes</p>
-          <div className="mt-3 flex flex-wrap items-end justify-between gap-6">
+          <div className="flex flex-wrap items-end justify-between gap-6">
             <h2 className="display-title max-w-2xl text-3xl sm:text-5xl">
               Lo que dicen en Google
             </h2>

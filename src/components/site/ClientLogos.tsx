@@ -58,7 +58,7 @@ export function ClientLogos() {
     <section className="border-y border-border bg-white py-14">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal>
-          <p className="text-center text-xs font-medium uppercase tracking-[0.3em] text-ink/40">
+          <p className="text-center text-base font-semibold uppercase tracking-[0.2em] text-ink/60">
             Empresas e instituciones que ya confían en nosotros
           </p>
         </Reveal>

@@ -39,8 +39,7 @@ function BlogIndex() {
     <QuoteProvider>
       <Navbar />
       <main className="mx-auto max-w-5xl px-5 pb-16 pt-28 lg:px-8 lg:pb-24 lg:pt-32">
-        <p className="eyebrow text-magenta">Recursos</p>
-        <h1 className="display-title mt-3 text-3xl sm:text-5xl">Blog Sublinovena</h1>
+        <h1 className="display-title text-3xl sm:text-5xl">Blog Sublinovena</h1>
         <p className="mt-4 max-w-xl text-muted-foreground">
           Guías con precios reales de nuestro catálogo: qué producto conviene según tu presupuesto,
           cantidades mínimas y recomendaciones para empresas en Temuco y el resto de Chile.

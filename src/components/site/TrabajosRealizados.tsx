@@ -43,8 +43,7 @@ export function TrabajosRealizados() {
     <section id="trabajos" className="bg-background py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal>
-          <p className="eyebrow text-magenta">Nuestros trabajos</p>
-          <h2 className="display-title mt-3 max-w-2xl text-3xl sm:text-5xl">
+          <h2 className="display-title max-w-2xl text-3xl sm:text-5xl">
             Trabajos realizados
           </h2>
           <p className="mt-4 max-w-xl text-base leading-relaxed text-ink/65">

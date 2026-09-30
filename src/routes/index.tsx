@@ -37,10 +37,10 @@ function Index() {
       <main>
         <Hero />
         <ClientLogos />
-        <HowTo />
         <TrabajosRealizados />
-        <Catalog />
         <GoogleReviews />
+        <HowTo />
+        <Catalog />
       </main>
       <Footer />
       <WhatsappFab />

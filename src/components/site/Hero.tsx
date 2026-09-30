@@ -45,13 +45,13 @@ export function Hero() {
           <dl className="mt-16 grid max-w-3xl grid-cols-2 gap-x-6 gap-y-8 border-t border-white/10 pt-10 sm:grid-cols-4 lg:max-w-none">
             {[
               ["+150", "productos en catálogo"],
-              ["4", "unidades mínimas desde"],
               ["13", "categorías de productos"],
               ["100%", "personalizable"],
+              ["+50", "clientes nos califican con 5 estrellas"],
             ].map(([big, small]) => (
               <div key={small}>
-                <dt className="text-brand-gradient text-2xl font-bold sm:text-3xl">{big}</dt>
-                <dd className="mt-1 text-xs uppercase tracking-widest text-white/50">{small}</dd>
+                <dt className="text-brand-gradient text-3xl font-bold sm:text-5xl">{big}</dt>
+                <dd className="mt-2 text-sm uppercase tracking-wide text-white/65">{small}</dd>
               </div>
             ))}
           </dl>

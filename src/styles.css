@@ -119,6 +119,17 @@
   background-image: var(--gradient-brand);
 }
 
+@utility bg-brand-gradient-slide {
+  background-image: var(--gradient-brand);
+  background-size: 180% 100%;
+  background-position: 0% 50%;
+  transition: background-position var(--transition-smooth);
+
+  &:hover {
+    background-position: 100% 50%;
+  }
+}
+
 @utility text-brand-gradient {
   background-image: var(--gradient-brand);
   background-clip: text;

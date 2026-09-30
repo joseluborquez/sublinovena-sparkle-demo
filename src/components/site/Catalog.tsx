@@ -29,8 +29,7 @@ export function Catalog() {
     <section id="catalogo" className="bg-background py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal>
-          <p className="eyebrow text-magenta">Catálogo</p>
-          <h2 className="display-title mt-3 text-3xl sm:text-5xl">Productos que se personalizan</h2>
+          <h2 className="display-title text-3xl sm:text-5xl">Productos que se personalizan</h2>
           <p className="mt-4 max-w-xl text-muted-foreground">
             Una selección de nuestro catálogo. Cada pieza se produce con tu logo, tus colores y tu
             acabado.
@@ -57,10 +56,10 @@ export function Catalog() {
                 <button
                   key={c}
                   onClick={() => setCat(c)}
-                  className={`shrink-0 rounded-full border px-4 py-2 text-sm transition-all duration-300 ${
+                  className={`shrink-0 rounded-full border px-4 py-2 text-sm transition-all duration-300 hover:-translate-y-0.5 ${
                     cat === c
-                      ? "bg-brand-gradient border-transparent font-semibold text-ink"
-                      : "border-border bg-card text-muted-foreground hover:border-lavender hover:text-foreground"
+                      ? "bg-brand-gradient-slide border-transparent font-semibold text-ink shadow-[var(--shadow-brand)]"
+                      : "border-border bg-card text-muted-foreground hover:border-lavender hover:text-foreground hover:shadow-[var(--shadow-brand)]"
                   }`}
                 >
                   {c}
@@ -131,10 +130,7 @@ export function Catalog() {
                       </Accordion>
                     )}
 
-                    <button
-                      onClick={() => open(p.name)}
-                      className="w-full rounded-full border border-border py-2.5 text-sm font-semibold transition-all duration-300 group-hover:border-transparent group-hover:bg-brand-gradient group-hover:text-ink"
-                    >
+                    <button onClick={() => open(p.name)} className="btn-brand w-full">
                       Cotizar
                     </button>
                   </div>
