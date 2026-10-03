@@ -47,7 +47,7 @@ export function Hero() {
               ["+150", "productos en catálogo"],
               ["13", "categorías de productos"],
               ["100%", "personalizable"],
-              ["+50", "clientes nos califican con 5 estrellas"],
+              ["+50", "clientes nos califican con 5 estrellas en Google"],
             ].map(([big, small]) => (
               <div key={small}>
                 <dt className="text-brand-gradient text-3xl font-bold sm:text-5xl">{big}</dt>

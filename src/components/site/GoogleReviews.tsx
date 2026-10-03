@@ -1,5 +1,6 @@
 import { ExternalLink, Star } from "lucide-react";
 import { Reveal } from "./Reveal";
+import { GoogleIcon } from "./GoogleIcon";
 import { siteConfig } from "@/lib/site-config";
 
 const reviews = [
@@ -70,6 +71,7 @@ export function GoogleReviews() {
               rel="noreferrer noopener"
               className="flex items-center gap-3 rounded-2xl border border-border bg-card px-5 py-3 transition-colors hover:border-magenta/40"
             >
+              <GoogleIcon className="size-7 shrink-0" />
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-2xl font-bold text-ink">5,0</span>

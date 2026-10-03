@@ -76,7 +76,7 @@ export function Navbar() {
             <WhatsappIcon className="size-5" />
           </a>
 
-          <button onClick={() => open()} className="btn-brand hidden text-sm sm:inline-flex">
+          <button onClick={() => open()} className="btn-brand hidden text-sm lg:inline-flex">
             Cotizar ahora
           </button>
 

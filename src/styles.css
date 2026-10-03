@@ -47,7 +47,8 @@
   --color-magenta: var(--brand-magenta);
   --color-lavender: var(--brand-lavender);
 
-  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
@@ -143,6 +144,7 @@
 }
 
 @utility display-title {
+  font-family: var(--font-display);
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.05;
