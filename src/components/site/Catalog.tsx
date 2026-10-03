@@ -77,7 +77,10 @@ export function Catalog() {
             );
             return (
               <Reveal key={p.id} delay={(i % 4) * 90}>
-                <article className="card-lift group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card">
+                <article
+                  id={p.id}
+                  className="card-lift group flex h-full scroll-mt-24 flex-col overflow-hidden rounded-3xl border border-border bg-card"
+                >
                   <Link to="/productos/$id" params={{ id: p.id }} className="contents">
                     <div className="relative aspect-square overflow-hidden bg-white">
                       <img

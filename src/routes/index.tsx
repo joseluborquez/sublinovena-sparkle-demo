@@ -1,4 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
+import { createFileRoute, useRouterState } from "@tanstack/react-router";
 import { QuoteProvider } from "@/components/site/QuoteProvider";
 import { Navbar } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
@@ -31,10 +32,41 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const hash = useRouterState({ select: (s) => s.location.hash });
+  const [ready, setReady] = useState(() => !hash);
+
+  useEffect(() => {
+    if (!hash) {
+      setReady(true);
+      return;
+    }
+    setReady(false);
+    let cancelled = false;
+    let attempts = 0;
+    const tryScroll = () => {
+      if (cancelled) return;
+      const el = document.getElementById(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: "auto", block: "start" });
+        setReady(true);
+        return;
+      }
+      if (++attempts > 90) {
+        setReady(true);
+        return;
+      }
+      requestAnimationFrame(tryScroll);
+    };
+    tryScroll();
+    return () => {
+      cancelled = true;
+    };
+  }, [hash]);
+
   return (
     <QuoteProvider>
       <Navbar />
-      <main>
+      <main style={ready ? undefined : { visibility: "hidden" }}>
         <Hero />
         <ClientLogos />
         <TrabajosRealizados />

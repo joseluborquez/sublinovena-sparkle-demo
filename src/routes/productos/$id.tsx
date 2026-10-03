@@ -1,4 +1,4 @@
-import { createFileRoute, Link, notFound, useRouter } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ChevronRight } from "lucide-react";
 import { products, type Product } from "@/data/products";
 import { siteConfig, waLink } from "@/lib/site-config";
@@ -95,19 +95,19 @@ function ProductPage() {
     product.tiers[0]?.price ?? 0,
   );
   const waMessage = `Hola, quiero cotizar: ${product.name}${product.sku ? ` (${product.sku})` : ""}`;
-  const router = useRouter();
 
   return (
     <QuoteProvider>
       <Navbar />
       <main className="mx-auto max-w-6xl px-5 pb-10 pt-28 lg:px-8 lg:pb-16 lg:pt-32">
         <div className="flex flex-wrap items-center gap-3">
-          <button
-            onClick={() => router.history.back()}
+          <Link
+            to="/"
+            hash={product.id}
             className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-lavender hover:text-foreground"
           >
             <ArrowLeft size={13} /> Volver
-          </button>
+          </Link>
           <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-1 text-xs text-muted-foreground">
             <Link to="/" className="hover:text-foreground">
               Inicio
