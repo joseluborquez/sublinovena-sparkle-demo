@@ -151,7 +151,7 @@ const rawBlogPosts: RawBlogPost[] = [
     imageFile: "lanyards-personalizados-con-logo-guia.jpg",
     title: "Lanyards personalizados con logo: materiales, precios y para qué sirve cada tipo",
     description:
-      "Sublimado, texturizado, con broche tip top: guía para elegir el lanyard correcto según tu evento o credencial, con precios reales desde 3 unidades.",
+      "Sublimado, texturizado, con broche tip top: guía para elegir el lanyard correcto según tu evento o credencial, con precios reales desde 10 unidades.",
     keywords: [
       "lanyards personalizados con logo",
       "cordones porta credencial personalizados",
@@ -179,7 +179,7 @@ const rawBlogPosts: RawBlogPost[] = [
       { type: "h2", text: "Lanyard texturizado" },
       {
         type: "p",
-        text: "Cinta de poliéster grueso texturado, más económica, con estampado DTF textil a un color. Es la opción cuando el pedido es grande (disponible hasta tramos de 2.000+ unidades) y el diseño es simple — por ejemplo, solo el logo en un color. Precio desde $1.100 c/u + IVA en los tramos más altos.",
+        text: "Cinta de poliéster grueso texturado, más económica, con estampado DTF textil a un color. Es la opción cuando el pedido es grande — mínimo 100 unidades, con tramos hasta 2.000+ — y el diseño es simple, por ejemplo, solo el logo en un color. Precio desde $900 c/u + IVA en los tramos más altos.",
       },
       { type: "h2", text: "¿Con o sin credencial impresa?" },
       {
