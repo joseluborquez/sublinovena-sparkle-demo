@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { blogPosts } from "@/data/blog-posts";
 import { siteConfig } from "@/lib/site-config";
-import { QuoteProvider } from "@/components/site/QuoteProvider";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { WhatsappFab } from "@/components/site/WhatsappFab";
@@ -36,7 +35,7 @@ function BlogIndex() {
   const posts = [...blogPosts].sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1));
 
   return (
-    <QuoteProvider>
+    <>
       <Navbar />
       <main className="mx-auto max-w-5xl px-5 pb-16 pt-28 lg:px-8 lg:pb-24 lg:pt-32">
         <h1 className="display-title text-3xl sm:text-5xl">Blog Sublinovena</h1>
@@ -79,6 +78,6 @@ function BlogIndex() {
       </main>
       <Footer />
       <WhatsappFab />
-    </QuoteProvider>
+    </>
   );
 }

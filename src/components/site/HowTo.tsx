@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ArrowLeft, ArrowRight, Check } from "lucide-react";
 import { Reveal } from "./Reveal";
-import { useQuote } from "./QuoteProvider";
 import tazonBlanco from "@/assets/products/tazon-blanco-325cc.png";
 import sublinovenaLogo from "@/assets/sublinovena-logo-full.png";
 import mockupTazaLogo from "@/assets/howto/mockup-taza-logo.jpg";
@@ -15,7 +14,7 @@ type Step = {
   fill?: boolean;
 };
 
-const steps: Step[] = [
+export const steps: Step[] = [
   {
     title: "Elige tu producto",
     description:
@@ -50,7 +49,6 @@ const steps: Step[] = [
 
 export function HowTo() {
   const [active, setActive] = useState(0);
-  const { open } = useQuote();
   const step = steps[active];
   const isLast = active === steps.length - 1;
 
@@ -82,7 +80,7 @@ export function HowTo() {
                       className={`flex size-12 shrink-0 items-center justify-center rounded-full border-2 text-base font-bold transition-colors sm:size-16 sm:text-lg ${
                         state === "upcoming"
                           ? "border-white/20 text-white/40 group-hover:border-white/40"
-                          : "animate-sheen border-transparent bg-[image:var(--gradient-brand)] text-ink"
+                          : "border-transparent bg-[image:var(--gradient-brand)] text-ink"
                       }`}
                     >
                       {state === "done" ? <Check size={22} /> : i + 1}
@@ -135,9 +133,9 @@ export function HowTo() {
                   <ArrowLeft size={17} /> Atrás
                 </button>
                 {isLast ? (
-                  <button type="button" onClick={() => open()} className="btn-brand">
-                    Cotizar ahora <ArrowRight size={17} />
-                  </button>
+                  <a href="#catalogo" className="btn-brand">
+                    Ver catálogo <ArrowRight size={17} />
+                  </a>
                 ) : (
                   <button
                     type="button"

@@ -2,14 +2,13 @@ import { useMemo, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Search } from "lucide-react";
 import { categories, products } from "@/data/products";
-import { useQuote } from "./QuoteProvider";
+import { waLink } from "@/lib/site-config";
 import { Reveal } from "./Reveal";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const clp = (n: number) => n.toLocaleString("es-CL");
 
 export function Catalog() {
-  const { open } = useQuote();
   const [query, setQuery] = useState("");
   const [cat, setCat] = useState<string>("Todos");
 
@@ -133,9 +132,16 @@ export function Catalog() {
                       </Accordion>
                     )}
 
-                    <button onClick={() => open(p.name)} className="btn-brand w-full">
-                      Cotizar
-                    </button>
+                    <a
+                      href={waLink(
+                        `Hola, quiero cotizar: ${p.name}${p.sku ? ` (${p.sku})` : ""}`,
+                      )}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="btn-brand w-full"
+                    >
+                      Cotizar por WhatsApp
+                    </a>
                   </div>
                 </article>
               </Reveal>

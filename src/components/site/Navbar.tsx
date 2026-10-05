@@ -3,7 +3,6 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/sublinovena-icon.png";
 import { waLink } from "@/lib/site-config";
-import { useQuote } from "./QuoteProvider";
 import { WhatsappIcon } from "./WhatsappIcon";
 
 const links = [
@@ -16,7 +15,6 @@ const links = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menu, setMenu] = useState(false);
-  const { open } = useQuote();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const isHome = pathname === "/";
 
@@ -76,9 +74,9 @@ export function Navbar() {
             <WhatsappIcon className="size-5" />
           </a>
 
-          <button onClick={() => open()} className="btn-brand hidden text-sm lg:inline-flex">
-            Cotizar ahora
-          </button>
+          <a href="/#catalogo" className="btn-brand hidden text-sm lg:inline-flex">
+            Ver catálogo
+          </a>
 
           <button
             onClick={() => setMenu((v) => !v)}
@@ -108,15 +106,9 @@ export function Navbar() {
             </li>
           ))}
           <li className="pt-2">
-            <button
-              onClick={() => {
-                setMenu(false);
-                open();
-              }}
-              className="btn-brand w-full"
-            >
-              Cotizar ahora
-            </button>
+            <a href="/#catalogo" onClick={() => setMenu(false)} className="btn-brand w-full">
+              Ver catálogo
+            </a>
           </li>
         </ul>
       </div>

@@ -1,8 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { products, type Product } from "@/data/products";
 import { siteConfig, waLink } from "@/lib/site-config";
-import { QuoteProvider } from "@/components/site/QuoteProvider";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { WhatsappFab } from "@/components/site/WhatsappFab";
@@ -97,7 +96,7 @@ function ProductPage() {
   const waMessage = `Hola, quiero cotizar: ${product.name}${product.sku ? ` (${product.sku})` : ""}`;
 
   return (
-    <QuoteProvider>
+    <>
       <Navbar />
       <main className="mx-auto max-w-6xl px-5 pb-10 pt-28 lg:px-8 lg:pb-16 lg:pt-32">
         <div className="flex flex-wrap items-center gap-3">
@@ -108,17 +107,6 @@ function ProductPage() {
           >
             <ArrowLeft size={13} /> Volver
           </Link>
-          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-1 text-xs text-muted-foreground">
-            <Link to="/" className="hover:text-foreground">
-              Inicio
-            </Link>
-            <ChevronRight size={12} />
-            <Link to="/" hash="catalogo" className="hover:text-foreground">
-              {product.category}
-            </Link>
-            <ChevronRight size={12} />
-            <span className="text-foreground">{product.name}</span>
-          </nav>
         </div>
 
         <div className="mt-6 grid gap-10 lg:grid-cols-2">
@@ -197,6 +185,6 @@ function ProductPage() {
       </main>
       <Footer />
       <WhatsappFab />
-    </QuoteProvider>
+    </>
   );
 }

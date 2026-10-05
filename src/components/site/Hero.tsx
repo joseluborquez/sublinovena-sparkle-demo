@@ -20,8 +20,8 @@ const slides: HeroSlide[] = [
     eyebrow: "Regalos corporativos de fin de año",
     title: "Cierra el año agradeciendo a tu equipo",
     subtitle: "Sets de regalo personalizados con tu logo, listos antes de Navidad.",
-    ctaLabel: "Cotizar regalos de fin de año",
-    cta: { type: "quote", product: "Regalos corporativos de fin de año" },
+    ctaLabel: "Ver regalos de fin de año",
+    cta: { type: "link", href: "#catalogo" },
     align: "right",
   },
   {

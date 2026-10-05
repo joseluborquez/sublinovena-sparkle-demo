@@ -1,10 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
-import { useQuote } from "./QuoteProvider";
 
-export type HeroSlideCta =
-  | { type: "link"; href: string }
-  | { type: "quote"; product?: string };
+export type HeroSlideCta = { type: "link"; href: string };
 
 export type HeroSlide = {
   image: string;
@@ -19,7 +16,6 @@ export type HeroSlide = {
 const AUTOPLAY_MS = 6500;
 
 export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
-  const { open } = useQuote();
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -81,7 +77,9 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
             <div className="absolute inset-0 mx-auto flex max-w-7xl px-5 lg:px-8">
               <div
                 className={`flex w-full flex-col justify-center ${
-                  slide.align === "left" ? "items-start text-left" : "items-end text-right sm:ml-auto"
+                  slide.align === "left"
+                    ? "items-start text-left"
+                    : "items-end text-right sm:ml-auto"
                 }`}
               >
                 <div className="max-w-lg">
@@ -92,14 +90,19 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
                   >
                     {slide.eyebrow}
                   </p>
-                  <h1
-                    className={`display-title mt-5 text-3xl text-white transition-all delay-200 duration-700 sm:text-5xl lg:text-6xl ${
-                      active ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
-                    }`}
-                    style={{ lineHeight: 1.2 }}
-                  >
-                    {slide.title}
-                  </h1>
+                  {(() => {
+                    const HeadingTag = i === 0 ? "h1" : "h2";
+                    return (
+                      <HeadingTag
+                        className={`display-title mt-5 text-3xl text-white transition-all delay-200 duration-700 sm:text-5xl lg:text-6xl ${
+                          active ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
+                        }`}
+                        style={{ lineHeight: 1.2 }}
+                      >
+                        {slide.title}
+                      </HeadingTag>
+                    );
+                  })()}
                   <p
                     className={`mt-5 text-base leading-relaxed text-white/75 transition-all delay-300 duration-700 sm:text-lg ${
                       active ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
@@ -112,15 +115,9 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
                       slide.align === "right" ? "justify-end" : ""
                     } ${active ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}
                   >
-                    {slide.cta.type === "link" ? (
-                      <a href={slide.cta.href} className="btn-brand">
-                        {slide.ctaLabel} <ArrowRight size={17} />
-                      </a>
-                    ) : (
-                      <button onClick={() => open(slide.cta.type === "quote" ? slide.cta.product : undefined)} className="btn-brand">
-                        {slide.ctaLabel} <ArrowRight size={17} />
-                      </button>
-                    )}
+                    <a href={slide.cta.href} className="btn-brand">
+                      {slide.ctaLabel} <ArrowRight size={17} />
+                    </a>
                   </div>
                 </div>
               </div>
