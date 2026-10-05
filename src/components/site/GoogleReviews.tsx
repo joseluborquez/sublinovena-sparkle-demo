@@ -3,7 +3,10 @@ import { Reveal } from "./Reveal";
 import { GoogleIcon } from "./GoogleIcon";
 import { siteConfig } from "@/lib/site-config";
 
-const reviews = [
+export const googleRating = 5.0;
+export const googleReviewCount = 57;
+
+export const reviews = [
   {
     name: "Javiera Palacios",
     time: "Hace 10 meses",
@@ -62,9 +65,7 @@ export function GoogleReviews() {
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-6">
-            <h2 className="display-title max-w-2xl text-3xl sm:text-5xl">
-              Lo que dicen en Google
-            </h2>
+            <h2 className="display-title max-w-2xl text-3xl sm:text-5xl">Lo que dicen en Google</h2>
             <a
               href={siteConfig.googleReviewsUrl}
               target="_blank"
@@ -74,10 +75,12 @@ export function GoogleReviews() {
               <GoogleIcon className="size-7 shrink-0" />
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="text-2xl font-bold text-ink">5,0</span>
+                  <span className="text-2xl font-bold text-ink">
+                    {googleRating.toLocaleString("es-CL", { minimumFractionDigits: 1 })}
+                  </span>
                   <Stars />
                 </div>
-                <span className="text-xs text-ink/55">57 reseñas en Google</span>
+                <span className="text-xs text-ink/55">{googleReviewCount} reseñas en Google</span>
               </div>
               <ExternalLink size={16} className="text-ink/40" />
             </a>

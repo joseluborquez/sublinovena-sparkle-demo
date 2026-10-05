@@ -3,7 +3,6 @@ import { ArrowLeft, ChevronRight } from "lucide-react";
 import { blogPosts, type BlogBlock } from "@/data/blog-posts";
 import { products } from "@/data/products";
 import { siteConfig } from "@/lib/site-config";
-import { QuoteProvider } from "@/components/site/QuoteProvider";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { WhatsappFab } from "@/components/site/WhatsappFab";
@@ -14,6 +13,9 @@ const dateFmt = (iso: string) =>
     month: "long",
     year: "numeric",
   });
+
+const absoluteImage = (image: string) =>
+  image.startsWith("http") ? image : `${siteConfig.url}${image}`;
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
@@ -32,6 +34,7 @@ export const Route = createFileRoute("/blog/$slug")({
       "@id": `${canonical}#article`,
       headline: post.title,
       description: post.description,
+      image: absoluteImage(post.image),
       keywords: post.keywords.join(", "),
       url: canonical,
       datePublished: post.publishedAt,
@@ -65,7 +68,10 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:description", content: post.description },
         { property: "og:type", content: "article" },
         { property: "og:url", content: canonical },
+        { property: "og:image", content: absoluteImage(post.image) },
         { property: "article:published_time", content: post.publishedAt },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:image", content: absoluteImage(post.image) },
       ],
       links: [{ rel: "canonical", href: canonical }],
       scripts: [
@@ -111,7 +117,7 @@ function BlogPostPage() {
   const router = useRouter();
 
   return (
-    <QuoteProvider>
+    <>
       <Navbar />
       <main className="mx-auto max-w-3xl px-5 pb-10 pt-28 lg:px-8 lg:pb-16 lg:pt-32">
         <div className="flex flex-wrap items-center gap-3">
@@ -191,6 +197,6 @@ function BlogPostPage() {
       </main>
       <Footer />
       <WhatsappFab />
-    </QuoteProvider>
+    </>
   );
 }
