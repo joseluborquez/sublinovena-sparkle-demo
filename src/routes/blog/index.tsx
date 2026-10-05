@@ -51,18 +51,28 @@ function BlogIndex() {
               key={post.slug}
               to="/blog/$slug"
               params={{ slug: post.slug }}
-              className="card-lift group flex h-full flex-col gap-3 rounded-3xl border border-border bg-card p-6"
+              className="card-lift group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card"
             >
-              <span className="w-fit rounded-full bg-muted px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-lavender">
-                {post.tag}
-              </span>
-              <h2 className="text-lg font-semibold leading-snug group-hover:text-magenta">
-                {post.title}
-              </h2>
-              <p className="line-clamp-3 text-sm text-muted-foreground">{post.description}</p>
-              <p className="mt-auto pt-2 text-xs text-muted-foreground">
-                {dateFmt(post.publishedAt)} · {post.readingMinutes} min de lectura
-              </p>
+              <div className="aspect-[16/9] overflow-hidden bg-muted">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  loading="lazy"
+                  className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="flex flex-1 flex-col gap-3 p-6">
+                <span className="w-fit rounded-full bg-muted px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-lavender">
+                  {post.tag}
+                </span>
+                <h2 className="text-lg font-semibold leading-snug group-hover:text-magenta">
+                  {post.title}
+                </h2>
+                <p className="line-clamp-3 text-sm text-muted-foreground">{post.description}</p>
+                <p className="mt-auto pt-2 text-xs text-muted-foreground">
+                  {dateFmt(post.publishedAt)} · {post.readingMinutes} min de lectura
+                </p>
+              </div>
             </Link>
           ))}
         </div>

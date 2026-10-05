@@ -146,6 +146,10 @@ function BlogPostPage() {
             {dateFmt(post.publishedAt)} · {post.readingMinutes} min de lectura
           </p>
 
+          <div className="mt-6 aspect-[16/9] overflow-hidden rounded-3xl bg-muted">
+            <img src={post.image} alt={post.title} className="size-full object-cover" />
+          </div>
+
           <div className="mt-2">
             {post.blocks.map((block, i) => (
               <Block key={i} block={block} />

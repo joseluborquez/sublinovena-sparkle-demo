@@ -18,12 +18,27 @@ export type BlogPost = {
   publishedAt: string;
   readingMinutes: number;
   relatedCategories: string[];
+  image: string;
   blocks: BlogBlock[];
 };
 
-export const blogPosts: BlogPost[] = [
+type RawBlogPost = Omit<BlogPost, "image"> & { imageFile: string };
+
+const imageModules = import.meta.glob("../assets/blog/*.jpg", {
+  eager: true,
+  import: "default",
+}) as Record<string, string>;
+
+function resolveImage(filename: string): string {
+  const match = Object.entries(imageModules).find(([path]) => path.endsWith(`/${filename}`));
+  if (!match) throw new Error(`Imagen de blog no encontrada: ${filename}`);
+  return match[1];
+}
+
+const rawBlogPosts: RawBlogPost[] = [
   {
     slug: "regalos-corporativos-temuco-guia",
+    imageFile: "regalos-corporativos-temuco-guia.jpg",
     title: "Regalos corporativos en Temuco: guía completa para elegir merchandising que funcione",
     description:
       "Cómo elegir merchandising corporativo en Temuco y La Araucanía: qué productos rinden mejor, cuánto pedir y qué preguntar antes de cotizar.",
@@ -83,6 +98,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "cantidad-minima-regalos-corporativos-mitos-y-realidades",
+    imageFile: "cantidad-minima-regalos-corporativos-mitos-y-realidades.jpg",
     title: "Cantidad mínima para regalos corporativos: mitos y realidades",
     description:
       "¿Es verdad que siempre hay que pedir mínimo 500 o 1.000 unidades? Revisamos mínimos reales por tipo de producto de merchandising en Chile.",
@@ -132,6 +148,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "lanyards-personalizados-con-logo-guia",
+    imageFile: "lanyards-personalizados-con-logo-guia.jpg",
     title: "Lanyards personalizados con logo: materiales, precios y para qué sirve cada tipo",
     description:
       "Sublimado, texturizado, con broche tip top: guía para elegir el lanyard correcto según tu evento o credencial, con precios reales desde 3 unidades.",
@@ -177,6 +194,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "tazones-mugs-publicitarios-para-empresas",
+    imageFile: "tazones-mugs-publicitarios-para-empresas.jpg",
     title: "Tazones y mugs publicitarios: por qué siguen siendo el regalo corporativo más pedido",
     description:
       "Tazones cerámicos, con mango de color, térmicos o de bamboo: comparación de opciones y precios para elegir el mug publicitario correcto.",
@@ -222,6 +240,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "botellas-termos-corporativos-cual-elegir",
+    imageFile: "botellas-termos-corporativos-cual-elegir.jpg",
     title: "Botellas y termos corporativos: cuál elegir según tu presupuesto y uso",
     description:
       "Comparamos botellas de aluminio, acero inoxidable, plástico y vidrio para merchandising corporativo, con precios reales por tramo de cantidad.",
@@ -267,6 +286,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "cuanto-cuesta-personalizar-poleras-con-logo",
+    imageFile: "cuanto-cuesta-personalizar-poleras-con-logo.jpg",
     title: "¿Cuánto cuesta personalizar poleras y polerones con logo en Chile?",
     description:
       "Precios reales de poleras, polerones y vestuario corporativo con logo por tramo de cantidad, y qué factores suben o bajan el costo.",
@@ -312,6 +332,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "ideas-regalos-corporativos-fin-de-ano",
+    imageFile: "ideas-regalos-corporativos-fin-de-ano.jpg",
     title: "Ideas de regalos corporativos de fin de año para empresas en Chile",
     description:
       "Ideas de regalos de fin de año y Navidad para colaboradores y clientes, organizadas por presupuesto, con precios reales del catálogo.",
@@ -369,6 +390,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "articulos-publicitarios-para-eventos-y-ferias",
+    imageFile: "articulos-publicitarios-para-eventos-y-ferias.jpg",
     title: "Artículos publicitarios para eventos y ferias: lo que no puede faltar",
     description:
       "Guía práctica de merchandising para congresos, ferias y activaciones: acreditación, entrega masiva y qué llevarse a la memoria del asistente.",
@@ -417,3 +439,8 @@ export const blogPosts: BlogPost[] = [
     ],
   },
 ];
+
+export const blogPosts: BlogPost[] = rawBlogPosts.map(({ imageFile, ...post }) => ({
+  ...post,
+  image: resolveImage(imageFile),
+}));
