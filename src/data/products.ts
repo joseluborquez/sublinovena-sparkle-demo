@@ -177,7 +177,7 @@ const rawProducts: RawProduct[] = [
     category: "Lanyards y Credenciales",
     description: "Kit de identificación n°1: Incluye lanyard sublimado full color en cinta de poliéster suave al tacto de 2.5 cm de ancho y 50 cm de largo, bordado con hilo de alta resistencia + mosquetón metálico + portacredencial + credencial impresa a una cara. (lanyard sin límite de personalización). Valores no incluyen diseño de la credencial.",
     tiers: [{ label: "6 a 99 unidades", price: 5900 }, { label: "100 a 199 unidades", price: 5800 }, { label: "200 a 299 unidades", price: 5700 }, { label: "300 a 399 unidades", price: 5600 }, { label: "400 a 499 unidades", price: 5500 }, { label: "500 o más unidades", price: 5400 }],
-    notes: ["*Con", "credencial", "impresa", "a", "dos", "caras, se cobra $1.000 adicional"],
+    notes: ["*Con credencial impresa a dos caras, se cobra $1.000 adicional por cada KIT."],
     imageFile: "kit-de-identificacion-n1.png",
   },
   {
@@ -187,7 +187,7 @@ const rawProducts: RawProduct[] = [
     category: "Lanyards y Credenciales",
     description: "Kit de identificación n°2: Incluye lanyard sublimado full color en cinta de poliéster suave al tacto de 2.5 cm de ancho y 55 cm de largo, bordado con hilo de alta resistencia + mosquetón metálico + broche tip top + portacredencial + credencial impresa a una cara. (lanyard sin límite de personalización). Valores no incluyen diseño de la credencial.",
     tiers: [{ label: "6 a 99 unidades", price: 6900 }, { label: "100 a 199 unidades", price: 6800 }, { label: "200 a 299 unidades", price: 6700 }, { label: "300 a 399 unidades", price: 6600 }, { label: "400 a 499 unidades", price: 6500 }, { label: "500 o más unidades", price: 6400 }],
-    notes: ["por cada KIT.", "*Con", "credencial", "impresa", "a", "dos", "caras, se cobra $1.000 adicional", "por cada KIT."],
+    notes: ["*Con credencial impresa a dos caras, se cobra $1.000 adicional por cada KIT."],
     imageFile: "kit-de-identificacion-n2.png",
   },
   {
@@ -195,9 +195,9 @@ const rawProducts: RawProduct[] = [
     sku: null,
     name: "KIT DE IDENTIFICACIÓN N°3",
     category: "Lanyards y Credenciales",
-    description: "Kit de identificación n°3: Incluye lanyard texturizado de 2 cm de ancho con broche tip top estampado a un color a una cara + portacredencial + credencial impresa a una cara. (lanyard",
+    description: "Kit de identificación n°3: Incluye lanyard texturizado de 2 cm de ancho con broche tip top estampado a un color a una cara + portacredencial + credencial impresa a una cara. (lanyard disponible en 14 colores diferentes). Valores no incluyen diseño de la credencial.",
     tiers: [{ label: "50 a 99 unidades", price: 4000 }, { label: "100 a 199 unidades", price: 3900 }, { label: "200 a 299 unidades", price: 3800 }, { label: "300 a 399 unidades", price: 3700 }, { label: "400 a 499 unidades", price: 3600 }, { label: "500 o más", price: 3500 }],
-    notes: ["disponible en 14 colores diferentes). Valores no incluyen diseño de la credencial.", "*Con", "credencial", "impresa", "a", "dos", "caras, se cobra $1.000 adicional", "por cada KIT."],
+    notes: ["*Con credencial impresa a dos caras, se cobra $1.000 adicional por cada KIT."],
     imageFile: "kit-de-identificacion-n3.png",
   },
   {
