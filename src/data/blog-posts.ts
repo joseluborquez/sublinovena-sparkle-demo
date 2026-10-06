@@ -37,6 +37,63 @@ function resolveImage(filename: string): string {
 
 const rawBlogPosts: RawBlogPost[] = [
   {
+    slug: "kits-de-identificacion-cual-elegir",
+    imageFile: "kits-de-identificacion-cual-elegir.jpg",
+    title: "Kits de identificación: diferencias entre el N°1, N°2 y N°3",
+    description:
+      "Comparamos los 3 kits de identificación de Sublinovena (lanyard + portacredencial + credencial): qué trae cada uno, las diferencias reales y cuál conviene según tu evento y presupuesto.",
+    keywords: [
+      "kit de identificación con logo",
+      "kit credencial y lanyard precio",
+      "diferencias kits de identificación",
+    ],
+    tag: "Producto",
+    publishedAt: "2026-10-06",
+    readingMinutes: 4,
+    relatedCategories: ["Lanyards y Credenciales"],
+    blocks: [
+      {
+        type: "p",
+        text: "Si necesitas acreditar personal o asistentes a un evento, un kit de identificación te ahorra cotizar el lanyard, el portacredencial y la credencial por separado — y además sale más barato que comprar cada pieza por su lado. Pero tenemos 3 kits distintos en el catálogo y la pregunta que más nos hacen es cuál elegir. Esta es la diferencia real entre los tres.",
+      },
+      { type: "h2", text: "Lo que no cambia entre los tres kits" },
+      {
+        type: "p",
+        text: "Los tres incluyen portacredencial + credencial impresa a una cara. El diseño de la credencial no está incluido en el precio, y si necesitas que se imprima a dos caras, se cobra $1.000 + IVA adicional por cada kit.",
+      },
+      { type: "h2", text: "Kit de identificación N°1 — el estándar" },
+      {
+        type: "p",
+        text: "Lanyard sublimado full color, cinta de poliéster de 2.5 cm de ancho x 50 cm de largo, con mosquetón metálico (sin broche de seguridad). Es la opción más simple: diseño sin límite de colores, para eventos corporativos y congresos donde no hace falta soltar el lanyard rápido. Desde 6 unidades, $5.900 c/u + IVA (6 a 99) bajando hasta $5.400 c/u + IVA (500 o más).",
+      },
+      { type: "h2", text: "Kit de identificación N°2 — con broche de seguridad" },
+      {
+        type: "p",
+        text: "Igual al N°1, pero con cinta de 55 cm y un broche tip top plástico que permite soltar el lanyard rápido si queda enganchado — un detalle que piden colegios, hospitales y plantas industriales. Desde 6 unidades, $6.900 c/u + IVA (6 a 99) bajando hasta $6.400 c/u + IVA (500 o más).",
+      },
+      { type: "h2", text: "Kit de identificación N°3 — el más económico" },
+      {
+        type: "p",
+        text: "Acá cambia el lanyard: es texturizado (no sublimado), estampado a un solo color en vez de full color, con broche tip top incluido y disponible en 14 colores de cinta para elegir. Es la opción para pedidos grandes con diseño simple — por ejemplo, solo el logo en un color. El mínimo es más alto que los otros dos: 50 unidades. Desde $4.000 c/u + IVA (50 a 99) bajando hasta $3.500 c/u + IVA (500 o más).",
+      },
+      { type: "h2", text: "Cuadro comparativo rápido" },
+      {
+        type: "ul",
+        items: [
+          "Diseño del lanyard: N°1 y N°2 son full color, sin límite de personalización; N°3 es a un color, con 14 colores de cinta para elegir.",
+          "Broche de seguridad (tip top): lo incluyen el N°2 y el N°3; el N°1 no.",
+          "Cantidad mínima: N°1 y N°2 desde 6 unidades; N°3 desde 50 unidades.",
+          "Precio desde (pedidos de 500 o más unidades): N°3 $3.500 c/u, N°1 $5.400 c/u, N°2 $6.400 c/u, todos + IVA.",
+        ],
+      },
+      { type: "h2", text: "¿Cuál elegir?" },
+      {
+        type: "p",
+        text: "Si necesitas pocas unidades y diseño full color, el N°1. Si además quieres el broche de seguridad, el N°2. Si el pedido es grande y el diseño es simple, el N°3 es la opción más económica. Si no estás seguro, cuéntanos el tipo de evento y la cantidad que necesitas y te recomendamos el kit indicado.",
+      },
+    ],
+  },
+  {
     slug: "regalos-corporativos-temuco-guia",
     imageFile: "regalos-corporativos-temuco-guia.jpg",
     title: "Regalos corporativos en Temuco: guía completa para elegir merchandising que funcione",
