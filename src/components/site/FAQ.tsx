@@ -21,7 +21,7 @@ export const faqs: FaqItem[] = [
   {
     question: "¿El precio incluye el diseño y el estampado del logo?",
     answer:
-      "En la mayoría de los productos sí, pero varía según el artículo — algunos como las credenciales no lo incluyen. Te confirmamos el detalle exacto al cotizar tu producto por WhatsApp.",
+      "En la mayoría de los productos sí, pero varía según el artículo. Algunos, como las credenciales, no lo incluyen. Te confirmamos el detalle exacto al cotizar tu producto por WhatsApp.",
   },
   {
     question: "¿Hacen despacho a todo Chile?",
@@ -35,7 +35,7 @@ export const faqs: FaqItem[] = [
   {
     question: "¿Cuánto demora la producción?",
     answer:
-      "Varía según el producto, la técnica de personalización y la cantidad — se confirma al cotizar. En temporada alta (octubre a diciembre) los plazos se alargan, así que conviene cotizar con anticipación.",
+      "Varía según el producto, la técnica de personalización y la cantidad, y se confirma al cotizar. En temporada alta (octubre a diciembre) los plazos se alargan, así que conviene cotizar con anticipación.",
   },
   {
     question: "¿Dónde están ubicados?",
@@ -45,7 +45,7 @@ export const faqs: FaqItem[] = [
   {
     question: "¿Cómo cotizo un producto?",
     answer:
-      "Eliges el producto que te interesa en el catálogo y cotizas directo por WhatsApp con la cantidad que necesitas — te respondemos con el precio real, sin formularios ni esperas.",
+      "Eliges el producto que te interesa en el catálogo y cotizas directo por WhatsApp con la cantidad que necesitas. Te respondemos con el precio real, sin formularios ni esperas.",
   },
 ];
 

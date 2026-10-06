@@ -54,27 +54,27 @@ const rawBlogPosts: RawBlogPost[] = [
     blocks: [
       {
         type: "p",
-        text: "Si necesitas acreditar personal o asistentes a un evento, un kit de identificación te ahorra cotizar el lanyard, el portacredencial y la credencial por separado — y además sale más barato que comprar cada pieza por su lado. Pero tenemos 3 kits distintos en el catálogo y la pregunta que más nos hacen es cuál elegir. Esta es la diferencia real entre los tres.",
+        text: "Si necesitas acreditar personal o asistentes a un evento, un kit de identificación te ahorra cotizar el lanyard, el portacredencial y la credencial por separado, y además sale más barato que comprar cada pieza por su lado. Pero tenemos 3 kits distintos en el catálogo y la pregunta que más nos hacen es cuál elegir. Esta es la diferencia real entre los tres.",
       },
       { type: "h2", text: "Lo que no cambia entre los tres kits" },
       {
         type: "p",
         text: "Los tres incluyen portacredencial + credencial impresa a una cara. El diseño de la credencial no está incluido en el precio, y si necesitas que se imprima a dos caras, se cobra $1.000 + IVA adicional por cada kit.",
       },
-      { type: "h2", text: "Kit de identificación N°1 — el estándar" },
+      { type: "h2", text: "Kit de identificación N°1: el estándar" },
       {
         type: "p",
         text: "Lanyard sublimado full color, cinta de poliéster de 2.5 cm de ancho x 50 cm de largo, con mosquetón metálico (sin broche de seguridad). Es la opción más simple: diseño sin límite de colores, para eventos corporativos y congresos donde no hace falta soltar el lanyard rápido. Desde 6 unidades, $5.900 c/u + IVA (6 a 99) bajando hasta $5.400 c/u + IVA (500 o más).",
       },
-      { type: "h2", text: "Kit de identificación N°2 — con broche de seguridad" },
+      { type: "h2", text: "Kit de identificación N°2: con broche de seguridad" },
       {
         type: "p",
-        text: "Igual al N°1, pero con cinta de 55 cm y un broche tip top plástico que permite soltar el lanyard rápido si queda enganchado — un detalle que piden colegios, hospitales y plantas industriales. Desde 6 unidades, $6.900 c/u + IVA (6 a 99) bajando hasta $6.400 c/u + IVA (500 o más).",
+        text: "Igual al N°1, pero con cinta de 55 cm y un broche tip top plástico que permite soltar el lanyard rápido si queda enganchado, un detalle que piden colegios, hospitales y plantas industriales. Desde 6 unidades, $6.900 c/u + IVA (6 a 99) bajando hasta $6.400 c/u + IVA (500 o más).",
       },
-      { type: "h2", text: "Kit de identificación N°3 — el más económico" },
+      { type: "h2", text: "Kit de identificación N°3: el más económico" },
       {
         type: "p",
-        text: "Acá cambia el lanyard: es texturizado (no sublimado), estampado a un solo color en vez de full color, con broche tip top incluido y disponible en 14 colores de cinta para elegir. Es la opción para pedidos grandes con diseño simple — por ejemplo, solo el logo en un color. El mínimo es más alto que los otros dos: 50 unidades. Desde $4.000 c/u + IVA (50 a 99) bajando hasta $3.500 c/u + IVA (500 o más).",
+        text: "Acá cambia el lanyard: es texturizado (no sublimado), estampado a un solo color en vez de full color, con broche tip top incluido y disponible en 14 colores de cinta para elegir. Es la opción para pedidos grandes con diseño simple, por ejemplo, solo el logo en un color. El mínimo es más alto que los otros dos: 50 unidades. Desde $4.000 c/u + IVA (50 a 99) bajando hasta $3.500 c/u + IVA (500 o más).",
       },
       { type: "h2", text: "Cuadro comparativo rápido" },
       {
@@ -111,7 +111,7 @@ const rawBlogPosts: RawBlogPost[] = [
     blocks: [
       {
         type: "p",
-        text: "La mayoría de las tiendas de regalos corporativos grandes están en Santiago: cotizas por formulario, esperas días de respuesta y el despacho a la Región de La Araucanía suma tiempo y costo de flete. Para una empresa en Temuco, Padre Las Casas, Villarrica o cualquier comuna de la región, trabajar con un proveedor local cambia los tiempos de entrega y la conversación — puedes coordinar por WhatsApp y, si hace falta, pasar a ver muestras.",
+        text: "La mayoría de las tiendas de regalos corporativos grandes están en Santiago: cotizas por formulario, esperas días de respuesta y el despacho a la Región de La Araucanía suma tiempo y costo de flete. Para una empresa en Temuco, Padre Las Casas, Villarrica o cualquier comuna de la región, trabajar con un proveedor local cambia los tiempos de entrega y la conversación: puedes coordinar por WhatsApp y, si hace falta, pasar a ver muestras.",
       },
       {
         type: "p",
@@ -120,16 +120,16 @@ const rawBlogPosts: RawBlogPost[] = [
       { type: "h2", text: "1. Define el objetivo antes que el producto" },
       {
         type: "p",
-        text: "El error más común es elegir el producto \"bonito\" antes de definir para qué se va a usar. No es lo mismo un regalo de bienvenida para un colaborador nuevo (algo que se usa a diario: taza, botella, libreta) que un obsequio para un cliente en una reunión puntual (algo con más percepción de valor: botella térmica, kit de identificación) o merchandising para un evento masivo (lo que se entrega en volumen: lanyards, chapitas, bolsas).",
+        text: 'El error más común es elegir el producto "bonito" antes de definir para qué se va a usar. No es lo mismo un regalo de bienvenida para un colaborador nuevo (algo que se usa a diario: taza, botella, libreta) que un obsequio para un cliente en una reunión puntual (algo con más percepción de valor: botella térmica, kit de identificación) o merchandising para un evento masivo (lo que se entrega en volumen: lanyards, chapitas, bolsas).',
       },
       { type: "h2", text: "2. Los productos que más se piden en la región" },
       {
         type: "ul",
         items: [
-          "Lanyards y credenciales — para congresos, ferias y eventos institucionales, muy pedidos por universidades e instituciones públicas de la zona.",
-          "Tazones y mugs personalizados — el clásico regalo de bienvenida u onboarding, con estampado full color.",
-          "Botellas y termos corporativos — buena rotación entre empresas agrícolas, forestales y de servicios con equipos que trabajan en terreno.",
-          "Vestuario corporativo (poleras, polerones, chalecos reflectantes, overoles) — clave para rubros con personal en faena: construcción, forestal, agro.",
+          "Lanyards y credenciales: para congresos, ferias y eventos institucionales, muy pedidos por universidades e instituciones públicas de la zona.",
+          "Tazones y mugs personalizados: el clásico regalo de bienvenida u onboarding, con estampado full color.",
+          "Botellas y termos corporativos: buena rotación entre empresas agrícolas, forestales y de servicios con equipos que trabajan en terreno.",
+          "Vestuario corporativo (poleras, polerones, chalecos reflectantes, overoles): clave para rubros con personal en faena, como construcción, forestal o agro.",
         ],
       },
       { type: "h2", text: "3. No necesitas pedir 1.000 unidades" },
@@ -149,7 +149,7 @@ const rawBlogPosts: RawBlogPost[] = [
       },
       {
         type: "p",
-        text: "Si quieres partir por algo concreto, revisa nuestro catálogo completo por categoría o escríbenos directo por WhatsApp con el producto y la cantidad que necesitas — cotizamos con precios reales, no \"a consultar\".",
+        text: 'Si quieres partir por algo concreto, revisa nuestro catálogo completo por categoría o escríbenos directo por WhatsApp con el producto y la cantidad que necesitas. Cotizamos con precios reales, no "a consultar".',
       },
     ],
   },
@@ -171,12 +171,12 @@ const rawBlogPosts: RawBlogPost[] = [
     blocks: [
       {
         type: "p",
-        text: "\"Necesito solo 20 poleras para mi equipo, pero todos piden mínimo 100\". Es un mensaje que recibimos seguido. La creencia de que el merchandising corporativo siempre exige pedidos gigantes es uno de los mitos que más frena a pymes y equipos chicos a la hora de personalizar algo con su marca.",
+        text: '"Necesito solo 20 poleras para mi equipo, pero todos piden mínimo 100". Es un mensaje que recibimos seguido. La creencia de que el merchandising corporativo siempre exige pedidos gigantes es uno de los mitos que más frena a pymes y equipos chicos a la hora de personalizar algo con su marca.',
       },
-      { type: "h2", text: "Mito: \"siempre hay que pedir cientos de unidades\"" },
+      { type: "h2", text: 'Mito: "siempre hay que pedir cientos de unidades"' },
       {
         type: "p",
-        text: "Es cierto para algunos productos (una tela publicitaria o un pendón se cotiza distinto, por metro cuadrado o por pieza, sin mínimo de cantidad). Pero para los productos personalizados con logo — que es donde suele estar la confusión — el mínimo real es mucho más bajo de lo que la mayoría asume.",
+        text: "Es cierto para algunos productos (una tela publicitaria o un pendón se cotiza distinto, por metro cuadrado o por pieza, sin mínimo de cantidad). Pero para los productos personalizados con logo, que es donde suele estar la confusión, el mínimo real es mucho más bajo de lo que la mayoría asume.",
       },
       { type: "h2", text: "Mínimos reales por categoría (catálogo Sublinovena)" },
       {
@@ -188,7 +188,7 @@ const rawBlogPosts: RawBlogPost[] = [
           "Chapitas, llaveros e imanes: desde 10 unidades.",
           "Libretas ecológicas con bolígrafo: desde 25 unidades.",
           "Mochilas y bolsos tipo morral: desde 50 unidades.",
-          "Pendones y telas PVC: sin mínimo — se cotizan por pieza o metro cuadrado.",
+          "Pendones y telas PVC: sin mínimo, se cotizan por pieza o metro cuadrado.",
         ],
       },
       { type: "h2", text: "¿Por qué existe mínimo en algunos productos y en otros no?" },
@@ -199,7 +199,7 @@ const rawBlogPosts: RawBlogPost[] = [
       { type: "h2", text: "Qué hacer si necesitas menos que el mínimo" },
       {
         type: "p",
-        text: "Si tu cantidad está justo debajo del mínimo de un producto, conviene preguntar directamente: a veces se puede ajustar el precio unitario en vez de subir la cantidad, o existe una alternativa (por ejemplo, chapitas o pines en vez de bordado en tela) que sí calza con lo que necesitas. Escríbenos con el número exacto de personas o piezas que necesitas y te decimos qué opciones tienes, sin \"redondear\" el pedido para arriba.",
+        text: 'Si tu cantidad está justo debajo del mínimo de un producto, conviene preguntar directamente: a veces se puede ajustar el precio unitario en vez de subir la cantidad, o existe una alternativa (por ejemplo, chapitas o pines en vez de bordado en tela) que sí calza con lo que necesitas. Escríbenos con el número exacto de personas o piezas que necesitas y te decimos qué opciones tienes, sin "redondear" el pedido para arriba.',
       },
     ],
   },
@@ -221,7 +221,7 @@ const rawBlogPosts: RawBlogPost[] = [
     blocks: [
       {
         type: "p",
-        text: "El lanyard (cordón porta-credencial) es probablemente el artículo publicitario más pedido para eventos, congresos, ferias e instituciones — se ve todo el día, en el cuello de cada asistente, y su costo por unidad es bajo comparado con el resto del merchandising. Pero no todos los lanyards son iguales, y elegir el tipo correcto cambia tanto la durabilidad como el precio.",
+        text: "El lanyard (cordón porta-credencial) es probablemente el artículo publicitario más pedido para eventos, congresos, ferias e instituciones: se ve todo el día, en el cuello de cada asistente, y su costo por unidad es bajo comparado con el resto del merchandising. Pero no todos los lanyards son iguales, y elegir el tipo correcto cambia tanto la durabilidad como el precio.",
       },
       { type: "h2", text: "Lanyard sublimado (el más usado)" },
       {
@@ -231,12 +231,12 @@ const rawBlogPosts: RawBlogPost[] = [
       { type: "h2", text: "Lanyard sublimado con broche tip top" },
       {
         type: "p",
-        text: "Igual al anterior, pero con un broche de seguridad plástico (tip top) que permite soltar el lanyard rápido si queda enganchado — un detalle de seguridad que piden colegios, hospitales y plantas industriales. Precio desde $3.750 c/u + IVA en volumen.",
+        text: "Igual al anterior, pero con un broche de seguridad plástico (tip top) que permite soltar el lanyard rápido si queda enganchado, un detalle de seguridad que piden colegios, hospitales y plantas industriales. Precio desde $3.750 c/u + IVA en volumen.",
       },
       { type: "h2", text: "Lanyard texturizado" },
       {
         type: "p",
-        text: "Cinta de poliéster grueso texturado, más económica, con estampado DTF textil a un color. Es la opción cuando el pedido es grande — mínimo 100 unidades, con tramos hasta 2.000+ — y el diseño es simple, por ejemplo, solo el logo en un color. Precio desde $900 c/u + IVA en los tramos más altos.",
+        text: "Cinta de poliéster grueso texturado, más económica, con estampado DTF textil a un color. Es la opción cuando el pedido es grande (mínimo 100 unidades, con tramos hasta 2.000+) y el diseño es simple, por ejemplo, solo el logo en un color. Precio desde $900 c/u + IVA en los tramos más altos.",
       },
       { type: "h2", text: "¿Con o sin credencial impresa?" },
       {
@@ -267,7 +267,7 @@ const rawBlogPosts: RawBlogPost[] = [
     blocks: [
       {
         type: "p",
-        text: "De los más de 120 productos de nuestro catálogo, la categoría de tazones y mugs es la más grande — más de 25 variantes distintas. Hay una razón simple: es el regalo corporativo con mejor relación entre costo, percepción de valor y uso diario. Una taza con el logo bien impreso se usa todos los días, en la oficina o en la casa, y eso es exposición de marca gratis y constante.",
+        text: "De los más de 120 productos de nuestro catálogo, la categoría de tazones y mugs es la más grande: más de 25 variantes distintas. Hay una razón simple: es el regalo corporativo con mejor relación entre costo, percepción de valor y uso diario. Una taza con el logo bien impreso se usa todos los días, en la oficina o en la casa, y eso es exposición de marca gratis y constante.",
       },
       { type: "h2", text: "Tazón cerámico blanco clásico" },
       {
@@ -277,17 +277,17 @@ const rawBlogPosts: RawBlogPost[] = [
       { type: "h2", text: "Tazón con mango o interior de color" },
       {
         type: "p",
-        text: "Mismo formato, pero con el mango, el borde o el interior en un color a elección (más de 10 colores disponibles) — útil para diferenciar equipos o áreas dentro de la misma empresa, o simplemente para que el regalo no se vea \"genérico\".",
+        text: 'Mismo formato, pero con el mango, el borde o el interior en un color a elección (más de 10 colores disponibles), útil para diferenciar equipos o áreas dentro de la misma empresa, o simplemente para que el regalo no se vea "genérico".',
       },
       { type: "h2", text: "Opciones premium: bamboo, cerámica enlozada, glass empavonado" },
       {
         type: "p",
-        text: "Para regalos a clientes o directorio, donde el precio por unidad importa menos que la percepción de calidad, conviene subir a mugs de bamboo, cerámica enlozada o vidrio empavonado — mismo estampado full color, pero un acabado que se siente distinto al abrir la caja.",
+        text: "Para regalos a clientes o directorio, donde el precio por unidad importa menos que la percepción de calidad, conviene subir a mugs de bamboo, cerámica enlozada o vidrio empavonado: mismo estampado full color, pero un acabado que se siente distinto al abrir la caja.",
       },
       { type: "h2", text: "Mugs térmicos de acero inoxidable" },
       {
         type: "p",
-        text: "Para equipos que trabajan en terreno o pasan tiempo fuera de oficina, los mugs térmicos en acero inoxidable (desde 250cc hasta 1.200cc) mantienen la temperatura mucho más tiempo que la cerámica — un regalo que efectivamente se usa a diario, no que termina en un cajón.",
+        text: "Para equipos que trabajan en terreno o pasan tiempo fuera de oficina, los mugs térmicos en acero inoxidable (desde 250cc hasta 1.200cc) mantienen la temperatura mucho más tiempo que la cerámica: un regalo que efectivamente se usa a diario, no que termina en un cajón.",
       },
       {
         type: "p",
@@ -313,27 +313,27 @@ const rawBlogPosts: RawBlogPost[] = [
     blocks: [
       {
         type: "p",
-        text: "Después de los tazones, las botellas y termos son la categoría más grande de nuestro catálogo — casi 40 variantes distintas, entre aluminio, acero inoxidable, plástico y vidrio. La pregunta que más nos hacen no es \"cuál es más bonita\" sino \"cuál me conviene según cuánto quiero gastar y para qué la va a usar la gente\".",
+        text: 'Después de los tazones, las botellas y termos son la categoría más grande de nuestro catálogo: casi 40 variantes distintas, entre aluminio, acero inoxidable, plástico y vidrio. La pregunta que más nos hacen no es "cuál es más bonita" sino "cuál me conviene según cuánto quiero gastar y para qué la va a usar la gente".',
       },
       { type: "h2", text: "Presupuesto ajustado, volumen alto: aluminio o plástico" },
       {
         type: "p",
-        text: "Las botellas de aluminio (600-850cc) y las plásticas (700-800cc) son la opción más económica para pedidos grandes — eventos, ferias, regalos masivos de fin de año. Se personalizan en DTF UV full color y parten desde cantidades bajas (10-20 unidades según el modelo).",
+        text: "Las botellas de aluminio (600-850cc) y las plásticas (700-800cc) son la opción más económica para pedidos grandes: eventos, ferias, regalos masivos de fin de año. Se personalizan en DTF UV full color y parten desde cantidades bajas (10-20 unidades según el modelo).",
       },
       { type: "h2", text: "Uso diario en oficina: acero inoxidable" },
       {
         type: "p",
-        text: "Para un regalo que la persona realmente va a usar todos los días — de bienvenida, aniversario, o como parte de un kit ejecutivo — el acero inoxidable con doble pared aislante mantiene frío o caliente por horas. Hay opciones desde 450cc hasta termos grandes de 1.200cc, con distintos sistemas de tapa (click, rosca, bombilla para mate o té).",
+        text: "Para un regalo que la persona realmente va a usar todos los días (de bienvenida, aniversario, o como parte de un kit ejecutivo), el acero inoxidable con doble pared aislante mantiene frío o caliente por horas. Hay opciones desde 450cc hasta termos grandes de 1.200cc, con distintos sistemas de tapa (click, rosca, bombilla para mate o té).",
       },
       { type: "h2", text: "Rubros con personal en terreno: deportivas y con bombilla" },
       {
         type: "p",
-        text: "Para empresas agrícolas, forestales, de construcción o servicios en terreno, las botellas deportivas (tapa flip, boquilla) y las de bombilla (para mate, muy pedidas en el sur de Chile) tienen mejor recepción que una botella de escritorio — se ajustan a cómo la gente realmente las usa en el día a día.",
+        text: "Para empresas agrícolas, forestales, de construcción o servicios en terreno, las botellas deportivas (tapa flip, boquilla) y las de bombilla (para mate, muy pedidas en el sur de Chile) tienen mejor recepción que una botella de escritorio: se ajustan a cómo la gente realmente las usa en el día a día.",
       },
       { type: "h2", text: "Un detalle que se nota: el color de la tapa" },
       {
         type: "p",
-        text: "Varias de nuestras botellas de aluminio permiten elegir el color de la tapa por separado del cuerpo — un recurso simple para diferenciar áreas, sedes o simplemente para que el regalo combine con la paleta de tu marca sin subir el precio.",
+        text: "Varias de nuestras botellas de aluminio permiten elegir el color de la tapa por separado del cuerpo, un recurso simple para diferenciar áreas, sedes o simplemente para que el regalo combine con la paleta de tu marca sin subir el precio.",
       },
       {
         type: "p",
@@ -359,7 +359,7 @@ const rawBlogPosts: RawBlogPost[] = [
     blocks: [
       {
         type: "p",
-        text: "Es la pregunta más frecuente que recibimos y, a la vez, la más difícil de responder con un solo número — porque el precio de una polera o polerón con logo depende de varios factores, no solo de la cantidad. Aquí va el desglose real, con cifras de nuestro catálogo.",
+        text: "Es la pregunta más frecuente que recibimos y, a la vez, la más difícil de responder con un solo número, porque el precio de una polera o polerón con logo depende de varios factores, no solo de la cantidad. Aquí va el desglose real, con cifras de nuestro catálogo.",
       },
       { type: "h2", text: "El factor que más pesa: la cantidad" },
       {
@@ -372,14 +372,14 @@ const rawBlogPosts: RawBlogPost[] = [
         items: [
           "Tallas extendidas: 2XL y 3XL suelen tener un recargo de aprox. $1.000 + IVA por unidad.",
           "Número de colores del diseño: un diseño a un color es más barato que uno full color.",
-          "Técnica de estampado: DTF textil full color (la más común hoy) vs. bordado — el bordado tiene un costo de matriz aparte (~$10.000 + IVA una vez).",
-          "Tipo de prenda: polera básica vs. polera piqué (con cuello) vs. polar bordado vs. ropa técnica (dry-fit, softshell, parka impermeable) — cada una tiene su propia estructura de precio.",
+          "Técnica de estampado: DTF textil full color (la más común hoy) vs. bordado. El bordado tiene un costo de matriz aparte (~$10.000 + IVA una vez).",
+          "Tipo de prenda: polera básica vs. polera piqué (con cuello) vs. polar bordado vs. ropa técnica (dry-fit, softshell, parka impermeable). Cada una tiene su propia estructura de precio.",
         ],
       },
       { type: "h2", text: "Ropa de trabajo: un caso aparte" },
       {
         type: "p",
-        text: "Si lo que necesitas es vestuario para personal en terreno (chalecos reflectantes, overoles, chaquetas geólogo), el precio no compite con una polera de algodón — son prendas técnicas con norma de seguridad, tela más gruesa y cinta reflectiva, y el precio parte más arriba en consecuencia. Vale la pena separar mentalmente \"merchandising\" de \"ropa de trabajo con norma\": son necesidades distintas aunque ambas lleven tu logo.",
+        text: 'Si lo que necesitas es vestuario para personal en terreno (chalecos reflectantes, overoles, chaquetas geólogo), el precio no compite con una polera de algodón: son prendas técnicas con norma de seguridad, tela más gruesa y cinta reflectiva, y el precio parte más arriba en consecuencia. Vale la pena separar mentalmente "merchandising" de "ropa de trabajo con norma": son necesidades distintas aunque ambas lleven tu logo.',
       },
       {
         type: "p",
@@ -405,24 +405,24 @@ const rawBlogPosts: RawBlogPost[] = [
     blocks: [
       {
         type: "p",
-        text: "Entre octubre y noviembre empiezan a llegar las primeras consultas de fin de año — y también los primeros cuellos de botella de producción. Esta lista está ordenada por presupuesto aproximado por persona, para que la puedas usar directo en la reunión donde te pidan \"algo para el equipo\".",
+        text: 'Entre octubre y noviembre empiezan a llegar las primeras consultas de fin de año, y también los primeros cuellos de botella de producción. Esta lista está ordenada por presupuesto aproximado por persona, para que la puedas usar directo en la reunión donde te pidan "algo para el equipo".',
       },
       { type: "h2", text: "Presupuesto bajo (menos de $3.000 por persona)" },
       {
         type: "ul",
         items: [
-          "Tazón cerámico blanco personalizado — desde $2.500 c/u en volumen.",
-          "Chapitas o pines corporativos — desde $420 c/u en volumen, funcionan bien como detalle adicional dentro de un kit.",
-          "Libreta ecológica con bolígrafo — desde $2.100 c/u en volumen, buena opción si además quieres algo \"útil\" y no solo decorativo.",
+          "Tazón cerámico blanco personalizado: desde $2.500 c/u en volumen.",
+          "Chapitas o pines corporativos: desde $420 c/u en volumen, funcionan bien como detalle adicional dentro de un kit.",
+          'Libreta ecológica con bolígrafo: desde $2.100 c/u en volumen, buena opción si además quieres algo "útil" y no solo decorativo.',
         ],
       },
       { type: "h2", text: "Presupuesto medio ($3.000 - $8.000 por persona)" },
       {
         type: "ul",
         items: [
-          "Botella térmica de acero inoxidable — se percibe como un regalo real, no un souvenir.",
-          "Polera o polerón con logo — desde $7.600 c/u en volumen, buena opción si el regalo se entrega en un evento donde la gente se lo puede poner ese mismo día.",
-          "Kit combinado (taza + libreta, o botella + llavero) — sube la percepción de valor sin subir tanto el costo por persona.",
+          "Botella térmica de acero inoxidable: se percibe como un regalo real, no un souvenir.",
+          "Polera o polerón con logo: desde $7.600 c/u en volumen, buena opción si el regalo se entrega en un evento donde la gente se lo puede poner ese mismo día.",
+          "Kit combinado (taza + libreta, o botella + llavero): sube la percepción de valor sin subir tanto el costo por persona.",
         ],
       },
       { type: "h2", text: "Presupuesto alto / regalos a clientes clave" },
@@ -430,14 +430,14 @@ const rawBlogPosts: RawBlogPost[] = [
         type: "ul",
         items: [
           "Termo o mug premium (bamboo, acero inoxidable grande, vidrio empavonado).",
-          "Chaqueta softshell o polar bordado — para directorio o clientes estratégicos.",
+          "Chaqueta softshell o polar bordado: para directorio o clientes estratégicos.",
           "Set armado a medida combinando 2-3 productos del catálogo con empaque conjunto.",
         ],
       },
       { type: "h2", text: "El error más caro de esta época: cotizar tarde" },
       {
         type: "p",
-        text: "Diciembre es temporada alta para toda la industria del merchandising en Chile, y los tiempos de producción se alargan cuando todos piden al mismo tiempo. Si el regalo es para una fecha fija (fiesta de fin de año, aguinaldo, evento con clientes), lo ideal es cotizar y confirmar cantidad durante octubre — no la primera semana de diciembre.",
+        text: "Diciembre es temporada alta para toda la industria del merchandising en Chile, y los tiempos de producción se alargan cuando todos piden al mismo tiempo. Si el regalo es para una fecha fija (fiesta de fin de año, aguinaldo, evento con clientes), lo ideal es cotizar y confirmar cantidad durante octubre, no la primera semana de diciembre.",
       },
       {
         type: "p",
@@ -459,35 +459,39 @@ const rawBlogPosts: RawBlogPost[] = [
     tag: "Producto",
     publishedAt: "2026-08-07",
     readingMinutes: 5,
-    relatedCategories: ["Lanyards y Credenciales", "Bolsas y Basureros para Auto", "Pendones y Telas PVC"],
+    relatedCategories: [
+      "Lanyards y Credenciales",
+      "Bolsas y Basureros para Auto",
+      "Pendones y Telas PVC",
+    ],
     blocks: [
       {
         type: "p",
-        text: "Organizar un evento — congreso, feria, seminario, activación de marca — implica varias decisiones de merchandising que se resuelven mejor si se piensan juntas desde el inicio, en vez de ir cotizando pieza por pieza a última hora. Esta guía las separa en tres momentos: antes del evento (señalética), durante (acreditación) y lo que la gente se lleva.",
+        text: "Organizar un evento (congreso, feria, seminario, activación de marca) implica varias decisiones de merchandising que se resuelven mejor si se piensan juntas desde el inicio, en vez de ir cotizando pieza por pieza a última hora. Esta guía las separa en tres momentos: antes del evento (señalética), durante (acreditación) y lo que la gente se lleva.",
       },
       { type: "h2", text: "Antes: señalética del lugar" },
       {
         type: "p",
-        text: "Pendones roller (papel sintético o tela PVC, en formatos 80x200, 90x200 o 100x200 cm) y telas PVC con sellado perimetral y ojetillos para colgar o tensar. A diferencia del resto del merchandising, esto se cotiza por pieza o por metro cuadrado — sin mínimo de cantidad, así que puedes pedir solo lo que necesitas para el lugar del evento.",
+        text: "Pendones roller (papel sintético o tela PVC, en formatos 80x200, 90x200 o 100x200 cm) y telas PVC con sellado perimetral y ojetillos para colgar o tensar. A diferencia del resto del merchandising, esto se cotiza por pieza o por metro cuadrado, sin mínimo de cantidad, así que puedes pedir solo lo que necesitas para el lugar del evento.",
       },
       { type: "h2", text: "Durante: acreditación" },
       {
         type: "p",
-        text: "Esta es la parte donde más se nota si un evento está bien organizado. El kit típico es: lanyard sublimado + portacredencial + credencial impresa — se puede cotizar como kit combinado en vez de tres cotizaciones separadas, lo que además sale más barato que comprar cada pieza por su lado. Si el evento requiere control de acceso por zonas (staff, prensa, VIP), los lanyards de distintos colores son la forma más simple de diferenciar sin imprimir credenciales distintas.",
+        text: "Esta es la parte donde más se nota si un evento está bien organizado. El kit típico es: lanyard sublimado + portacredencial + credencial impresa. Se puede cotizar como kit combinado en vez de tres cotizaciones separadas, lo que además sale más barato que comprar cada pieza por su lado. Si el evento requiere control de acceso por zonas (staff, prensa, VIP), los lanyards de distintos colores son la forma más simple de diferenciar sin imprimir credenciales distintas.",
       },
       { type: "h2", text: "Lo que se lleva el asistente" },
       {
         type: "ul",
         items: [
-          "Bolsa reutilizable o tote bag — para juntar folletos, catálogos y cualquier material físico que se entregue.",
-          "Libreta con bolígrafo — sigue funcionando bien en formatos donde la gente toma notas (seminarios, capacitaciones).",
-          "Botella o mug — si el evento dura todo el día, es de los ítems con mejor recepción real (se usa ahí mismo, no solo en la casa después).",
+          "Bolsa reutilizable o tote bag: para juntar folletos, catálogos y cualquier material físico que se entregue.",
+          "Libreta con bolígrafo: sigue funcionando bien en formatos donde la gente toma notas (seminarios, capacitaciones).",
+          "Botella o mug: si el evento dura todo el día, es de los ítems con mejor recepción real (se usa ahí mismo, no solo en la casa después).",
         ],
       },
       { type: "h2", text: "Un detalle que se olvida: el tiempo de producción" },
       {
         type: "p",
-        text: "A diferencia de un regalo corporativo con fecha flexible, un evento tiene fecha fija e innegociable. Define la cantidad de acreditaciones y el merchandising de entrega con al menos 3-4 semanas de anticipación — especialmente si el diseño necesita ajustes o hay más de un color de lanyard por tipo de acceso.",
+        text: "A diferencia de un regalo corporativo con fecha flexible, un evento tiene fecha fija e innegociable. Define la cantidad de acreditaciones y el merchandising de entrega con al menos 3-4 semanas de anticipación, especialmente si el diseño necesita ajustes o hay más de un color de lanyard por tipo de acceso.",
       },
       {
         type: "p",

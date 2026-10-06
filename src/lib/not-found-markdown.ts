@@ -4,7 +4,7 @@ import { siteConfig } from "./site-config";
 // (agents/crawlers probing for resources) — gives them a real 404 status plus a
 // plain-text body pointing at where the real content actually lives.
 export function renderNotFoundMarkdown(pathname: string): string {
-  return `# 404 — Página no encontrada
+  return `# 404: Página no encontrada
 
 La ruta \`${pathname}\` no existe en ${siteConfig.name}.
 

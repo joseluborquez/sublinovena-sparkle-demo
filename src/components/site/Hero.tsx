@@ -10,7 +10,7 @@ const slides: HeroSlide[] = [
     eyebrow: "Merchandising corporativo · Chile",
     title: "Tu marca, presente todos los días",
     subtitle:
-      "Lanyards, tazones y libretas con tu logo — personalización real, sin mínimos gigantes.",
+      "Lanyards, tazones y libretas con tu logo: personalización real, sin mínimos gigantes.",
     ctaLabel: "Ver catálogo",
     cta: { type: "link", href: "#catalogo" },
     align: "left",

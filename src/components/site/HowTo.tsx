@@ -18,7 +18,7 @@ export const steps: Step[] = [
   {
     title: "Elige tu producto",
     description:
-      "Revisa el catálogo y elige lo que te interesa — tazones, lanyards, botellas y más, desde pocas unidades.",
+      "Revisa el catálogo y elige lo que te interesa: tazones, lanyards, botellas y más, desde pocas unidades.",
     image: tazonBlanco,
     alt: "Tazón blanco sin personalizar",
   },
