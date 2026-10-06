@@ -32,6 +32,7 @@ export function Footer() {
               ["/#como-cotizar", "Cómo cotizar"],
               ["/#preguntas-frecuentes", "Preguntas frecuentes"],
               ["/blog", "Blog"],
+              ["/about", "Quiénes somos"],
               ["/#top", "Inicio"],
             ].map(([href, label]) => (
               <li key={href}>
@@ -73,12 +74,22 @@ export function Footer() {
                 <Instagram size={15} /> @sublinovena
               </a>
             </li>
+            <li>
+              <a href="/contact" className="hover:text-lavender">
+                Página de contacto
+              </a>
+            </li>
           </ul>
         </Reveal>
       </div>
 
-      <div className="border-t border-white/10 px-5 py-6 text-center text-xs text-white/40 lg:px-8">
-        © {new Date().getFullYear()} {siteConfig.legalName} · Temuco, Chile
+      <div className="flex flex-col items-center justify-center gap-2 border-t border-white/10 px-5 py-6 text-center text-xs text-white/40 lg:flex-row lg:justify-between lg:px-8">
+        <span>
+          © {new Date().getFullYear()} {siteConfig.legalName} · Temuco, Chile
+        </span>
+        <a href="/privacy" className="hover:text-lavender">
+          Política de privacidad
+        </a>
       </div>
     </footer>
   );
