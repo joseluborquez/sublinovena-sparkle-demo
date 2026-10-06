@@ -2,6 +2,7 @@ import "./lib/error-capture";
 
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
+import { renderNotFoundMarkdown } from "./lib/not-found-markdown";
 
 type ServerEntry = {
   fetch: (request: Request, env: unknown, ctx: unknown) => Promise<Response> | Response;
@@ -44,12 +45,43 @@ function isH3SwallowedErrorBody(body: string): boolean {
   }
 }
 
+function wantsMarkdown(request: Request): boolean {
+  return (request.headers.get("accept") ?? "").includes("text/markdown");
+}
+
+// TanStack Start's own content negotiation 406s any request whose Accept header
+// doesn't include text/html, before our code ever sees it — so for a client asking
+// for text/markdown we swap the Accept header to text/html for the inner handler,
+// let it resolve the route normally (200 or a real 404), and only then decide what
+// to actually send back.
+function withHtmlAccept(request: Request): Request {
+  // Rebuilt from plain fields instead of `new Request(request, init)` — some runtimes
+  // (Node's undici vs. the framework's own Request-like object in dev) reject cloning
+  // a foreign Request instance that way with a cross-realm private-field error.
+  const headers = new Headers(request.headers);
+  headers.set("accept", "text/html");
+  return new Request(request.url, { method: request.method, headers });
+}
+
+// Agents/crawlers probing for resources (e.g. `curl -H 'Accept: text/markdown'`) get a
+// plain-text 404 body instead of the HTML error page — same real 404 status either way.
+function maybeServeMarkdownNotFound(request: Request, response: Response): Response {
+  if (response.status !== 404 || !wantsMarkdown(request)) return response;
+
+  const pathname = new URL(request.url).pathname;
+  return new Response(renderNotFoundMarkdown(pathname), {
+    status: 404,
+    headers: { "content-type": "text/markdown; charset=utf-8" },
+  });
+}
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
       const handler = await getServerEntry();
-      const response = await handler.fetch(request, env, ctx);
-      return await normalizeCatastrophicSsrResponse(response);
+      const upstreamRequest = wantsMarkdown(request) ? withHtmlAccept(request) : request;
+      const response = await handler.fetch(upstreamRequest, env, ctx);
+      return maybeServeMarkdownNotFound(request, await normalizeCatastrophicSsrResponse(response));
     } catch (error) {
       console.error(error);
       return new Response(renderErrorPage(), {

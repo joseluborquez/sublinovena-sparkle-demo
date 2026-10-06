@@ -47,7 +47,8 @@
   --color-magenta: var(--brand-magenta);
   --color-lavender: var(--brand-lavender);
 
-  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
@@ -119,6 +120,17 @@
   background-image: var(--gradient-brand);
 }
 
+@utility bg-brand-gradient-slide {
+  background-image: var(--gradient-brand);
+  background-size: 180% 100%;
+  background-position: 0% 50%;
+  transition: background-position var(--transition-smooth);
+
+  &:hover {
+    background-position: 100% 50%;
+  }
+}
+
 @utility text-brand-gradient {
   background-image: var(--gradient-brand);
   background-clip: text;
@@ -132,6 +144,7 @@
 }
 
 @utility display-title {
+  font-family: var(--font-display);
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.05;
@@ -280,6 +293,23 @@
 @utility animate-sheen {
   background-size: 200% 100%;
   animation: sheen 8s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@utility animate-marquee {
+  animation: marquee 34s linear infinite;
+}
+
+@utility animate-marquee-slow {
+  animation: marquee 90s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

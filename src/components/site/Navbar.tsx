@@ -1,40 +1,45 @@
 import { useEffect, useState } from "react";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/sublinovena-logo.png.asset.json";
-import { useQuote } from "./QuoteProvider";
+import logo from "@/assets/sublinovena-icon.png";
+import { waLink } from "@/lib/site-config";
 import { WhatsappIcon } from "./WhatsappIcon";
 
 const links = [
-  { href: "#catalogo", label: "Catálogo" },
-  { href: "#como-cotizar", label: "Cómo cotizar" },
-  { href: "#nosotros", label: "Nosotros" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "/#catalogo", label: "Catálogo" },
+  { href: "/#como-cotizar", label: "Cómo cotizar" },
+  { href: "/blog", label: "Blog" },
+  { href: "/#contacto", label: "Contacto" },
 ];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menu, setMenu] = useState(false);
-  const { open } = useQuote();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isHome = pathname === "/";
 
   useEffect(() => {
+    if (!isHome) return;
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [isHome]);
+
+  const solid = scrolled || !isHome;
 
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-ink/90 shadow-[0_10px_40px_-24px_rgba(0,0,0,0.9)] backdrop-blur-xl"
+        solid
+          ? "bg-ink shadow-[0_10px_40px_-24px_rgba(0,0,0,0.9)]"
           : "bg-transparent"
       }`}
     >
       <nav className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-3 lg:px-8">
-        <a href="#top" className="flex min-w-0 items-center gap-3">
+        <a href="/#top" className="flex min-w-0 items-center gap-3">
           <img
-            src={logo.url}
+            src={logo}
             alt="Sublinovena Merchandising"
             width={44}
             height={44}
@@ -60,7 +65,7 @@ export function Navbar() {
           </ul>
 
           <a
-            href="https://wa.me/56900000000"
+            href={waLink()}
             target="_blank"
             rel="noreferrer"
             aria-label="Escríbenos por WhatsApp"
@@ -69,9 +74,9 @@ export function Navbar() {
             <WhatsappIcon className="size-5" />
           </a>
 
-          <button onClick={() => open()} className="btn-brand hidden text-sm sm:inline-flex">
-            Cotizar ahora
-          </button>
+          <a href="/#catalogo" className="btn-brand hidden text-sm lg:inline-flex">
+            Ver catálogo
+          </a>
 
           <button
             onClick={() => setMenu((v) => !v)}
@@ -101,15 +106,9 @@ export function Navbar() {
             </li>
           ))}
           <li className="pt-2">
-            <button
-              onClick={() => {
-                setMenu(false);
-                open();
-              }}
-              className="btn-brand w-full"
-            >
-              Cotizar ahora
-            </button>
+            <a href="/#catalogo" onClick={() => setMenu(false)} className="btn-brand w-full">
+              Ver catálogo
+            </a>
           </li>
         </ul>
       </div>
