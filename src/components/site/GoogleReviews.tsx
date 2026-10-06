@@ -59,7 +59,22 @@ function Stars() {
   );
 }
 
+function ReviewCard({ r }: { r: (typeof reviews)[number] }) {
+  return (
+    <div className="card-lift flex h-full flex-col rounded-3xl border border-border bg-card p-6">
+      <Stars />
+      <p className="mt-4 flex-1 text-sm leading-relaxed text-ink/75">“{r.text}”</p>
+      <div className="mt-5 border-t border-border pt-4">
+        <p className="text-sm font-semibold text-ink">{r.name}</p>
+        <p className="text-xs text-ink/45">{r.time} · Google</p>
+      </div>
+    </div>
+  );
+}
+
 export function GoogleReviews() {
+  const loop = [...reviews, ...reviews];
+
   return (
     <section className="bg-background py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
@@ -87,18 +102,21 @@ export function GoogleReviews() {
           </div>
         </Reveal>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 hidden gap-5 sm:grid sm:grid-cols-2 lg:grid-cols-4">
           {reviews.map((r, i) => (
             <Reveal key={r.name} delay={(i % 4) * 80}>
-              <div className="card-lift flex h-full flex-col rounded-3xl border border-border bg-card p-6">
-                <Stars />
-                <p className="mt-4 flex-1 text-sm leading-relaxed text-ink/75">“{r.text}”</p>
-                <div className="mt-5 border-t border-border pt-4">
-                  <p className="text-sm font-semibold text-ink">{r.name}</p>
-                  <p className="text-xs text-ink/45">{r.time} · Google</p>
-                </div>
-              </div>
+              <ReviewCard r={r} />
             </Reveal>
+          ))}
+        </div>
+      </div>
+
+      <div className="group relative mt-10 overflow-hidden sm:hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
+        <div className="flex w-max animate-marquee gap-4 group-hover:[animation-play-state:paused]">
+          {loop.map((r, i) => (
+            <div key={`${r.name}-${i}`} className="w-72 shrink-0">
+              <ReviewCard r={r} />
+            </div>
           ))}
         </div>
       </div>

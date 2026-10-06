@@ -65,13 +65,17 @@ export function ClientLogos() {
       </div>
 
       <div className="group relative mt-10 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
-        <div className="flex w-max animate-marquee-slow gap-14 group-hover:[animation-play-state:paused]">
+        <div className="flex w-max animate-marquee-slow gap-8 group-hover:[animation-play-state:paused] sm:gap-14">
           {loop.map((logo, i) => (
             <div
               key={`${logo.slug}-${i}`}
-              className="flex h-16 w-40 shrink-0 items-center justify-center sm:h-20 sm:w-48"
+              className="flex h-10 w-24 shrink-0 items-center justify-center sm:h-20 sm:w-48"
             >
-              <img src={logo.src} alt={logo.name} className="max-h-full max-w-full object-contain" />
+              <img
+                src={logo.src}
+                alt={logo.name}
+                className="max-h-full max-w-full object-contain"
+              />
             </div>
           ))}
         </div>

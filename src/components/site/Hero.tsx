@@ -42,7 +42,7 @@ export function Hero() {
 
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal delay={200}>
-          <dl className="mt-16 grid max-w-3xl grid-cols-2 gap-x-6 gap-y-8 border-t border-white/10 pt-10 sm:grid-cols-4 lg:max-w-none">
+          <dl className="mt-10 grid max-w-3xl grid-cols-2 gap-x-6 gap-y-6 border-t border-white/10 pt-8 sm:mt-16 sm:gap-y-8 sm:pt-10 sm:grid-cols-4 lg:max-w-none">
             {[
               ["+150", "productos en catálogo"],
               ["13", "categorías de productos"],
@@ -50,8 +50,10 @@ export function Hero() {
               ["+50", "clientes nos califican con 5 estrellas en Google"],
             ].map(([big, small]) => (
               <div key={small}>
-                <dt className="text-brand-gradient text-3xl font-bold sm:text-5xl">{big}</dt>
-                <dd className="mt-2 text-sm uppercase tracking-wide text-white/65">{small}</dd>
+                <dt className="text-brand-gradient text-2xl font-bold sm:text-5xl">{big}</dt>
+                <dd className="mt-2 text-xs uppercase tracking-wide text-white/65 sm:text-sm">
+                  {small}
+                </dd>
               </div>
             ))}
           </dl>

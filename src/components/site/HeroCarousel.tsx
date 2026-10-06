@@ -43,7 +43,7 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
       role="region"
       aria-roledescription="carousel"
       aria-label="Destacados de Sublinovena"
-      className="relative h-[540px] w-full overflow-hidden sm:h-[600px] lg:h-[660px]"
+      className="relative h-[420px] w-full overflow-hidden sm:h-[600px] lg:h-[660px]"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocus={() => setPaused(true)}
