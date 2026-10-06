@@ -27,6 +27,14 @@ const organizationJsonLd = {
   telephone: siteConfig.phone,
   priceRange: "$$",
   sameAs: [siteConfig.instagram],
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer service",
+    email: siteConfig.email,
+    telephone: siteConfig.phone,
+    areaServed: "CL",
+    availableLanguage: ["Spanish"],
+  },
   address: siteConfig.addresses.map((a) => ({
     "@type": "PostalAddress",
     streetAddress: a.street,

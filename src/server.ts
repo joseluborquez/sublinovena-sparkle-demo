@@ -3,6 +3,7 @@ import "./lib/error-capture";
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
 import { renderNotFoundMarkdown } from "./lib/not-found-markdown";
+import { renderMarkdownForPath } from "./lib/page-markdown";
 
 type ServerEntry = {
   fetch: (request: Request, env: unknown, ctx: unknown) => Promise<Response> | Response;
@@ -75,13 +76,51 @@ function maybeServeMarkdownNotFound(request: Request, response: Response): Respo
   });
 }
 
+// Content genuinely differs by Accept now, so every response (HTML or Markdown) needs
+// Vary: Accept — otherwise a cache could serve one client's Markdown response to the
+// next client that only accepts HTML, or vice versa.
+function withVaryAccept(response: Response): Response {
+  const headers = new Headers(response.headers);
+  const existing = headers.get("vary");
+  if (!existing) {
+    headers.set("vary", "Accept");
+  } else if (
+    !existing
+      .toLowerCase()
+      .split(",")
+      .map((v) => v.trim())
+      .includes("accept")
+  ) {
+    headers.set("vary", `${existing}, Accept`);
+  }
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
+      if (wantsMarkdown(request)) {
+        const pathname = new URL(request.url).pathname;
+        const direct = renderMarkdownForPath(pathname);
+        if (direct) {
+          return withVaryAccept(
+            new Response(direct.body, {
+              status: direct.status,
+              headers: { "content-type": "text/markdown; charset=utf-8" },
+            }),
+          );
+        }
+      }
+
       const handler = await getServerEntry();
       const upstreamRequest = wantsMarkdown(request) ? withHtmlAccept(request) : request;
       const response = await handler.fetch(upstreamRequest, env, ctx);
-      return maybeServeMarkdownNotFound(request, await normalizeCatastrophicSsrResponse(response));
+      const normalized = await normalizeCatastrophicSsrResponse(response);
+      return withVaryAccept(maybeServeMarkdownNotFound(request, normalized));
     } catch (error) {
       console.error(error);
       return new Response(renderErrorPage(), {
