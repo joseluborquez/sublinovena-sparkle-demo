@@ -117,10 +117,10 @@ function Index() {
       <main style={ready ? undefined : { visibility: "hidden" }}>
         <Hero />
         <ClientLogos />
+        <Catalog />
         <TrabajosRealizados />
         <GoogleReviews />
         <HowTo />
-        <Catalog />
         <FAQ />
       </main>
       <Footer />

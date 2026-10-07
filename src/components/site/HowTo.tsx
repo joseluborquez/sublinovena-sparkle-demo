@@ -77,10 +77,10 @@ export function HowTo() {
                     className="group flex flex-col items-center gap-3"
                   >
                     <span
-                      className={`flex size-12 shrink-0 items-center justify-center rounded-full border-2 text-base font-bold transition-colors sm:size-16 sm:text-lg ${
+                      className={`flex size-12 shrink-0 items-center justify-center rounded-full border-2 text-base font-bold sm:size-16 sm:text-lg ${
                         state === "upcoming"
-                          ? "border-white/20 text-white/40 group-hover:border-white/40"
-                          : "border-transparent bg-[image:var(--gradient-brand)] text-ink"
+                          ? "border-white/20 text-white/40 transition-colors group-hover:border-white/40"
+                          : "border-transparent bg-[image:var(--gradient-brand)] bg-[length:180%_100%] bg-[position:0%_50%] text-ink shadow-[var(--shadow-brand)] transition-[background-position,transform,box-shadow] duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:bg-[position:100%_50%] group-hover:-translate-y-0.5 group-hover:shadow-[0_22px_55px_-18px_color-mix(in_oklab,var(--brand-magenta)_70%,transparent)]"
                       }`}
                     >
                       {state === "done" ? <Check size={22} /> : i + 1}
