@@ -15,10 +15,13 @@ export type HeroSlide = {
 
 const AUTOPLAY_MS = 6500;
 
+const SWIPE_THRESHOLD_PX = 40;
+
 export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const touchStartX = useRef<number | null>(null);
 
   const goTo = useCallback(
     (i: number) => {
@@ -27,6 +30,22 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
     },
     [slides.length],
   );
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0]?.clientX ?? null;
+    setPaused(true);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    const startX = touchStartX.current;
+    touchStartX.current = null;
+    setPaused(false);
+    if (startX === null) return;
+    const endX = e.changedTouches[0]?.clientX ?? startX;
+    const delta = endX - startX;
+    if (Math.abs(delta) < SWIPE_THRESHOLD_PX) return;
+    goTo(delta < 0 ? index + 1 : index - 1);
+  };
 
   useEffect(() => {
     if (paused || slides.length <= 1) return;
@@ -43,11 +62,13 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
       role="region"
       aria-roledescription="carousel"
       aria-label="Destacados de Sublinovena"
-      className="relative h-[420px] w-full overflow-hidden sm:h-[600px] lg:h-[660px]"
+      className="relative h-[520px] w-full touch-pan-y overflow-hidden sm:h-[600px] lg:h-[660px]"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
     >
       {slides.map((slide, i) => {
         const active = i === index;
@@ -82,7 +103,7 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
                     : "items-end text-right sm:ml-auto"
                 }`}
               >
-                <div className="mt-24 max-w-lg sm:mt-20">
+                <div className="mt-20 max-w-lg sm:mt-20">
                   <p
                     className={`eyebrow font-bold text-magenta transition-all delay-150 duration-700 ${
                       slide.align === "left" ? "text-left" : "text-right"
@@ -94,24 +115,24 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
                     const HeadingTag = i === 0 ? "h1" : "h2";
                     return (
                       <HeadingTag
-                        className={`display-title mt-5 text-3xl text-white transition-all delay-200 duration-700 sm:text-5xl lg:text-6xl ${
+                        className={`display-title mt-3 text-2xl text-white transition-all delay-200 duration-700 sm:mt-5 sm:text-5xl lg:text-6xl ${
                           active ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
                         }`}
-                        style={{ lineHeight: 1.35 }}
+                        style={{ lineHeight: 1.3 }}
                       >
                         {slide.title}
                       </HeadingTag>
                     );
                   })()}
                   <p
-                    className={`mt-5 text-base leading-relaxed text-white/75 transition-all delay-300 duration-700 sm:text-lg ${
+                    className={`mt-3 text-sm leading-relaxed text-white/75 transition-all delay-300 duration-700 sm:mt-5 sm:text-lg ${
                       slide.align === "left" ? "text-left" : "text-right"
                     } ${active ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}
                   >
                     {slide.subtitle}
                   </p>
                   <div
-                    className={`mt-8 flex flex-wrap gap-3 transition-all delay-500 duration-700 ${
+                    className={`mt-5 flex flex-wrap gap-3 transition-all delay-500 duration-700 sm:mt-8 ${
                       slide.align === "right" ? "justify-end" : ""
                     } ${active ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}
                   >
