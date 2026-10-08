@@ -64,7 +64,14 @@
   --brand-magenta: oklch(0.56 0.21 344); /* #C74195 */
   --brand-lavender: oklch(0.72 0.17 300); /* #C28DF4 */
 
-  --gradient-brand: linear-gradient(100deg, var(--brand-magenta) 0%, var(--brand-magenta) 100%);
+  --gradient-brand: linear-gradient(
+    100deg,
+    var(--brand-lime) 0%,
+    var(--brand-green) 28%,
+    var(--brand-cyan) 54%,
+    var(--brand-violet) 74%,
+    var(--brand-magenta) 100%
+  );
   --shadow-brand: 0 18px 45px -18px color-mix(in oklab, var(--brand-violet) 65%, transparent);
   --shadow-card: 0 20px 45px -28px color-mix(in oklab, var(--ink) 60%, transparent);
   --transition-smooth: 400ms cubic-bezier(0.22, 1, 0.36, 1);
