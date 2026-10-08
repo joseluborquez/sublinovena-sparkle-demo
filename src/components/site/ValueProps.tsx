@@ -6,7 +6,7 @@ const cards: BentoCardProps[] = [
     color: "#1A1625",
     label: "Técnica",
     title: "Personalización real",
-    description: "Sublimación, serigrafía, bordado y grabado láser: elegimos la técnica que mejor rinde para tu logo.",
+    description: "Sublimación, serigrafía, bordado y grabado láser: elegimos la técnica que mejor hace lucir tu logo, no la más fácil para nosotros.",
   },
   {
     color: "#1A1625",
@@ -36,7 +36,7 @@ const cards: BentoCardProps[] = [
     color: "#1A1625",
     label: "Novedades",
     title: "Catálogo siempre actualizado",
-    description: "Incorporamos productos nuevos cada temporada para que tu regalo corporativo no se repita.",
+    description: "Sumamos productos nuevos cada temporada para que tu regalo corporativo nunca se sienta igual al del año pasado.",
   },
 ];
 

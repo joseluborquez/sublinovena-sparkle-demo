@@ -29,9 +29,8 @@ function ContactPage() {
   return (
     <>
       <Navbar />
-      <main className="mx-auto max-w-3xl px-5 pb-16 pt-28 lg:px-8 lg:pb-24 lg:pt-32">
-        <p className="eyebrow">Contacto</p>
-        <h1 className="display-title mt-3 text-3xl sm:text-5xl">Hablemos de tu pedido</h1>
+      <main className="mx-auto max-w-3xl px-5 pb-16 pt-36 lg:px-8 lg:pb-24 lg:pt-40">
+        <h1 className="display-title text-3xl sm:text-5xl">Hablemos de tu pedido</h1>
         <p className="mt-6 leading-relaxed text-muted-foreground">
           En {siteConfig.name} cotizamos directo por WhatsApp, sin formularios ni esperas: nos
           cuentas el producto y la cantidad que necesitas, y te respondemos con el precio real según
@@ -41,7 +40,7 @@ function ContactPage() {
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2">
           <a
-            href={waLink()}
+            href={waLink("Hola, vengo de la página web y quiero cotizar")}
             target="_blank"
             rel="noreferrer"
             className="card-lift flex items-start gap-4 rounded-3xl border border-border bg-card p-6"
@@ -73,7 +72,7 @@ function ContactPage() {
               key={a.street}
               className="card-lift flex items-start gap-4 rounded-3xl border border-border bg-card p-6"
             >
-              <MapPin className="mt-1 size-6 shrink-0 text-lavender" />
+              <MapPin className="mt-1 size-6 shrink-0 text-magenta" />
               <div>
                 <p className="font-semibold text-foreground">{a.street}</p>
                 <p className="mt-1 text-sm text-muted-foreground">{a.city}, Chile</p>

@@ -3,8 +3,9 @@ import { createFileRoute, useRouterState } from "@tanstack/react-router";
 import { Navbar } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
 import { ClientLogos } from "@/components/site/ClientLogos";
-import { Catalog } from "@/components/site/Catalog";
+import { CatalogPreview } from "@/components/site/CatalogPreview";
 import { HowTo, steps as howToSteps } from "@/components/site/HowTo";
+import { QuienesSomos } from "@/components/site/QuienesSomos";
 import { FAQ, faqs } from "@/components/site/FAQ";
 import { TrabajosRealizados } from "@/components/site/TrabajosRealizados";
 import {
@@ -117,10 +118,11 @@ function Index() {
       <main style={ready ? undefined : { visibility: "hidden" }}>
         <Hero />
         <ClientLogos />
-        <Catalog />
+        <CatalogPreview />
         <TrabajosRealizados />
         <GoogleReviews />
         <HowTo />
+        <QuienesSomos />
         <FAQ />
       </main>
       <Footer />

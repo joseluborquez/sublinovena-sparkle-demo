@@ -37,7 +37,8 @@ export function renderHomeMarkdown(): string {
   lines.push("");
   lines.push("## Recursos");
   lines.push("");
-  lines.push(`- Catálogo completo con precios: ${siteConfig.url}/llms.txt`);
+  lines.push(`- Catálogo completo: ${siteConfig.url}/catalogo`);
+  lines.push(`- Catálogo con precios (para agentes): ${siteConfig.url}/llms.txt`);
   lines.push(`- Mapa del sitio: ${siteConfig.url}/sitemap.xml`);
   lines.push(`- Blog: ${siteConfig.url}/blog`);
   lines.push(`- Quiénes somos: ${siteConfig.url}/about`);
@@ -79,7 +80,7 @@ export function renderProductMarkdown(product: Product): string {
   }
   lines.push("## Cotizar");
   lines.push("");
-  const message = `Hola, quiero cotizar: ${product.name}${product.sku ? ` (${product.sku})` : ""}`;
+  const message = `Hola, vengo de la página web y quiero cotizar ${product.name}${product.sku ? ` (${product.sku})` : ""}`;
   lines.push(`WhatsApp: ${waLink(message)}`);
   lines.push("");
   return lines.join("\n");

@@ -89,7 +89,7 @@ const rawBlogPosts: RawBlogPost[] = [
       { type: "h2", text: "¿Cuál elegir?" },
       {
         type: "p",
-        text: "Si necesitas pocas unidades y diseño full color, el N°1. Si además quieres el broche de seguridad, el N°2. Si el pedido es grande y el diseño es simple, el N°3 es la opción más económica. Si no estás seguro, cuéntanos el tipo de evento y la cantidad que necesitas y te recomendamos el kit indicado.",
+        text: "Pocas unidades y diseño full color: el N°1. Lo mismo pero con broche de seguridad: el N°2. Pedido grande con diseño simple: el N°3, de lejos el más conveniente en ese escenario. Y si igual quedaste con dudas, mándanos el tipo de evento y cuántas personas acreditas — en dos minutos te decimos cuál te conviene más.",
       },
     ],
   },
@@ -115,7 +115,7 @@ const rawBlogPosts: RawBlogPost[] = [
       },
       {
         type: "p",
-        text: "Sublinovena SpA es una fábrica de merchandising corporativo fundada en 2022 en Temuco, con dos direcciones en la ciudad (Av. Los Fundadores #180 y Dinamarca #723). Esta guía resume cómo elegir bien, basada en el catálogo real de más de 120 productos que trabajamos.",
+        text: "Somos Sublinovena SpA, fábrica de merchandising corporativo fundada en 2022 acá en Temuco, con dos direcciones en la ciudad (Av. Los Fundadores #180 y Dinamarca #723). Llevamos un buen tiempo viendo qué funciona y qué no en pedidos de la región, así que va directo: lo que te conviene tener claro antes de cotizar.",
       },
       { type: "h2", text: "1. Define el objetivo antes que el producto" },
       {
@@ -149,7 +149,7 @@ const rawBlogPosts: RawBlogPost[] = [
       },
       {
         type: "p",
-        text: 'Si quieres partir por algo concreto, revisa nuestro catálogo completo por categoría o escríbenos directo por WhatsApp con el producto y la cantidad que necesitas. Cotizamos con precios reales, no "a consultar".',
+        text: 'Dato que sirve: si ya tienes algo en mente, salta directo al catálogo por categoría. Y si prefieres que te orientemos nosotros, escríbenos por WhatsApp con el producto y la cantidad. Nada de "a consultar" — cotizamos con el precio real, al tiro.',
       },
     ],
   },
@@ -171,7 +171,7 @@ const rawBlogPosts: RawBlogPost[] = [
     blocks: [
       {
         type: "p",
-        text: '"Necesito solo 20 poleras para mi equipo, pero todos piden mínimo 100". Es un mensaje que recibimos seguido. La creencia de que el merchandising corporativo siempre exige pedidos gigantes es uno de los mitos que más frena a pymes y equipos chicos a la hora de personalizar algo con su marca.',
+        text: 'Nos escriben seguido equipos chicos pidiendo disculpas de antemano por lo "poco" que necesitan: 20 poleras, 15 tazones. Y la verdad es que no hay nada que disculpar — la idea de que el merchandising corporativo siempre exige pedidos gigantes es uno de los mitos que más frena a pymes a la hora de personalizar algo con su marca.',
       },
       { type: "h2", text: 'Mito: "siempre hay que pedir cientos de unidades"' },
       {
@@ -199,7 +199,7 @@ const rawBlogPosts: RawBlogPost[] = [
       { type: "h2", text: "Qué hacer si necesitas menos que el mínimo" },
       {
         type: "p",
-        text: 'Si tu cantidad está justo debajo del mínimo de un producto, conviene preguntar directamente: a veces se puede ajustar el precio unitario en vez de subir la cantidad, o existe una alternativa (por ejemplo, chapitas o pines en vez de bordado en tela) que sí calza con lo que necesitas. Escríbenos con el número exacto de personas o piezas que necesitas y te decimos qué opciones tienes, sin "redondear" el pedido para arriba.',
+        text: 'Si tu cantidad quedó justo debajo del mínimo de algún producto, pregunta antes de resignarte. A veces se puede ajustar el precio unitario en vez de subir la cantidad, y otras veces hay una alternativa que calza mejor igual (chapitas o pines en vez de bordado en tela, por ejemplo). Mándanos el número exacto de personas o piezas y vemos qué opciones tienes — sin "redondear" el pedido para arriba porque sí.',
       },
     ],
   },
@@ -245,7 +245,7 @@ const rawBlogPosts: RawBlogPost[] = [
       },
       {
         type: "p",
-        text: "Todos los lanyards incluyen diseño y estampado en el precio. Si necesitas una cantidad específica, escríbenos y te confirmamos el tramo de precio exacto que te corresponde.",
+        text: "El diseño y el estampado van incluidos en el precio en los tres casos, así que no es un costo extra que aparece después. Dinos cuántas unidades necesitas y te confirmamos al toque en qué tramo de precio caes.",
       },
     ],
   },
@@ -291,7 +291,7 @@ const rawBlogPosts: RawBlogPost[] = [
       },
       {
         type: "p",
-        text: "Todos se personalizan con tu logo en sublimación o DTF full color. Si no sabes cuál elegir según tu presupuesto, cuéntanos cuántas unidades necesitas y te recomendamos la opción que más rinde.",
+        text: "Todos llevan tu logo en sublimación o DTF full color, así que la decisión real pasa por presupuesto y uso, no por técnica de impresión. Si te cuesta decidir, dinos cuántas unidades necesitas y para qué son, y te decimos cuál rinde más para ese caso puntual.",
       },
     ],
   },
@@ -313,7 +313,7 @@ const rawBlogPosts: RawBlogPost[] = [
     blocks: [
       {
         type: "p",
-        text: 'Después de los tazones, las botellas y termos son la categoría más grande de nuestro catálogo: casi 40 variantes distintas, entre aluminio, acero inoxidable, plástico y vidrio. La pregunta que más nos hacen no es "cuál es más bonita" sino "cuál me conviene según cuánto quiero gastar y para qué la va a usar la gente".',
+        text: "Después de los tazones, las botellas y termos son la categoría más grande de nuestro catálogo: casi 40 variantes entre aluminio, acero inoxidable, plástico y vidrio. Y casi nunca nos preguntan cuál se ve mejor — lo que realmente quieren saber es cuánto conviene gastar según para qué la va a usar la gente.",
       },
       { type: "h2", text: "Presupuesto ajustado, volumen alto: aluminio o plástico" },
       {
@@ -405,7 +405,7 @@ const rawBlogPosts: RawBlogPost[] = [
     blocks: [
       {
         type: "p",
-        text: 'Entre octubre y noviembre empiezan a llegar las primeras consultas de fin de año, y también los primeros cuellos de botella de producción. Esta lista está ordenada por presupuesto aproximado por persona, para que la puedas usar directo en la reunión donde te pidan "algo para el equipo".',
+        text: 'Entre octubre y noviembre empiezan a llegar las primeras consultas de fin de año, y con ellas los primeros cuellos de botella de producción. Te dejamos esto ordenado por presupuesto aproximado por persona, para que lo lleves directo a la reunión donde te pidan "algo para el equipo" y no te pille en blanco.',
       },
       { type: "h2", text: "Presupuesto bajo (menos de $3.000 por persona)" },
       {
@@ -441,7 +441,7 @@ const rawBlogPosts: RawBlogPost[] = [
       },
       {
         type: "p",
-        text: "Cuéntanos tu presupuesto aproximado por persona y el número de personas, y te armamos 2-3 combinaciones concretas del catálogo.",
+        text: "Danos un número: presupuesto por persona y cuántas personas son. Con eso te armamos 2 o 3 combinaciones reales del catálogo, no una lista para que sigas buscando tú solo.",
       },
     ],
   },
@@ -467,7 +467,7 @@ const rawBlogPosts: RawBlogPost[] = [
     blocks: [
       {
         type: "p",
-        text: "Organizar un evento (congreso, feria, seminario, activación de marca) implica varias decisiones de merchandising que se resuelven mejor si se piensan juntas desde el inicio, en vez de ir cotizando pieza por pieza a última hora. Esta guía las separa en tres momentos: antes del evento (señalética), durante (acreditación) y lo que la gente se lleva.",
+        text: "Organizar un evento (congreso, feria, seminario, activación de marca) trae varias decisiones de merchandising que conviene pensar juntas desde el inicio, no ir cotizando pieza por pieza a última hora. Lo dividimos en tres momentos, que es como realmente se vive un evento: antes (señalética), durante (acreditación) y lo que la gente se lleva puesto o en la mano.",
       },
       { type: "h2", text: "Antes: señalética del lugar" },
       {
@@ -495,7 +495,7 @@ const rawBlogPosts: RawBlogPost[] = [
       },
       {
         type: "p",
-        text: "Si estás organizando un evento y necesitas armar el kit completo (señalética + acreditación + entrega), cuéntanos la fecha y el número de asistentes y te armamos la cotización combinada.",
+        text: "¿Estás armando el kit completo — señalética, acreditación y lo que se entrega? Pásanos la fecha y el número de asistentes. Eso basta para dejarte la cotización combinada lista.",
       },
     ],
   },

@@ -37,9 +37,9 @@ function BlogIndex() {
   return (
     <>
       <Navbar />
-      <main className="mx-auto max-w-5xl px-5 pb-16 pt-28 lg:px-8 lg:pb-24 lg:pt-32">
-        <h1 className="display-title text-3xl sm:text-5xl">Blog Sublinovena</h1>
-        <p className="mt-4 max-w-xl text-muted-foreground">
+      <main className="mx-auto max-w-5xl px-5 pb-16 pt-36 lg:px-8 lg:pb-24 lg:pt-40">
+        <h1 className="display-title text-center text-3xl sm:text-5xl">Blog Sublinovena</h1>
+        <p className="mx-auto mt-4 max-w-xl text-center text-muted-foreground">
           Guías con precios reales de nuestro catálogo: qué producto conviene según tu presupuesto,
           cantidades mínimas y recomendaciones para empresas en Temuco y el resto de Chile.
         </p>
@@ -61,7 +61,7 @@ function BlogIndex() {
                 />
               </div>
               <div className="flex flex-1 flex-col gap-3 p-6">
-                <span className="w-fit rounded-full bg-muted px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-lavender">
+                <span className="font-brand w-fit rounded-full bg-muted px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-magenta">
                   {post.tag}
                 </span>
                 <h2 className="text-lg font-semibold leading-snug group-hover:text-magenta">

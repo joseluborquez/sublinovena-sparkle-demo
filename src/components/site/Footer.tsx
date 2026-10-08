@@ -19,16 +19,18 @@ export function Footer() {
             className="size-16 rounded-full"
           />
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/60">
-            Merchandising corporativo personalizado para empresas en Chile. Producción por volumen,
-            acabados premium y acompañamiento en cada pedido.
+            Fabricamos merchandising corporativo personalizado para empresas en todo Chile: acabados
+            de calidad y acompañamiento real, desde el primer WhatsApp hasta la entrega.
           </p>
         </Reveal>
 
         <Reveal delay={100}>
-          <h3 className="text-xs uppercase tracking-[0.3em] text-lavender">Navegación</h3>
+          <h3 className="font-brand text-xs font-bold uppercase tracking-[0.3em] text-magenta">
+            Navegación
+          </h3>
           <ul className="mt-5 space-y-3 text-sm text-white/65">
             {[
-              ["/#catalogo", "Catálogo"],
+              ["/catalogo", "Catálogo"],
               ["/#como-cotizar", "Cómo cotizar"],
               ["/#preguntas-frecuentes", "Preguntas frecuentes"],
               ["/blog", "Blog"],
@@ -36,7 +38,7 @@ export function Footer() {
               ["/#top", "Inicio"],
             ].map(([href, label]) => (
               <li key={href}>
-                <a href={href} className="transition-colors hover:text-lavender">
+                <a href={href} className="transition-colors hover:text-magenta">
                   {label}
                 </a>
               </li>
@@ -45,17 +47,24 @@ export function Footer() {
         </Reveal>
 
         <Reveal delay={200}>
-          <h3 className="text-xs uppercase tracking-[0.3em] text-lavender">Contacto</h3>
+          <h3 className="font-brand text-xs font-bold uppercase tracking-[0.3em] text-magenta">
+            Contacto
+          </h3>
           <ul className="mt-5 space-y-3 text-sm text-white/65">
             <li className="flex items-center gap-2">
               <Mail size={15} className="shrink-0 text-cyan" />
-              <a href={`mailto:${siteConfig.email}`} className="hover:text-lavender">
+              <a href={`mailto:${siteConfig.email}`} className="hover:text-magenta">
                 {siteConfig.email}
               </a>
             </li>
             <li className="flex items-center gap-2">
               <WhatsappIcon className="size-4 shrink-0 text-leaf" />
-              <a href={waLink()} target="_blank" rel="noreferrer" className="hover:text-lavender">
+              <a
+                href={waLink("Hola, vengo de la página web y quiero cotizar")}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-magenta"
+              >
                 +56 9 5654 2568
               </a>
             </li>
@@ -69,13 +78,13 @@ export function Footer() {
                 href={siteConfig.instagram}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-2 inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 transition-colors hover:border-lavender hover:text-lavender"
+                className="mt-2 inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 transition-colors hover:border-magenta hover:text-magenta"
               >
                 <Instagram size={15} /> @sublinovena
               </a>
             </li>
             <li>
-              <a href="/contact" className="hover:text-lavender">
+              <a href="/contact" className="hover:text-magenta">
                 Página de contacto
               </a>
             </li>
@@ -87,7 +96,7 @@ export function Footer() {
         <span>
           © {new Date().getFullYear()} {siteConfig.legalName} · Temuco, Chile
         </span>
-        <a href="/privacy" className="hover:text-lavender">
+        <a href="/privacy" className="hover:text-magenta">
           Política de privacidad
         </a>
       </div>

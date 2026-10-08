@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ArrowLeft, ArrowRight, Check } from "lucide-react";
 import { Reveal } from "./Reveal";
+import { TiltCard } from "./TiltCard";
 import tazonBlanco from "@/assets/products/tazon-blanco-325cc.png";
 import sublinovenaLogo from "@/assets/sublinovena-logo-full.png";
 import mockupTazaLogo from "@/assets/howto/mockup-taza-logo.jpg";
@@ -39,8 +40,9 @@ export const steps: Step[] = [
     fill: true,
   },
   {
-    title: "Producción y entrega",
-    description: "Fabricamos tu pedido y coordinamos la entrega en todo Chile.",
+    title: "Producimos y entregamos",
+    description:
+      "Fabricamos tu pedido con cuidado y coordinamos la entrega a cualquier punto de Chile.",
     image: entregaCamion,
     alt: "Caja de despacho con el logo de Sublinovena y un furgón de reparto",
     fill: true,
@@ -58,8 +60,8 @@ export function HowTo() {
     <section id="como-cotizar" className="relative overflow-hidden bg-ink py-24 sm:py-32">
       <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
         <Reveal>
-          <h2 className="display-title mt-3 max-w-2xl text-4xl text-white sm:text-6xl">
-            Un proceso de compra simple
+          <h2 className="display-title mx-auto mt-3 max-w-2xl text-center text-3xl text-white sm:text-5xl">
+            Cotizar con nosotros es así de simple
           </h2>
         </Reveal>
 
@@ -108,16 +110,18 @@ export function HowTo() {
 
         <Reveal delay={200}>
           <div className="card-lift mt-12 grid gap-10 rounded-3xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur sm:grid-cols-[280px_1fr] sm:items-center sm:p-12">
-            <div
-              className={`mx-auto flex size-[220px] shrink-0 items-center justify-center overflow-hidden rounded-2xl sm:size-[280px] ${
-                step.fill ? "bg-ink" : "bg-white p-7"
-              }`}
-            >
-              <img src={step.image} alt={step.alt} className="size-full object-contain" />
-            </div>
+            <TiltCard className="mx-auto size-[220px] shrink-0 sm:size-[280px]">
+              <div
+                className={`flex size-full items-center justify-center overflow-hidden rounded-2xl shadow-[0_25px_50px_-20px_rgba(0,0,0,0.6)] ${
+                  step.fill ? "bg-ink" : "bg-white p-7"
+                }`}
+              >
+                <img src={step.image} alt={step.alt} className="size-full object-contain" />
+              </div>
+            </TiltCard>
 
             <div>
-              <span className="text-brand-gradient text-sm font-bold uppercase tracking-widest">
+              <span className="font-brand text-brand-gradient text-sm font-bold uppercase tracking-widest">
                 Paso {active + 1} de {steps.length}
               </span>
               <h3 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">{step.title}</h3>
@@ -133,7 +137,7 @@ export function HowTo() {
                   <ArrowLeft size={17} /> Atrás
                 </button>
                 {isLast ? (
-                  <a href="#catalogo" className="btn-brand">
+                  <a href="/catalogo" className="btn-brand">
                     Ver catálogo <ArrowRight size={17} />
                   </a>
                 ) : (

@@ -39,6 +39,7 @@ function urlEntry(loc, { changefreq, priority }) {
 
 const sitemapUrls = [
   urlEntry(`${siteConfig.url}/`, { changefreq: "weekly", priority: "1.0" }),
+  urlEntry(`${siteConfig.url}/catalogo`, { changefreq: "weekly", priority: "0.9" }),
   urlEntry(`${siteConfig.url}/about`, { changefreq: "monthly", priority: "0.5" }),
   urlEntry(`${siteConfig.url}/contact`, { changefreq: "monthly", priority: "0.5" }),
   urlEntry(`${siteConfig.url}/privacy`, { changefreq: "yearly", priority: "0.3" }),
@@ -77,7 +78,7 @@ lines.push(
   `Contacto: ${siteConfig.email} · WhatsApp ${phonePretty} · ${addressesLine} · Instagram ${instagramHandle}`,
 );
 lines.push(
-  `Páginas: [Quiénes somos](${siteConfig.url}/about) · [Contacto](${siteConfig.url}/contact) · [Política de privacidad](${siteConfig.url}/privacy)`,
+  `Páginas: [Catálogo completo](${siteConfig.url}/catalogo) · [Quiénes somos](${siteConfig.url}/about) · [Contacto](${siteConfig.url}/contact) · [Política de privacidad](${siteConfig.url}/privacy)`,
 );
 lines.push("");
 lines.push("## Cuándo recurrir a Sublinovena");

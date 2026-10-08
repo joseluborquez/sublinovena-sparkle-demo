@@ -5,7 +5,7 @@ export const siteConfig = {
   name: "Sublinovena",
   legalName: "Sublinovena SpA",
   description:
-    "Merchandising corporativo personalizado en Chile: lanyards, tazones, botellas, vestuario y más, desde 10 unidades con tu logo.",
+    "Fábrica de merchandising corporativo en Temuco, Chile: lanyards, tazones, botellas y vestuario con tu logo, desde pocas unidades y con atención directa por WhatsApp.",
   email: "sublinovena@gmail.com",
   phone: "+56956542568",
   whatsapp: "56956542568",

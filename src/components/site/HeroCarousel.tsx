@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 export type HeroSlideCta = { type: "link"; href: string };
 
@@ -82,11 +82,11 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
                     : "items-end text-right sm:ml-auto"
                 }`}
               >
-                <div className="max-w-lg">
+                <div className="mt-16 max-w-lg sm:mt-20">
                   <p
-                    className={`eyebrow transition-all delay-150 duration-700 ${
-                      active ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
-                    }`}
+                    className={`eyebrow font-bold text-magenta transition-all delay-150 duration-700 ${
+                      slide.align === "left" ? "text-left" : "text-right"
+                    } ${active ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}
                   >
                     {slide.eyebrow}
                   </p>
@@ -97,7 +97,7 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
                         className={`display-title mt-5 text-3xl text-white transition-all delay-200 duration-700 sm:text-5xl lg:text-6xl ${
                           active ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
                         }`}
-                        style={{ lineHeight: 1.2 }}
+                        style={{ lineHeight: 1.35 }}
                       >
                         {slide.title}
                       </HeadingTag>
@@ -105,8 +105,8 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
                   })()}
                   <p
                     className={`mt-5 text-base leading-relaxed text-white/75 transition-all delay-300 duration-700 sm:text-lg ${
-                      active ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
-                    }`}
+                      slide.align === "left" ? "text-left" : "text-right"
+                    } ${active ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}
                   >
                     {slide.subtitle}
                   </p>
@@ -125,6 +125,27 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
           </div>
         );
       })}
+
+      {slides.length > 1 && (
+        <>
+          <button
+            type="button"
+            onClick={() => goTo(index - 1)}
+            aria-label="Diapositiva anterior"
+            className="absolute left-3 top-1/2 flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-ink/40 text-white backdrop-blur transition-all duration-300 hover:border-white/40 hover:bg-ink/60 sm:left-5 sm:size-11"
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <button
+            type="button"
+            onClick={() => goTo(index + 1)}
+            aria-label="Siguiente diapositiva"
+            className="absolute right-3 top-1/2 flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-ink/40 text-white backdrop-blur transition-all duration-300 hover:border-white/40 hover:bg-ink/60 sm:right-5 sm:size-11"
+          >
+            <ChevronRight size={20} />
+          </button>
+        </>
+      )}
 
       <div className="absolute inset-x-0 bottom-6 flex items-center justify-center gap-2">
         {slides.map((slide, i) => (
