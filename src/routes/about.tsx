@@ -40,11 +40,10 @@ function AboutPage() {
         <h1 className="display-title text-center text-3xl sm:text-5xl">Sobre {siteConfig.name}</h1>
 
         <p className="mt-6 leading-relaxed text-muted-foreground">
-          {siteConfig.legalName} nace en 2022, en Temuco, cuando el ingeniero comercial Fernando
-          Tabie Negue decidió hacer las cosas distinto: vender artículos publicitarios y
-          merchandising corporativo personalizado, pero con trato directo y sin perder de vista el
-          detalle. Hoy trabajamos con empresas, instituciones y personas de toda la Región de La
-          Araucanía y el resto de Chile.
+          {siteConfig.legalName} nace en 2022 en Temuco, con el propósito de vender artículos
+          publicitarios y merchandising corporativo personalizado, con trato directo y sin perder
+          de vista el detalle. Hoy trabajamos con empresas, instituciones y personas de toda la
+          Región de La Araucanía y el resto de Chile.
         </p>
         <p className="mt-4 leading-relaxed text-muted-foreground">
           En el camino, nuestro catálogo creció hasta superar los 150 productos (lanyards, tazones,
