@@ -17,7 +17,7 @@ export function QuienesSomos() {
       <div className="mx-auto max-w-5xl px-5 text-center lg:px-8">
         <Reveal>
           <h2 className="display-title mx-auto max-w-2xl text-3xl sm:text-5xl">
-            Sobre {siteConfig.name}
+            Acerca de {siteConfig.name}
           </h2>
           <p className="mx-auto mt-5 max-w-2xl leading-relaxed text-muted-foreground">
             {siteConfig.legalName} nace en 2022, en Temuco, cuando el ingeniero comercial Fernando

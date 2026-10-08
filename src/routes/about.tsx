@@ -37,7 +37,9 @@ function AboutPage() {
     <>
       <Navbar />
       <main className="mx-auto max-w-3xl px-5 pb-16 pt-36 lg:px-8 lg:pb-24 lg:pt-40">
-        <h1 className="display-title text-center text-3xl sm:text-5xl">Sobre {siteConfig.name}</h1>
+        <h1 className="display-title text-center text-3xl sm:text-5xl">
+          Acerca de {siteConfig.name}
+        </h1>
 
         <p className="mt-6 leading-relaxed text-muted-foreground">
           {siteConfig.legalName} nace en 2022 en Temuco, con el propósito de vender artículos
