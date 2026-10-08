@@ -124,7 +124,7 @@ export function HowTo() {
             </TiltCard>
 
             <div>
-              <span className="font-brand text-brand-gradient text-sm font-bold uppercase tracking-widest">
+              <span className="font-brand bg-[image:linear-gradient(90deg,var(--brand-lime),var(--brand-cyan))] bg-clip-text text-sm font-bold uppercase tracking-widest text-transparent">
                 Paso {active + 1} de {steps.length}
               </span>
               <h3 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">{step.title}</h3>
