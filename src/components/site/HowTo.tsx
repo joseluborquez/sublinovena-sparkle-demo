@@ -43,7 +43,7 @@ export const steps: Step[] = [
   {
     title: "Producimos y entregamos",
     description:
-      "Fabricamos tu pedido con cuidado y coordinamos la entrega o el retiro en el punto que elegiste.",
+      "Fabricamos tu pedido y coordinamos la entrega o el retiro en el punto que elegiste.",
     image: entregaCamion,
     alt: "Caja de despacho con el logo de Sublinovena y un furgón de reparto",
     fill: true,
@@ -99,7 +99,9 @@ export function HowTo() {
                   {i < steps.length - 1 && (
                     <span
                       className={`mx-2 h-0.5 flex-1 rounded-full transition-colors sm:mx-4 ${
-                        i < active ? "bg-[image:var(--gradient-brand)]" : "bg-white/15"
+                        i < active
+                          ? "bg-[image:linear-gradient(90deg,var(--brand-lime),var(--brand-cyan))]"
+                          : "bg-white/15"
                       }`}
                     />
                   )}
