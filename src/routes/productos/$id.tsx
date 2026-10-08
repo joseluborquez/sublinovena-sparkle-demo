@@ -58,7 +58,7 @@ export const Route = createFileRoute("/productos/$id")({
           "@type": "ListItem",
           position: 2,
           name: product.category,
-          item: `${siteConfig.url}/#catalogo`,
+          item: `${siteConfig.url}/catalogo`,
         },
         { "@type": "ListItem", position: 3, name: product.name, item: canonical },
       ],
@@ -88,22 +88,24 @@ export const Route = createFileRoute("/productos/$id")({
 
 function ProductPage() {
   const product = Route.useLoaderData();
-  const related = products.filter((p) => p.category === product.category && p.id !== product.id).slice(0, 4);
+  const related = products
+    .filter((p) => p.category === product.category && p.id !== product.id)
+    .slice(0, 4);
   const fromPrice = product.tiers.reduce(
     (min, t) => (t.price < min ? t.price : min),
     product.tiers[0]?.price ?? 0,
   );
-  const waMessage = `Hola, quiero cotizar: ${product.name}${product.sku ? ` (${product.sku})` : ""}`;
+  const waMessage = `Hola, vengo de la página web y quiero cotizar ${product.name}${product.sku ? ` (${product.sku})` : ""}`;
 
   return (
     <>
       <Navbar />
-      <main className="mx-auto max-w-6xl px-5 pb-10 pt-28 lg:px-8 lg:pb-16 lg:pt-32">
+      <main className="mx-auto max-w-6xl px-5 pb-10 pt-36 lg:px-8 lg:pb-16 lg:pt-40">
         <div className="flex flex-wrap items-center gap-3">
           <Link
             to="/"
             hash={product.id}
-            className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-lavender hover:text-foreground"
+            className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-magenta hover:text-foreground"
           >
             <ArrowLeft size={13} /> Volver
           </Link>
@@ -121,24 +123,34 @@ function ProductPage() {
           </div>
 
           <div>
-            <p className="eyebrow text-magenta">{product.category}</p>
+            <p className="eyebrow font-bold text-magenta">{product.category}</p>
             <h1 className="display-title mt-3 text-3xl sm:text-4xl">{product.name}</h1>
-            {product.sku && <p className="mt-1 text-sm text-muted-foreground">SKU: {product.sku}</p>}
+            {product.sku && (
+              <p className="mt-1 text-sm text-muted-foreground">SKU: {product.sku}</p>
+            )}
             <p className="mt-4 text-lg font-semibold">Desde ${clp(fromPrice)} c/u + IVA</p>
             <p className="mt-4 leading-relaxed text-muted-foreground">{product.description}</p>
 
-            <a href={waLink(waMessage)} target="_blank" rel="noreferrer" className="btn-brand mt-6 inline-flex">
+            <a
+              href={waLink(waMessage)}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-brand mt-6 inline-flex"
+            >
               Cotizar por WhatsApp
             </a>
 
             {product.tiers.length > 0 && (
               <div className="mt-10">
-                <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-lavender">
+                <h2 className="font-brand text-sm font-semibold uppercase tracking-[0.2em] text-magenta">
                   Precios por cantidad
                 </h2>
                 <ul className="mt-4 divide-y divide-border rounded-2xl border border-border">
                   {product.tiers.map((t) => (
-                    <li key={t.label} className="flex items-center justify-between gap-4 px-4 py-3 text-sm">
+                    <li
+                      key={t.label}
+                      className="flex items-center justify-between gap-4 px-4 py-3 text-sm"
+                    >
                       <span className="text-muted-foreground">{t.label}</span>
                       <span className="font-semibold">${clp(t.price)} c/u</span>
                     </li>

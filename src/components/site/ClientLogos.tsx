@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Reveal } from "./Reveal";
 
 const logoModules = import.meta.glob("../../assets/clients/*.png", {
@@ -53,19 +54,27 @@ const logos = Object.entries(logoModules)
 
 export function ClientLogos() {
   const loop = [...logos, ...logos];
+  const [paused, setPaused] = useState(false);
 
   return (
     <section className="border-y border-border bg-white py-14">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal>
-          <p className="text-center text-base font-semibold uppercase tracking-[0.2em] text-ink/60">
-            Empresas e instituciones que ya confían en nosotros
+          <p className="font-brand text-center text-base font-semibold uppercase tracking-[0.2em] text-ink">
+            Empresas que ya confían en nosotros
           </p>
         </Reveal>
       </div>
 
-      <div className="group relative mt-10 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
-        <div className="flex w-max animate-marquee-slow gap-8 group-hover:[animation-play-state:paused] sm:gap-14">
+      <div
+        className="group relative mt-10 overflow-x-auto [-webkit-overflow-scrolling:touch] [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        onTouchStart={() => setPaused(true)}
+        onTouchEnd={() => setPaused(false)}
+      >
+        <div
+          className="flex w-max animate-marquee-slow gap-8 group-hover:[animation-play-state:paused] sm:gap-14"
+          style={{ animationPlayState: paused ? "paused" : undefined }}
+        >
           {loop.map((logo, i) => (
             <div
               key={`${logo.slug}-${i}`}

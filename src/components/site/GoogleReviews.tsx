@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { ExternalLink, Star } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { GoogleIcon } from "./GoogleIcon";
@@ -74,13 +75,16 @@ function ReviewCard({ r }: { r: (typeof reviews)[number] }) {
 
 export function GoogleReviews() {
   const loop = [...reviews, ...reviews];
+  const [paused, setPaused] = useState(false);
 
   return (
     <section className="bg-background py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal>
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <h2 className="display-title max-w-2xl text-3xl sm:text-5xl">Lo que dicen en Google</h2>
+          <div className="flex flex-col items-center gap-6 text-center">
+            <h2 className="display-title max-w-2xl text-3xl sm:text-5xl">
+              Lo que dicen nuestros clientes en Google
+            </h2>
             <a
               href={siteConfig.googleReviewsUrl}
               target="_blank"
@@ -111,8 +115,15 @@ export function GoogleReviews() {
         </div>
       </div>
 
-      <div className="group relative mt-10 overflow-hidden sm:hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
-        <div className="flex w-max animate-marquee gap-4 group-hover:[animation-play-state:paused]">
+      <div
+        className="relative mt-10 overflow-x-auto sm:hidden [-webkit-overflow-scrolling:touch] [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        onTouchStart={() => setPaused(true)}
+        onTouchEnd={() => setPaused(false)}
+      >
+        <div
+          className="flex w-max animate-marquee gap-4"
+          style={{ animationPlayState: paused ? "paused" : "running" }}
+        >
           {loop.map((r, i) => (
             <div key={`${r.name}-${i}`} className="w-72 shrink-0">
               <ReviewCard r={r} />

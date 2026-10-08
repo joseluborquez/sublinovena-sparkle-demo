@@ -119,11 +119,11 @@ function BlogPostPage() {
   return (
     <>
       <Navbar />
-      <main className="mx-auto max-w-3xl px-5 pb-10 pt-28 lg:px-8 lg:pb-16 lg:pt-32">
+      <main className="mx-auto max-w-3xl px-5 pb-10 pt-36 lg:px-8 lg:pb-16 lg:pt-40">
         <div className="flex flex-wrap items-center gap-3">
           <button
             onClick={() => router.history.back()}
-            className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-lavender hover:text-foreground"
+            className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-magenta hover:text-foreground"
           >
             <ArrowLeft size={13} /> Volver
           </button>
@@ -144,7 +144,7 @@ function BlogPostPage() {
         </div>
 
         <article className="mt-6">
-          <span className="w-fit rounded-full bg-muted px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-lavender">
+          <span className="font-brand w-fit rounded-full bg-muted px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-magenta">
             {post.tag}
           </span>
           <h1 className="display-title mt-4 text-3xl sm:text-4xl">{post.title}</h1>

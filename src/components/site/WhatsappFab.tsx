@@ -4,7 +4,7 @@ import { WhatsappIcon } from "./WhatsappIcon";
 export function WhatsappFab() {
   return (
     <a
-      href={waLink()}
+      href={waLink("Hola, vengo de la página web y quiero cotizar")}
       target="_blank"
       rel="noreferrer"
       aria-label="Escríbenos por WhatsApp"
