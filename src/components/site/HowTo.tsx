@@ -2,8 +2,8 @@ import { useState } from "react";
 import { ArrowLeft, ArrowRight, Check } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { TiltCard } from "./TiltCard";
-import tazonBlanco from "@/assets/products/tazon-blanco-325cc.png";
-import sublinovenaLogo from "@/assets/sublinovena-logo-full.png";
+import whatsappCotizacion from "@/assets/howto/whatsapp-cotizacion.jpg";
+import transferenciaExitosa from "@/assets/howto/transferencia-exitosa.jpg";
 import mockupTazaLogo from "@/assets/howto/mockup-taza-logo.jpg";
 import entregaCamion from "@/assets/howto/entrega-camion.jpg";
 
@@ -17,24 +17,25 @@ type Step = {
 
 export const steps: Step[] = [
   {
-    title: "Elige tu producto",
+    title: "Cotiza por WhatsApp",
     description:
-      "Revisa el catálogo y elige lo que te interesa: tazones, lanyards, botellas y más, desde pocas unidades.",
-    image: tazonBlanco,
-    alt: "Tazón blanco sin personalizar",
-  },
-  {
-    title: "Sube tu logo",
-    description:
-      "Nos envías tu archivo y preparamos una propuesta gráfica con la técnica de impresión ideal para cada producto.",
-    image: sublinovenaLogo,
-    alt: "Logo de Sublinovena",
+      "Nos cuentas qué producto y cuántas unidades necesitas, y te enviamos la cotización con los datos para transferir, los puntos de retiro y si necesitas boleta o factura.",
+    image: whatsappCotizacion,
+    alt: "Conversación de WhatsApp cotizando un producto",
     fill: true,
   },
   {
-    title: "Aprobamos el muestrario",
+    title: "Transfiere y confirma tu documento",
     description:
-      "Te mostramos el mockup con tu logo aplicado y, si lo necesitas, una muestra física antes de producir todo el pedido.",
+      "Nos envías el comprobante de la transferencia y nos confirmas si necesitas boleta o factura. Con eso, tu pedido queda aprobado.",
+    image: transferenciaExitosa,
+    alt: "Celular mostrando una transferencia exitosa",
+    fill: true,
+  },
+  {
+    title: "Aprueba la maqueta",
+    description:
+      "Preparamos el diseño digital con tu logo aplicado y te lo enviamos antes de producir, para que nos des el visto bueno.",
     image: mockupTazaLogo,
     alt: "Tazón con el logo aplicado, mockup de aprobación",
     fill: true,
@@ -42,7 +43,7 @@ export const steps: Step[] = [
   {
     title: "Producimos y entregamos",
     description:
-      "Fabricamos tu pedido con cuidado y coordinamos la entrega a cualquier punto de Chile.",
+      "Fabricamos tu pedido con cuidado y coordinamos la entrega o el retiro en el punto que elegiste.",
     image: entregaCamion,
     alt: "Caja de despacho con el logo de Sublinovena y un furgón de reparto",
     fill: true,
