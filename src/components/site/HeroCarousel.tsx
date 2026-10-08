@@ -82,7 +82,7 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
                     : "items-end text-right sm:ml-auto"
                 }`}
               >
-                <div className="mt-16 max-w-lg sm:mt-20">
+                <div className="mt-24 max-w-lg sm:mt-20">
                   <p
                     className={`eyebrow font-bold text-magenta transition-all delay-150 duration-700 ${
                       slide.align === "left" ? "text-left" : "text-right"
@@ -132,7 +132,7 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
             type="button"
             onClick={() => goTo(index - 1)}
             aria-label="Diapositiva anterior"
-            className="absolute left-3 top-1/2 flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-ink/40 text-white backdrop-blur transition-all duration-300 hover:border-white/40 hover:bg-ink/60 sm:left-5 sm:size-11"
+            className="absolute left-3 top-1/2 hidden size-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-ink/40 text-white backdrop-blur transition-all duration-300 hover:border-white/40 hover:bg-ink/60 sm:left-5 sm:flex sm:size-11"
           >
             <ChevronLeft size={20} />
           </button>
@@ -140,7 +140,7 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
             type="button"
             onClick={() => goTo(index + 1)}
             aria-label="Siguiente diapositiva"
-            className="absolute right-3 top-1/2 flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-ink/40 text-white backdrop-blur transition-all duration-300 hover:border-white/40 hover:bg-ink/60 sm:right-5 sm:size-11"
+            className="absolute right-3 top-1/2 hidden size-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-ink/40 text-white backdrop-blur transition-all duration-300 hover:border-white/40 hover:bg-ink/60 sm:right-5 sm:flex sm:size-11"
           >
             <ChevronRight size={20} />
           </button>
