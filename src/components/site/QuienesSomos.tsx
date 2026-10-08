@@ -40,10 +40,7 @@ export function QuienesSomos() {
             ))}
           </ul>
 
-          <a
-            href="/about"
-            className="mt-9 inline-flex items-center gap-1.5 text-sm font-semibold text-magenta hover:underline"
-          >
+          <a href="/about" className="btn-brand mt-9 inline-flex">
             Conoce más sobre nosotros <ArrowRight size={16} />
           </a>
         </Reveal>
