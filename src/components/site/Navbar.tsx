@@ -186,8 +186,8 @@ export function Navbar() {
       </nav>
 
       <div
-        className={`overflow-hidden border-t border-white/5 bg-ink/95 backdrop-blur-xl transition-all duration-500 lg:hidden ${
-          menu ? "max-h-[32rem] overflow-y-auto" : "max-h-0"
+        className={`overflow-hidden bg-ink/95 backdrop-blur-xl transition-all duration-500 lg:hidden ${
+          menu ? "max-h-[32rem] overflow-y-auto border-t border-white/5" : "max-h-0 border-t-0"
         }`}
       >
         <div className="px-6 pt-4">
