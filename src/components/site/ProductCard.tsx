@@ -41,10 +41,10 @@ export function ProductCard({ product: p, delay = 0 }: { product: Product; delay
           </div>
         </Link>
         <div className="flex flex-1 flex-col gap-3 p-5">
-          <p className="font-brand text-xs font-bold uppercase tracking-[0.2em] text-magenta">
+          <p className="font-brand text-xs font-bold uppercase tracking-[0.2em] text-cyan">
             {p.category}
           </p>
-          <Link to="/productos/$id" params={{ id: p.id }} className="hover:text-magenta">
+          <Link to="/productos/$id" params={{ id: p.id }} className="hover:text-cyan">
             <h3 className="font-semibold leading-snug">{p.name}</h3>
           </Link>
           <p className="line-clamp-3 text-sm text-muted-foreground">{p.description}</p>

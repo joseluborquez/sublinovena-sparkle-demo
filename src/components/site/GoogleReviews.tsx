@@ -89,7 +89,7 @@ export function GoogleReviews() {
               href={siteConfig.googleReviewsUrl}
               target="_blank"
               rel="noreferrer noopener"
-              className="flex items-center gap-3 rounded-2xl border border-border bg-card px-5 py-3 transition-colors hover:border-magenta/40"
+              className="flex items-center gap-3 rounded-2xl border border-border bg-card px-5 py-3 transition-colors hover:border-cyan/40"
             >
               <GoogleIcon className="size-7 shrink-0" />
               <div>

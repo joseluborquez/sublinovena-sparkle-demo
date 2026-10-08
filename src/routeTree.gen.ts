@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as CatalogoRouteImport } from './routes/catalogo'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as TrabajosRouteImport } from './routes/trabajos'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 import { Route as ProductosIdRouteImport } from './routes/productos/$id'
@@ -43,6 +44,11 @@ const PrivacyRoute = PrivacyRouteImport.update({
   path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TrabajosRoute = TrabajosRouteImport.update({
+  id: '/trabajos',
+  path: '/trabajos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
   id: '/blog/',
   path: '/blog/',
@@ -65,6 +71,7 @@ export interface FileRoutesByFullPath {
   '/catalogo': typeof CatalogoRoute
   '/contact': typeof ContactRoute
   '/privacy': typeof PrivacyRoute
+  '/trabajos': typeof TrabajosRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/productos/$id': typeof ProductosIdRoute
   '/blog/': typeof BlogIndexRoute
@@ -75,6 +82,7 @@ export interface FileRoutesByTo {
   '/catalogo': typeof CatalogoRoute
   '/contact': typeof ContactRoute
   '/privacy': typeof PrivacyRoute
+  '/trabajos': typeof TrabajosRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/productos/$id': typeof ProductosIdRoute
   '/blog': typeof BlogIndexRoute
@@ -86,6 +94,7 @@ export interface FileRoutesById {
   '/catalogo': typeof CatalogoRoute
   '/contact': typeof ContactRoute
   '/privacy': typeof PrivacyRoute
+  '/trabajos': typeof TrabajosRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/productos/$id': typeof ProductosIdRoute
   '/blog/': typeof BlogIndexRoute
@@ -98,6 +107,7 @@ export interface FileRouteTypes {
     | '/catalogo'
     | '/contact'
     | '/privacy'
+    | '/trabajos'
     | '/blog/$slug'
     | '/productos/$id'
     | '/blog/'
@@ -108,6 +118,7 @@ export interface FileRouteTypes {
     | '/catalogo'
     | '/contact'
     | '/privacy'
+    | '/trabajos'
     | '/blog/$slug'
     | '/productos/$id'
     | '/blog'
@@ -118,6 +129,7 @@ export interface FileRouteTypes {
     | '/catalogo'
     | '/contact'
     | '/privacy'
+    | '/trabajos'
     | '/blog/$slug'
     | '/productos/$id'
     | '/blog/'
@@ -129,6 +141,7 @@ export interface RootRouteChildren {
   CatalogoRoute: typeof CatalogoRoute
   ContactRoute: typeof ContactRoute
   PrivacyRoute: typeof PrivacyRoute
+  TrabajosRoute: typeof TrabajosRoute
   BlogSlugRoute: typeof BlogSlugRoute
   ProductosIdRoute: typeof ProductosIdRoute
   BlogIndexRoute: typeof BlogIndexRoute
@@ -171,6 +184,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/trabajos': {
+      id: '/trabajos'
+      path: '/trabajos'
+      fullPath: '/trabajos'
+      preLoaderRoute: typeof TrabajosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/': {
       id: '/blog/'
       path: '/blog'
@@ -201,6 +221,7 @@ const rootRouteChildren: RootRouteChildren = {
   CatalogoRoute: CatalogoRoute,
   ContactRoute: ContactRoute,
   PrivacyRoute: PrivacyRoute,
+  TrabajosRoute: TrabajosRoute,
   BlogSlugRoute: BlogSlugRoute,
   ProductosIdRoute: ProductosIdRoute,
   BlogIndexRoute: BlogIndexRoute,

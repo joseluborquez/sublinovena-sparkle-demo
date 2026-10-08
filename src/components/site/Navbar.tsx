@@ -109,7 +109,7 @@ export function Navbar() {
             <li>
               <a
                 href="/#top"
-                className="text-sm text-white/80 transition-colors duration-300 hover:text-magenta"
+                className="text-sm text-white/80 transition-colors duration-300 hover:text-cyan"
               >
                 Inicio
               </a>
@@ -119,7 +119,7 @@ export function Navbar() {
                 type="button"
                 onClick={() => setProductsOpen((v) => !v)}
                 aria-expanded={productsOpen}
-                className="flex items-center gap-1 text-sm text-white/80 transition-colors duration-300 hover:text-magenta"
+                className="flex items-center gap-1 text-sm text-white/80 transition-colors duration-300 hover:text-cyan"
               >
                 Productos
                 <ChevronDown
@@ -132,7 +132,7 @@ export function Navbar() {
                   <button
                     type="button"
                     onClick={() => goToCatalog({ cat: undefined })}
-                    className="block w-full rounded-xl px-3 py-2 text-left text-sm font-semibold text-white transition-colors hover:bg-white/5 hover:text-magenta"
+                    className="block w-full rounded-xl px-3 py-2 text-left text-sm font-semibold text-white transition-colors hover:bg-white/5 hover:text-cyan"
                   >
                     Ver todo el catálogo
                   </button>
@@ -143,7 +143,7 @@ export function Navbar() {
                         key={c}
                         type="button"
                         onClick={() => goToCatalog({ cat: c })}
-                        className="block w-full rounded-xl px-3 py-2 text-left text-sm text-white/75 transition-colors hover:bg-white/5 hover:text-magenta"
+                        className="block w-full rounded-xl px-3 py-2 text-left text-sm text-white/75 transition-colors hover:bg-white/5 hover:text-cyan"
                       >
                         {c}
                       </button>
@@ -155,7 +155,7 @@ export function Navbar() {
             <li>
               <a
                 href="/#contacto"
-                className="text-sm text-white/80 transition-colors duration-300 hover:text-magenta"
+                className="text-sm text-white/80 transition-colors duration-300 hover:text-cyan"
               >
                 Contacto
               </a>
@@ -210,7 +210,7 @@ export function Navbar() {
             <a
               href="/#top"
               onClick={() => setMenu(false)}
-              className="block py-2 text-white/85 transition-colors hover:text-magenta"
+              className="block py-2 text-white/85 transition-colors hover:text-cyan"
             >
               Inicio
             </a>
@@ -220,7 +220,7 @@ export function Navbar() {
               type="button"
               onClick={() => setMobileProductsOpen((v) => !v)}
               aria-expanded={mobileProductsOpen}
-              className="flex w-full items-center justify-between py-2 text-left text-white/85 transition-colors hover:text-magenta"
+              className="flex w-full items-center justify-between py-2 text-left text-white/85 transition-colors hover:text-cyan"
             >
               Productos
               <ChevronDown
@@ -237,7 +237,7 @@ export function Navbar() {
                 <button
                   type="button"
                   onClick={() => goToCatalog({ cat: undefined })}
-                  className="block w-full py-1.5 text-left text-sm font-semibold text-white/90 hover:text-magenta"
+                  className="block w-full py-1.5 text-left text-sm font-semibold text-white/90 hover:text-cyan"
                 >
                   Ver todo el catálogo
                 </button>
@@ -246,7 +246,7 @@ export function Navbar() {
                     key={c}
                     type="button"
                     onClick={() => goToCatalog({ cat: c })}
-                    className="block w-full py-1.5 text-left text-sm text-white/65 hover:text-magenta"
+                    className="block w-full py-1.5 text-left text-sm text-white/65 hover:text-cyan"
                   >
                     {c}
                   </button>
@@ -258,7 +258,7 @@ export function Navbar() {
             <a
               href="/#contacto"
               onClick={() => setMenu(false)}
-              className="block py-2 text-white/85 transition-colors hover:text-magenta"
+              className="block py-2 text-white/85 transition-colors hover:text-cyan"
             >
               Contacto
             </a>

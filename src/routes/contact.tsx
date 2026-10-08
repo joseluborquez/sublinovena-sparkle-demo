@@ -4,6 +4,7 @@ import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { WhatsappFab } from "@/components/site/WhatsappFab";
 import { WhatsappIcon } from "@/components/site/WhatsappIcon";
+import { BackButton } from "@/components/site/BackButton";
 import { siteConfig, waLink } from "@/lib/site-config";
 
 const title = `Contacto | ${siteConfig.name}`;
@@ -30,7 +31,9 @@ function ContactPage() {
     <>
       <Navbar />
       <main className="mx-auto max-w-3xl px-5 pb-16 pt-36 lg:px-8 lg:pb-24 lg:pt-40">
-        <h1 className="display-title text-3xl sm:text-5xl">Hablemos de tu pedido</h1>
+        <BackButton />
+
+        <h1 className="display-title mt-6 text-3xl sm:text-5xl">Hablemos de tu pedido</h1>
         <p className="mt-6 leading-relaxed text-muted-foreground">
           En {siteConfig.name} cotizamos directo por WhatsApp, sin formularios ni esperas: nos
           cuentas el producto y la cantidad que necesitas, y te respondemos con el precio real según
