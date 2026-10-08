@@ -169,7 +169,7 @@
   letter-spacing: 0.42em;
   font-size: 0.7rem;
   font-weight: 500;
-  color: var(--brand-lavender);
+  color: var(--brand-cyan);
 }
 
 @utility btn-brand {

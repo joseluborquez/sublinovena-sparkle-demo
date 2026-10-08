@@ -1,11 +1,12 @@
-import { createFileRoute, Link, notFound, useRouter } from "@tanstack/react-router";
-import { ArrowLeft, ChevronRight } from "lucide-react";
+import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { ChevronRight } from "lucide-react";
 import { blogPosts, type BlogBlock } from "@/data/blog-posts";
 import { products } from "@/data/products";
 import { siteConfig } from "@/lib/site-config";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { WhatsappFab } from "@/components/site/WhatsappFab";
+import { BackButton } from "@/components/site/BackButton";
 
 const dateFmt = (iso: string) =>
   new Date(`${iso}T00:00:00`).toLocaleDateString("es-CL", {
@@ -114,19 +115,12 @@ function BlogPostPage() {
   const related = products
     .filter((p) => (post.relatedCategories as string[]).includes(p.category))
     .slice(0, 4);
-  const router = useRouter();
-
   return (
     <>
       <Navbar />
       <main className="mx-auto max-w-3xl px-5 pb-10 pt-36 lg:px-8 lg:pb-16 lg:pt-40">
         <div className="flex flex-wrap items-center gap-3">
-          <button
-            onClick={() => router.history.back()}
-            className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-magenta hover:text-foreground"
-          >
-            <ArrowLeft size={13} /> Volver
-          </button>
+          <BackButton />
           <nav
             aria-label="Breadcrumb"
             className="flex flex-wrap items-center gap-1 text-xs text-muted-foreground"
@@ -144,7 +138,7 @@ function BlogPostPage() {
         </div>
 
         <article className="mt-6">
-          <span className="font-brand w-fit rounded-full bg-muted px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-magenta">
+          <span className="font-brand w-fit rounded-full bg-muted px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-cyan">
             {post.tag}
           </span>
           <h1 className="display-title mt-4 text-3xl sm:text-4xl">{post.title}</h1>

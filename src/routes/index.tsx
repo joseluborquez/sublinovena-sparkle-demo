@@ -7,7 +7,7 @@ import { CatalogPreview } from "@/components/site/CatalogPreview";
 import { HowTo, steps as howToSteps } from "@/components/site/HowTo";
 import { QuienesSomos } from "@/components/site/QuienesSomos";
 import { FAQ, faqs } from "@/components/site/FAQ";
-import { TrabajosRealizados } from "@/components/site/TrabajosRealizados";
+import { TrabajosPreview } from "@/components/site/TrabajosPreview";
 import {
   GoogleReviews,
   reviews,
@@ -119,7 +119,7 @@ function Index() {
         <Hero />
         <ClientLogos />
         <CatalogPreview />
-        <TrabajosRealizados />
+        <TrabajosPreview />
         <GoogleReviews />
         <HowTo />
         <QuienesSomos />

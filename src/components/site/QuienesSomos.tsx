@@ -22,8 +22,8 @@ export function QuienesSomos() {
           <p className="mx-auto mt-5 max-w-2xl leading-relaxed text-muted-foreground">
             {siteConfig.legalName} nace en 2022 en Temuco, con el propósito de vender artículos
             publicitarios y merchandising corporativo personalizado, con trato directo y sin perder
-            de vista el detalle. Hoy trabajamos con empresas, instituciones y personas de toda la
-            Región de La Araucanía y el resto de Chile.
+            de vista el detalle y la calidad. Hoy trabajamos con empresas, instituciones y personas
+            de toda la Región de La Araucanía y el resto de Chile.
           </p>
         </Reveal>
 

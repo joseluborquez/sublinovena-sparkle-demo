@@ -4,6 +4,7 @@ import { Search } from "lucide-react";
 import { categories, products } from "@/data/products";
 import { Reveal } from "./Reveal";
 import { ProductCard } from "./ProductCard";
+import { BackButton } from "./BackButton";
 
 export function Catalog() {
   const urlSearch = useSearch({ from: "/catalogo" });
@@ -39,8 +40,10 @@ export function Catalog() {
   return (
     <section id="catalogo" className="bg-background py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
+        <BackButton />
+
         <Reveal>
-          <h2 className="display-title text-center text-3xl sm:text-5xl">
+          <h2 className="display-title mt-6 text-center text-3xl sm:text-5xl">
             Catálogo de merchandising corporativo
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-center text-muted-foreground">
@@ -72,7 +75,7 @@ export function Catalog() {
                   className={`shrink-0 rounded-full border px-4 py-2 text-sm transition-all duration-300 hover:-translate-y-0.5 ${
                     cat === c
                       ? "bg-brand-gradient-slide border-transparent font-semibold text-ink shadow-[var(--shadow-brand)]"
-                      : "border-border bg-card text-muted-foreground hover:border-magenta hover:text-foreground hover:shadow-[var(--shadow-brand)]"
+                      : "border-border bg-card text-muted-foreground hover:border-cyan hover:text-foreground hover:shadow-[var(--shadow-brand)]"
                   }`}
                 >
                   {c}

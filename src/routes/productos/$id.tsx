@@ -105,7 +105,7 @@ function ProductPage() {
           <Link
             to="/"
             hash={product.id}
-            className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-magenta hover:text-foreground"
+            className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-cyan hover:text-foreground"
           >
             <ArrowLeft size={13} /> Volver
           </Link>
@@ -123,7 +123,7 @@ function ProductPage() {
           </div>
 
           <div>
-            <p className="eyebrow font-bold text-magenta">{product.category}</p>
+            <p className="eyebrow font-bold text-cyan">{product.category}</p>
             <h1 className="display-title mt-3 text-3xl sm:text-4xl">{product.name}</h1>
             {product.sku && (
               <p className="mt-1 text-sm text-muted-foreground">SKU: {product.sku}</p>
@@ -142,7 +142,7 @@ function ProductPage() {
 
             {product.tiers.length > 0 && (
               <div className="mt-10">
-                <h2 className="font-brand text-sm font-semibold uppercase tracking-[0.2em] text-magenta">
+                <h2 className="font-brand text-sm font-semibold uppercase tracking-[0.2em] text-cyan">
                   Precios por cantidad
                 </h2>
                 <ul className="mt-4 divide-y divide-border rounded-2xl border border-border">

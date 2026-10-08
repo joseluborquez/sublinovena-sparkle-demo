@@ -61,7 +61,7 @@ export function ClientLogos() {
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal>
           <p className="font-brand text-center text-base font-semibold uppercase tracking-[0.2em] text-ink">
-            Empresas que ya confían en nosotros
+            Empresas que confían en nosotros
           </p>
         </Reveal>
       </div>

@@ -25,7 +25,7 @@ export function Footer() {
         </Reveal>
 
         <Reveal delay={100}>
-          <h3 className="font-brand text-xs font-bold uppercase tracking-[0.3em] text-magenta">
+          <h3 className="font-brand text-xs font-bold uppercase tracking-[0.3em] text-cyan">
             Navegación
           </h3>
           <ul className="mt-5 space-y-3 text-sm text-white/65">
@@ -38,7 +38,7 @@ export function Footer() {
               ["/#top", "Inicio"],
             ].map(([href, label]) => (
               <li key={href}>
-                <a href={href} className="transition-colors hover:text-magenta">
+                <a href={href} className="transition-colors hover:text-cyan">
                   {label}
                 </a>
               </li>
@@ -47,13 +47,13 @@ export function Footer() {
         </Reveal>
 
         <Reveal delay={200}>
-          <h3 className="font-brand text-xs font-bold uppercase tracking-[0.3em] text-magenta">
+          <h3 className="font-brand text-xs font-bold uppercase tracking-[0.3em] text-cyan">
             Contacto
           </h3>
           <ul className="mt-5 space-y-3 text-sm text-white/65">
             <li className="flex items-center gap-2">
               <Mail size={15} className="shrink-0 text-cyan" />
-              <a href={`mailto:${siteConfig.email}`} className="hover:text-magenta">
+              <a href={`mailto:${siteConfig.email}`} className="hover:text-cyan">
                 {siteConfig.email}
               </a>
             </li>
@@ -63,7 +63,7 @@ export function Footer() {
                 href={waLink("Hola, vengo de la página web y quiero cotizar")}
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-magenta"
+                className="hover:text-cyan"
               >
                 +56 9 5654 2568
               </a>
@@ -78,13 +78,13 @@ export function Footer() {
                 href={siteConfig.instagram}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-2 inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 transition-colors hover:border-magenta hover:text-magenta"
+                className="mt-2 inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 transition-colors hover:border-cyan hover:text-cyan"
               >
                 <Instagram size={15} /> @sublinovena
               </a>
             </li>
             <li>
-              <a href="/contact" className="hover:text-magenta">
+              <a href="/contact" className="hover:text-cyan">
                 Página de contacto
               </a>
             </li>
@@ -96,7 +96,7 @@ export function Footer() {
         <span>
           © {new Date().getFullYear()} {siteConfig.legalName} · Temuco, Chile
         </span>
-        <a href="/privacy" className="hover:text-magenta">
+        <a href="/privacy" className="hover:text-cyan">
           Política de privacidad
         </a>
       </div>

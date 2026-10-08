@@ -40,6 +40,7 @@ function urlEntry(loc, { changefreq, priority }) {
 const sitemapUrls = [
   urlEntry(`${siteConfig.url}/`, { changefreq: "weekly", priority: "1.0" }),
   urlEntry(`${siteConfig.url}/catalogo`, { changefreq: "weekly", priority: "0.9" }),
+  urlEntry(`${siteConfig.url}/trabajos`, { changefreq: "monthly", priority: "0.6" }),
   urlEntry(`${siteConfig.url}/about`, { changefreq: "monthly", priority: "0.5" }),
   urlEntry(`${siteConfig.url}/contact`, { changefreq: "monthly", priority: "0.5" }),
   urlEntry(`${siteConfig.url}/privacy`, { changefreq: "yearly", priority: "0.3" }),

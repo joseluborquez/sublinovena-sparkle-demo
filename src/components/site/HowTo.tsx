@@ -19,7 +19,7 @@ export const steps: Step[] = [
   {
     title: "Cotiza por WhatsApp",
     description:
-      "Nos cuentas qué producto y cuántas unidades necesitas, y te enviamos la cotización con los datos para transferir, los puntos de retiro y si necesitas boleta o factura.",
+      "Nos cuentas qué producto y cuántas unidades necesitas, y te enviamos la cotización con los datos para transferir y los puntos de retiro disponibles.",
     image: whatsappCotizacion,
     alt: "Conversación de WhatsApp cotizando un producto",
     fill: true,

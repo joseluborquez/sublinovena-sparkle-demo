@@ -4,6 +4,7 @@ import { siteConfig } from "@/lib/site-config";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { WhatsappFab } from "@/components/site/WhatsappFab";
+import { BackButton } from "@/components/site/BackButton";
 
 const title = "Blog | Sublinovena";
 const description =
@@ -38,7 +39,9 @@ function BlogIndex() {
     <>
       <Navbar />
       <main className="mx-auto max-w-5xl px-5 pb-16 pt-36 lg:px-8 lg:pb-24 lg:pt-40">
-        <h1 className="display-title text-center text-3xl sm:text-5xl">Blog Sublinovena</h1>
+        <BackButton />
+
+        <h1 className="display-title mt-6 text-center text-3xl sm:text-5xl">Blog Sublinovena</h1>
         <p className="mx-auto mt-4 max-w-xl text-center text-muted-foreground">
           Guías con precios reales de nuestro catálogo: qué producto conviene según tu presupuesto,
           cantidades mínimas y recomendaciones para empresas en Temuco y el resto de Chile.
@@ -61,7 +64,7 @@ function BlogIndex() {
                 />
               </div>
               <div className="flex flex-1 flex-col gap-3 p-6">
-                <span className="font-brand w-fit rounded-full bg-muted px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-magenta">
+                <span className="font-brand w-fit rounded-full bg-muted px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-cyan">
                   {post.tag}
                 </span>
                 <h2 className="text-lg font-semibold leading-snug group-hover:text-magenta">
