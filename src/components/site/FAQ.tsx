@@ -54,7 +54,9 @@ export function FAQ() {
     <section id="preguntas-frecuentes" className="bg-background py-24">
       <div className="mx-auto max-w-3xl px-5 lg:px-8">
         <Reveal>
-          <h2 className="display-title text-3xl sm:text-5xl">Preguntas frecuentes</h2>
+          <h2 className="display-title text-center text-3xl sm:text-left sm:text-5xl">
+            Preguntas frecuentes
+          </h2>
           <p className="mt-4 text-muted-foreground">
             Lo que más nos preguntan antes de cotizar. Si tu duda no está aquí, escríbenos por
             WhatsApp.
