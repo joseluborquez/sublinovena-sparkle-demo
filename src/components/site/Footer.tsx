@@ -11,11 +11,13 @@ export function Footer() {
       <div className="rule-brand" />
       <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 lg:grid-cols-4 lg:px-8">
         <Reveal className="lg:col-span-2">
-          <p className="font-brand text-xs font-bold uppercase tracking-[0.3em] text-cyan">
-            Somos proveedores del Estado
-          </p>
-          <div className="mt-4 inline-flex w-fit items-center rounded-xl bg-white px-6 py-5">
-            <img src={chileCompraLogo} alt="ChileCompra" loading="lazy" className="h-12 w-auto" />
+          <div className="text-center lg:text-left">
+            <p className="font-brand text-xs font-bold uppercase tracking-[0.3em] text-cyan">
+              Somos proveedores del Estado
+            </p>
+            <div className="mt-4 inline-flex items-center rounded-xl bg-white px-6 py-5">
+              <img src={chileCompraLogo} alt="ChileCompra" loading="lazy" className="h-12 w-auto" />
+            </div>
           </div>
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/60">
             Fabricamos merchandising corporativo personalizado para empresas en todo Chile: acabados
