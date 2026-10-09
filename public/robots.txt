@@ -47,4 +47,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://www.sublinovena.com/sitemap.xml
+Sitemap: https://www.sublinovena.cl/sitemap.xml
