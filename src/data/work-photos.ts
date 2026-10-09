@@ -43,7 +43,7 @@ const captions: Record<string, string> = {
   "botellas-espacio-amigable": "Botellas deportivas personalizadas",
   "bolsas-senda-previene-renaico-1": "Bolsas para campaña de prevención",
   "bolsas-senda-previene-renaico-2": "Bolsas para campaña de prevención",
-  "gorro-corporacion-kutral": "Chaleco corporativo reflectante",
+  "pines-trashumantes-teatro-sur": "Pines personalizados para compañía de teatro",
 };
 
 export type WorkPhoto = { slug: string; src: string; caption: string };
