@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { siteConfig } from "@/lib/site-config";
@@ -39,9 +40,9 @@ export function QuienesSomos() {
             ))}
           </ul>
 
-          <a href="/about" className="btn-brand mt-9 inline-flex">
+          <Link to="/about" className="btn-brand mt-9 inline-flex">
             Conoce más sobre nosotros <ArrowRight size={16} />
-          </a>
+          </Link>
         </Reveal>
       </div>
     </section>

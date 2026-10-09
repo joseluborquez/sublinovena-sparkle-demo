@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, MapPin } from "lucide-react";
 import chileCompraLogo from "@/assets/chilecompra-logo.png";
 import { siteConfig, waLink } from "@/lib/site-config";
@@ -28,20 +29,40 @@ export function Footer() {
             Navegación
           </h3>
           <ul className="mt-5 space-y-3 text-sm text-white/65">
-            {[
-              ["/catalogo", "Catálogo"],
-              ["/#como-cotizar", "Cómo cotizar"],
-              ["/#preguntas-frecuentes", "Preguntas frecuentes"],
-              ["/blog", "Blog"],
-              ["/about", "Quiénes somos"],
-              ["/#top", "Inicio"],
-            ].map(([href, label]) => (
-              <li key={href}>
-                <a href={href} className="transition-colors hover:text-cyan">
-                  {label}
-                </a>
-              </li>
-            ))}
+            <li>
+              <Link to="/catalogo" className="transition-colors hover:text-cyan">
+                Catálogo
+              </Link>
+            </li>
+            <li>
+              <Link to="/" hash="como-cotizar" className="transition-colors hover:text-cyan">
+                Cómo cotizar
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/"
+                hash="preguntas-frecuentes"
+                className="transition-colors hover:text-cyan"
+              >
+                Preguntas frecuentes
+              </Link>
+            </li>
+            <li>
+              <Link to="/blog" className="transition-colors hover:text-cyan">
+                Blog
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" className="transition-colors hover:text-cyan">
+                Quiénes somos
+              </Link>
+            </li>
+            <li>
+              <Link to="/" hash="top" className="transition-colors hover:text-cyan">
+                Inicio
+              </Link>
+            </li>
           </ul>
         </Reveal>
 
@@ -83,9 +104,9 @@ export function Footer() {
               </a>
             </li>
             <li>
-              <a href="/contact" className="hover:text-cyan">
+              <Link to="/contact" className="hover:text-cyan">
                 Página de contacto
-              </a>
+              </Link>
             </li>
           </ul>
         </Reveal>
@@ -95,9 +116,9 @@ export function Footer() {
         <span>
           © {new Date().getFullYear()} {siteConfig.legalName} · Temuco, Chile
         </span>
-        <a href="/privacy" className="hover:text-cyan">
+        <Link to="/privacy" className="hover:text-cyan">
           Política de privacidad
-        </a>
+        </Link>
       </div>
     </footer>
   );
