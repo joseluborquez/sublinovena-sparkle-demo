@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { useSearch } from "@tanstack/react-router";
+import { useNavigate, useSearch } from "@tanstack/react-router";
 import { Search } from "lucide-react";
 import { categories, products } from "@/data/products";
 import { Reveal } from "./Reveal";
@@ -7,6 +7,7 @@ import { ProductCard } from "./ProductCard";
 import { BackButton } from "./BackButton";
 
 export function Catalog() {
+  const navigate = useNavigate({ from: "/catalogo" });
   const urlSearch = useSearch({ from: "/catalogo" });
   const [query, setQuery] = useState(urlSearch.q ?? "");
   const [cat, setCat] = useState<string>(
@@ -24,6 +25,24 @@ export function Catalog() {
   useEffect(() => {
     if (urlSearch.cat !== undefined) setCat(urlSearch.cat);
   }, [urlSearch.cat]);
+
+  // Reflejamos la búsqueda y la categoría en la URL (sin apilar historial) para
+  // que el botón "Volver" desde un producto regrese al mismo filtro y scroll.
+  function selectCategory(c: string) {
+    setCat(c);
+    navigate({
+      search: (prev) => ({ ...prev, cat: c === "Todos" ? undefined : c }),
+      replace: true,
+    });
+  }
+
+  function updateQuery(value: string) {
+    setQuery(value);
+    navigate({
+      search: (prev) => ({ ...prev, q: value.trim() === "" ? undefined : value }),
+      replace: true,
+    });
+  }
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -61,7 +80,7 @@ export function Catalog() {
               />
               <input
                 value={query}
-                onChange={(e) => setQuery(e.target.value)}
+                onChange={(e) => updateQuery(e.target.value)}
                 placeholder="Buscar producto…"
                 className="w-full rounded-full border border-input bg-card py-3 pl-11 pr-4 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-ring"
               />
@@ -71,7 +90,7 @@ export function Catalog() {
               {categories.map((c) => (
                 <button
                   key={c}
-                  onClick={() => setCat(c)}
+                  onClick={() => selectCategory(c)}
                   className={`shrink-0 rounded-full border px-4 py-2 text-sm transition-all duration-300 hover:-translate-y-0.5 ${
                     cat === c
                       ? "bg-brand-gradient-slide border-transparent font-semibold text-ink shadow-[var(--shadow-brand)]"
