@@ -1,7 +1,7 @@
 // Datos reales del negocio (Catálogo Sublinovena 2026). Única fuente de verdad:
 // usar estos valores en vez de hardcodear teléfono/dirección/email en componentes.
 export const siteConfig = {
-  url: "https://www.sublinovena.com",
+  url: "https://www.sublinovena.cl",
   name: "Sublinovena",
   legalName: "Sublinovena SpA",
   description:
