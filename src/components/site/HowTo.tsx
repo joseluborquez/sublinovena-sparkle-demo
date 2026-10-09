@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, Check } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { TiltCard } from "./TiltCard";
@@ -140,9 +141,9 @@ export function HowTo() {
                   <ArrowLeft size={17} /> Atrás
                 </button>
                 {isLast ? (
-                  <a href="/catalogo" className="btn-brand">
+                  <Link to="/catalogo" className="btn-brand">
                     Ver catálogo <ArrowRight size={17} />
-                  </a>
+                  </Link>
                 ) : (
                   <button
                     type="button"

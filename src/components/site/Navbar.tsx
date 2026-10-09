@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { useNavigate, useRouterState } from "@tanstack/react-router";
+import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { ChevronDown, Menu, Search, Star, X } from "lucide-react";
 import logo from "@/assets/sublinovena-icon.png";
 import { categories } from "@/data/products";
@@ -78,7 +78,7 @@ export function Navbar() {
       </a>
 
       <nav className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-3 lg:px-8">
-        <a href="/#top" className="flex min-w-0 items-center gap-3">
+        <Link to="/" hash="top" className="flex min-w-0 items-center gap-3">
           <img
             src={logo}
             alt="Sublinovena Merchandising"
@@ -89,7 +89,7 @@ export function Navbar() {
           <span className="font-brand truncate text-sm font-semibold uppercase tracking-[0.3em] text-white">
             Sublinovena
           </span>
-        </a>
+        </Link>
 
         <div className="flex items-center gap-3">
           <form onSubmit={handleSearchSubmit} className="relative hidden lg:block">
@@ -107,12 +107,13 @@ export function Navbar() {
 
           <ul className="mr-2 hidden items-center gap-6 lg:flex">
             <li>
-              <a
-                href="/#top"
+              <Link
+                to="/"
+                hash="top"
                 className="text-sm text-white/80 transition-colors duration-300 hover:text-cyan"
               >
                 Inicio
-              </a>
+              </Link>
             </li>
             <li ref={dropdownRef} className="relative">
               <button
@@ -153,12 +154,13 @@ export function Navbar() {
               )}
             </li>
             <li>
-              <a
-                href="/#contacto"
+              <Link
+                to="/"
+                hash="contacto"
                 className="text-sm text-white/80 transition-colors duration-300 hover:text-cyan"
               >
                 Contacto
-              </a>
+              </Link>
             </li>
           </ul>
 
@@ -171,9 +173,9 @@ export function Navbar() {
             <WhatsappIcon className="size-4 shrink-0" /> WhatsApp
           </a>
 
-          <a href="/catalogo" className="btn-brand hidden text-sm lg:inline-flex">
+          <Link to="/catalogo" className="btn-brand hidden text-sm lg:inline-flex">
             Ver catálogo
-          </a>
+          </Link>
 
           <button
             onClick={() => setMenu((v) => !v)}
@@ -207,13 +209,14 @@ export function Navbar() {
 
         <ul className="space-y-1 px-6 py-4">
           <li>
-            <a
-              href="/#top"
+            <Link
+              to="/"
+              hash="top"
               onClick={() => setMenu(false)}
               className="block py-2 text-white/85 transition-colors hover:text-cyan"
             >
               Inicio
-            </a>
+            </Link>
           </li>
           <li>
             <button
@@ -255,13 +258,14 @@ export function Navbar() {
             </div>
           </li>
           <li>
-            <a
-              href="/#contacto"
+            <Link
+              to="/"
+              hash="contacto"
               onClick={() => setMenu(false)}
               className="block py-2 text-white/85 transition-colors hover:text-cyan"
             >
               Contacto
-            </a>
+            </Link>
           </li>
           <li className="pt-2">
             <a
@@ -275,9 +279,9 @@ export function Navbar() {
             </a>
           </li>
           <li className="pt-2">
-            <a href="/catalogo" onClick={() => setMenu(false)} className="btn-brand w-full">
+            <Link to="/catalogo" onClick={() => setMenu(false)} className="btn-brand w-full">
               Ver catálogo
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
