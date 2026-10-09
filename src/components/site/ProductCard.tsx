@@ -71,7 +71,7 @@ export function ProductCard({ product: p, delay = 0 }: { product: Product; delay
                       ))}
                     </ul>
                   )}
-                  <p className="mt-2 text-[11px] text-muted-foreground">Valores + IVA.</p>
+                  <p className="mt-2 text-xs font-bold text-foreground">Valores + IVA.</p>
                 </AccordionContent>
               </AccordionItem>
             </Accordion>

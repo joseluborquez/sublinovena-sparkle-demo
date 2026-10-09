@@ -163,7 +163,7 @@ function ProductPage() {
                     ))}
                   </ul>
                 )}
-                <p className="mt-2 text-xs text-muted-foreground">Valores + IVA.</p>
+                <p className="mt-2 text-sm font-bold text-foreground">Valores + IVA.</p>
               </div>
             )}
           </div>

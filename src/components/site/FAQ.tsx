@@ -19,18 +19,18 @@ export const faqs: FaqItem[] = [
     answer: "No, todos los precios publicados son + IVA.",
   },
   {
-    question: "¿El precio incluye el diseño y el estampado del logo?",
+    question: "¿El precio del producto incluye el estampado o impresión?",
     answer:
-      "En la mayoría de los productos sí, pero varía según el artículo. Algunos, como las credenciales, no lo incluyen. Te confirmamos el detalle exacto al cotizar tu producto por WhatsApp.",
+      "Sí, el precio considera el estampado o impresión, sin embargo se debe tener en consideración que el precio puede variar si el tipo o tamaño del estampado o impresión varía o excede lo estipulado. Es importante solicitar una cotización con el ejecutivo.",
+  },
+  {
+    question: "¿El precio considera el servicio de diseño?",
+    answer:
+      "En la gran mayoría de los productos no se considera el servicio de diseño. Es importante solicitar una cotización con el ejecutivo.",
   },
   {
     question: "¿Hacen despacho a todo Chile?",
     answer: "Sí. Fabricamos tu pedido y coordinamos la entrega en todo Chile.",
-  },
-  {
-    question: "¿Puedo pedir una muestra antes de producir todo el pedido?",
-    answer:
-      "En los productos que lo permiten, te mostramos primero un mockup con tu logo aplicado y, si lo necesitas, una muestra física antes de producir el pedido completo.",
   },
   {
     question: "¿Cuánto demora la producción?",
