@@ -1,10 +1,10 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft } from "lucide-react";
 import { products, type Product } from "@/data/products";
 import { siteConfig, waLink } from "@/lib/site-config";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { WhatsappFab } from "@/components/site/WhatsappFab";
+import { BackButton } from "@/components/site/BackButton";
 
 const clp = (n: number) => n.toLocaleString("es-CL");
 const absoluteImage = (image: string) =>
@@ -102,13 +102,7 @@ function ProductPage() {
       <Navbar />
       <main className="mx-auto max-w-6xl px-5 pb-10 pt-36 lg:px-8 lg:pb-16 lg:pt-40">
         <div className="flex flex-wrap items-center gap-3">
-          <Link
-            to="/"
-            hash={product.id}
-            className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-cyan hover:text-foreground"
-          >
-            <ArrowLeft size={13} /> Volver
-          </Link>
+          <BackButton />
         </div>
 
         <div className="mt-6 grid gap-10 lg:grid-cols-2">
