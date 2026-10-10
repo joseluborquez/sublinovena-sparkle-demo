@@ -38,6 +38,7 @@ type ImblascoApiResponse = {
 };
 
 let cache: { data: Product[]; fetchedAt: number } | null = null;
+let inflight: Promise<Product[]> | null = null;
 
 function stripHtml(html: string): string {
   return html
@@ -90,12 +91,12 @@ function normalize(raw: ImblascoRawProduct): Product {
   };
 }
 
-export const fetchImblascoProducts = createServerFn({ method: "GET" }).handler(
-  async (): Promise<Product[]> => {
-    if (cache && Date.now() - cache.fetchedAt < CACHE_TTL_MS) {
-      return cache.data;
-    }
+// Hace el fetch real contra Imblasco. Si ya hay uno en curso, lo reutiliza en
+// vez de disparar requests duplicadas en paralelo.
+function refresh(): Promise<Product[]> {
+  if (inflight) return inflight;
 
+  inflight = (async () => {
     const apiKey = process.env["IMBLASCO_API_KEY"];
     if (!apiKey) {
       console.error("IMBLASCO_API_KEY no está configurada.");
@@ -117,6 +118,30 @@ export const fetchImblascoProducts = createServerFn({ method: "GET" }).handler(
     } catch (error) {
       console.error("Error consultando la API de Imblasco:", error);
       return cache?.data ?? [];
+    } finally {
+      inflight = null;
     }
+  })();
+
+  return inflight;
+}
+
+export const fetchImblascoProducts = createServerFn({ method: "GET" }).handler(
+  async (): Promise<Product[]> => {
+    if (!cache) {
+      // Nunca se ha traído nada: no hay nada que mostrar mientras tanto, así
+      // que acá sí hay que esperar el fetch.
+      return refresh();
+    }
+    if (Date.now() - cache.fetchedAt >= CACHE_TTL_MS) {
+      // Caché vencido: se sirve lo que hay altiro y se refresca en segundo
+      // plano para la próxima — el usuario actual nunca espera por esto.
+      void refresh();
+    }
+    return cache.data;
   },
 );
+
+// Precalienta el caché apenas arranca el servidor, para que ningún visitante
+// real tenga que esperar el primer fetch completo a la API de Imblasco.
+void refresh();
