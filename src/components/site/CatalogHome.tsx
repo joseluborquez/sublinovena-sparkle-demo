@@ -86,35 +86,33 @@ export function CatalogHome({ imblascoProducts }: { imblascoProducts: Product[] 
             )}
           </>
         ) : (
-          <Reveal delay={160}>
-            <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-              {topCategories.map((c) => (
-                <Link
-                  key={c.slug}
-                  to="/catalogo/$categoria"
-                  params={{ categoria: c.slug }}
-                  className="card-lift group overflow-hidden rounded-2xl border border-border bg-card"
-                >
-                  <div className="aspect-square overflow-hidden bg-white">
-                    {c.image && (
-                      <img
-                        src={c.image}
-                        alt={c.name}
-                        loading="lazy"
-                        className="size-full object-contain p-6 transition-transform duration-500 group-hover:scale-105"
-                      />
-                    )}
-                  </div>
-                  <div className="p-4 text-center">
-                    <span className="font-semibold leading-snug">{c.name}</span>
-                    <p className="mt-1 text-xs text-muted-foreground">
-                      {c.count} {c.count === 1 ? "producto" : "productos"}
-                    </p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </Reveal>
+          <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+            {topCategories.map((c) => (
+              <Link
+                key={c.slug}
+                to="/catalogo/$categoria"
+                params={{ categoria: c.slug }}
+                className="card-lift group overflow-hidden rounded-2xl border border-border bg-card"
+              >
+                <div className="aspect-square overflow-hidden bg-white">
+                  {c.image && (
+                    <img
+                      src={c.image}
+                      alt={c.name}
+                      loading="lazy"
+                      className="size-full object-contain p-6 transition-transform duration-500 group-hover:scale-105"
+                    />
+                  )}
+                </div>
+                <div className="p-4 text-center">
+                  <span className="font-semibold leading-snug">{c.name}</span>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    {c.count} {c.count === 1 ? "producto" : "productos"}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
         )}
       </div>
     </section>
