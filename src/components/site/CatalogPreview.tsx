@@ -1,13 +1,25 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import { products } from "@/data/products";
+import { categories, products } from "@/data/products";
 import { Reveal } from "./Reveal";
 import { ProductCard } from "./ProductCard";
 
-const PREVIEW_COUNT = 8;
+const PREVIEW_CATEGORY_COUNT = 8;
+
+// Un producto por categoría (hasta 8 categorías distintas) para que el home
+// muestre variedad real en vez de los primeros N productos del mismo rubro.
+function buildPreview() {
+  const picked: typeof products = [];
+  for (const cat of categories) {
+    if (cat === "Todos" || picked.length >= PREVIEW_CATEGORY_COUNT) continue;
+    const match = products.find((p) => p.category === cat);
+    if (match) picked.push(match);
+  }
+  return picked;
+}
 
 export function CatalogPreview() {
-  const preview = products.slice(0, PREVIEW_COUNT);
+  const preview = buildPreview();
 
   return (
     <section id="catalogo" className="bg-background py-24">

@@ -1,24 +1,31 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { products, type Product } from "@/data/products";
 import { siteConfig, waLink } from "@/lib/site-config";
+import { fetchImblascoProducts } from "@/lib/imblasco";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { WhatsappFab } from "@/components/site/WhatsappFab";
 import { BackButton } from "@/components/site/BackButton";
+import { ProductGallery } from "@/components/site/ProductGallery";
 
 const clp = (n: number) => n.toLocaleString("es-CL");
 const absoluteImage = (image: string) =>
   image.startsWith("http") ? image : `${siteConfig.url}${image}`;
 
 export const Route = createFileRoute("/productos/$id")({
-  loader: ({ params }) => {
-    const product = products.find((p) => p.id === params.id);
+  loader: async ({ params }) => {
+    const localProduct = products.find((p) => p.id === params.id);
+    const pool = localProduct ? products : await fetchImblascoProducts();
+    const product = localProduct ?? pool.find((p) => p.id === params.id);
     if (!product) throw notFound();
-    return product;
+    const related = pool
+      .filter((p) => p.category === product.category && p.id !== product.id)
+      .slice(0, 4);
+    return { product, related };
   },
   head: ({ loaderData }) => {
     if (!loaderData) return {};
-    const product = loaderData as Product;
+    const { product } = loaderData as { product: Product };
     const title = `${product.name}${product.sku ? ` (${product.sku})` : ""} | ${siteConfig.name}`;
     const description = product.description.slice(0, 155);
     const canonical = `${siteConfig.url}/productos/${product.id}`;
@@ -87,10 +94,8 @@ export const Route = createFileRoute("/productos/$id")({
 });
 
 function ProductPage() {
-  const product = Route.useLoaderData();
-  const related = products
-    .filter((p) => p.category === product.category && p.id !== product.id)
-    .slice(0, 4);
+  const { product, related } = Route.useLoaderData();
+  const showPrices = product.source !== "imblasco";
   const fromPrice = product.tiers.reduce(
     (min, t) => (t.price < min ? t.price : min),
     product.tiers[0]?.price ?? 0,
@@ -106,15 +111,7 @@ function ProductPage() {
         </div>
 
         <div className="mt-6 grid gap-10 lg:grid-cols-2">
-          <div className="aspect-square overflow-hidden rounded-3xl border border-border bg-white">
-            <img
-              src={product.image}
-              alt={product.name}
-              width={800}
-              height={800}
-              className="size-full object-contain p-2"
-            />
-          </div>
+          <ProductGallery main={product.image} gallery={product.images ?? []} alt={product.name} />
 
           <div>
             <p className="eyebrow font-bold text-cyan">{product.category}</p>
@@ -122,7 +119,13 @@ function ProductPage() {
             {product.sku && (
               <p className="mt-1 text-sm text-muted-foreground">SKU: {product.sku}</p>
             )}
-            <p className="mt-4 text-lg font-semibold">Desde ${clp(fromPrice)} c/u + IVA</p>
+            {showPrices ? (
+              <p className="mt-4 text-lg font-semibold">Desde ${clp(fromPrice)} c/u + IVA</p>
+            ) : (
+              <p className="mt-4 text-lg font-semibold text-cyan">
+                Consulta valores y mínimos de compra por WhatsApp
+              </p>
+            )}
             <p className="mt-4 leading-relaxed text-muted-foreground">{product.description}</p>
 
             <a
@@ -134,10 +137,10 @@ function ProductPage() {
               Cotizar por WhatsApp
             </a>
 
-            {product.tiers.length > 0 && (
+            {showPrices && product.tiers.length > 0 && (
               <div className="mt-10">
                 <h2 className="font-brand text-sm font-semibold uppercase tracking-[0.2em] text-cyan">
-                  Precios por cantidad
+                  {product.tiersLabel ?? "Precios por cantidad"}
                 </h2>
                 <ul className="mt-4 divide-y divide-border rounded-2xl border border-border">
                   {product.tiers.map((t) => (
