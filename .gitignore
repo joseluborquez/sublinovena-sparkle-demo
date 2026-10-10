@@ -20,6 +20,14 @@ dist-ssr
 .wrangler/
 .dev.vars
 
+# Variables de entorno (tokens/API keys) — nunca en git
+.env
+.env.local
+.env.*.local
+
+# Manual de la API de Imblasco (documentación del proveedor, no contenido del sitio)
+MANUAL_USO.pdf
+
 # Fuente del catálogo (94MB, no debe vivir en git — ver src/data/products.ts)
 Catálogo Sublinovena .pdf
 Catálogo Sublinovena (para trabajar).pdf

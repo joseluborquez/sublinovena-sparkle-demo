@@ -12,6 +12,7 @@ import {
 const clp = (n: number) => n.toLocaleString("es-CL");
 
 export function ProductCard({ product: p, delay = 0 }: { product: Product; delay?: number }) {
+  const showPrices = p.source !== "imblasco";
   const fromPrice = p.tiers.reduce(
     (min, t) => (t.price < min ? t.price : min),
     p.tiers[0]?.price ?? 0,
@@ -33,7 +34,7 @@ export function ProductCard({ product: p, delay = 0 }: { product: Product; delay
               loading="lazy"
               className="size-full object-contain p-2 transition-transform duration-700 group-hover:scale-110"
             />
-            {p.tiers.length > 0 && (
+            {showPrices && p.tiers.length > 0 && (
               <span className="absolute left-3 top-3 rounded-full bg-ink/85 px-3 py-1 text-[11px] font-medium text-white backdrop-blur">
                 Desde ${clp(fromPrice)} c/u
               </span>
@@ -49,11 +50,11 @@ export function ProductCard({ product: p, delay = 0 }: { product: Product; delay
           </Link>
           <p className="line-clamp-3 text-sm text-muted-foreground">{p.description}</p>
 
-          {p.tiers.length > 0 && (
+          {showPrices && p.tiers.length > 0 && (
             <Accordion type="single" collapsible className="-mb-1 mt-auto">
               <AccordionItem value="precios" className="border-none">
                 <AccordionTrigger className="rounded-xl bg-muted px-3 py-2 text-xs font-semibold text-foreground hover:no-underline">
-                  Precios por cantidad
+                  {p.tiersLabel ?? "Precios por cantidad"}
                 </AccordionTrigger>
                 <AccordionContent className="px-1 pb-2 pt-1">
                   <ul className="space-y-1 text-xs text-muted-foreground">
@@ -75,6 +76,12 @@ export function ProductCard({ product: p, delay = 0 }: { product: Product; delay
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
+          )}
+
+          {!showPrices && (
+            <p className="mt-auto rounded-xl bg-muted px-3 py-2 text-center text-xs font-semibold text-foreground">
+              Consulta valores y mínimos de compra por WhatsApp
+            </p>
           )}
 
           <a

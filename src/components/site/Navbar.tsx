@@ -3,6 +3,7 @@ import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { ChevronDown, Menu, Search, Star, X } from "lucide-react";
 import logo from "@/assets/sublinovena-icon.png";
 import { categories } from "@/data/products";
+import { slugify } from "@/lib/catalog-categories";
 import { siteConfig, waLink } from "@/lib/site-config";
 import { WhatsappIcon } from "./WhatsappIcon";
 import { GoogleIcon } from "./GoogleIcon";
@@ -43,7 +44,11 @@ export function Navbar() {
   const solid = scrolled || !isHome;
 
   function goToCatalog(params: { q?: string | undefined; cat?: string | undefined }) {
-    navigate({ to: "/catalogo", search: params });
+    if (params.cat) {
+      navigate({ to: "/catalogo/$categoria", params: { categoria: slugify(params.cat) } });
+    } else {
+      navigate({ to: "/catalogo", search: { q: params.q } });
+    }
     setMenu(false);
     setProductsOpen(false);
     setMobileProductsOpen(false);

@@ -11,12 +11,13 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
-import { Route as CatalogoRouteImport } from './routes/catalogo'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as TrabajosRouteImport } from './routes/trabajos'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
+import { Route as CatalogoIndexRouteImport } from './routes/catalogo/index'
+import { Route as CatalogoCategoriaRouteImport } from './routes/catalogo/$categoria'
 import { Route as ProductosIdRouteImport } from './routes/productos/$id'
 
 const IndexRoute = IndexRouteImport.update({
@@ -27,11 +28,6 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CatalogoRoute = CatalogoRouteImport.update({
-  id: '/catalogo',
-  path: '/catalogo',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -59,6 +55,16 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CatalogoIndexRoute = CatalogoIndexRouteImport.update({
+  id: '/catalogo/',
+  path: '/catalogo/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CatalogoCategoriaRoute = CatalogoCategoriaRouteImport.update({
+  id: '/catalogo/$categoria',
+  path: '/catalogo/$categoria',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProductosIdRoute = ProductosIdRouteImport.update({
   id: '/productos/$id',
   path: '/productos/$id',
@@ -68,83 +74,90 @@ const ProductosIdRoute = ProductosIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/catalogo': typeof CatalogoRoute
   '/contact': typeof ContactRoute
   '/privacy': typeof PrivacyRoute
   '/trabajos': typeof TrabajosRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/catalogo/$categoria': typeof CatalogoCategoriaRoute
   '/productos/$id': typeof ProductosIdRoute
   '/blog/': typeof BlogIndexRoute
+  '/catalogo/': typeof CatalogoIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/catalogo': typeof CatalogoRoute
   '/contact': typeof ContactRoute
   '/privacy': typeof PrivacyRoute
   '/trabajos': typeof TrabajosRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/catalogo/$categoria': typeof CatalogoCategoriaRoute
   '/productos/$id': typeof ProductosIdRoute
   '/blog': typeof BlogIndexRoute
+  '/catalogo': typeof CatalogoIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/catalogo': typeof CatalogoRoute
   '/contact': typeof ContactRoute
   '/privacy': typeof PrivacyRoute
   '/trabajos': typeof TrabajosRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/catalogo/$categoria': typeof CatalogoCategoriaRoute
   '/productos/$id': typeof ProductosIdRoute
   '/blog/': typeof BlogIndexRoute
+  '/catalogo/': typeof CatalogoIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
-    | '/catalogo'
     | '/contact'
     | '/privacy'
     | '/trabajos'
     | '/blog/$slug'
+    | '/catalogo/$categoria'
     | '/productos/$id'
     | '/blog/'
+    | '/catalogo/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
-    | '/catalogo'
     | '/contact'
     | '/privacy'
     | '/trabajos'
     | '/blog/$slug'
+    | '/catalogo/$categoria'
     | '/productos/$id'
     | '/blog'
+    | '/catalogo'
   id:
     | '__root__'
     | '/'
     | '/about'
-    | '/catalogo'
     | '/contact'
     | '/privacy'
     | '/trabajos'
     | '/blog/$slug'
+    | '/catalogo/$categoria'
     | '/productos/$id'
     | '/blog/'
+    | '/catalogo/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  CatalogoRoute: typeof CatalogoRoute
   ContactRoute: typeof ContactRoute
   PrivacyRoute: typeof PrivacyRoute
   TrabajosRoute: typeof TrabajosRoute
   BlogSlugRoute: typeof BlogSlugRoute
+  CatalogoCategoriaRoute: typeof CatalogoCategoriaRoute
   ProductosIdRoute: typeof ProductosIdRoute
   BlogIndexRoute: typeof BlogIndexRoute
+  CatalogoIndexRoute: typeof CatalogoIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -161,13 +174,6 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/catalogo': {
-      id: '/catalogo'
-      path: '/catalogo'
-      fullPath: '/catalogo'
-      preLoaderRoute: typeof CatalogoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -205,6 +211,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/catalogo/': {
+      id: '/catalogo/'
+      path: '/catalogo'
+      fullPath: '/catalogo/'
+      preLoaderRoute: typeof CatalogoIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/catalogo/$categoria': {
+      id: '/catalogo/$categoria'
+      path: '/catalogo/$categoria'
+      fullPath: '/catalogo/$categoria'
+      preLoaderRoute: typeof CatalogoCategoriaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/productos/$id': {
       id: '/productos/$id'
       path: '/productos/$id'
@@ -218,13 +238,14 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  CatalogoRoute: CatalogoRoute,
   ContactRoute: ContactRoute,
   PrivacyRoute: PrivacyRoute,
   TrabajosRoute: TrabajosRoute,
   BlogSlugRoute: BlogSlugRoute,
+  CatalogoCategoriaRoute: CatalogoCategoriaRoute,
   ProductosIdRoute: ProductosIdRoute,
   BlogIndexRoute: BlogIndexRoute,
+  CatalogoIndexRoute: CatalogoIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
