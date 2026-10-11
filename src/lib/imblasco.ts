@@ -6,6 +6,10 @@ import type { Product } from "@/data/products";
 
 const API_BASE = "https://api.imblasco.cl/";
 const CACHE_TTL_MS = 30 * 60 * 1000;
+// Por ahora solo traemos esta categoría grande (la más alineada al rubro de
+// Sublinovena) — el resto del catálogo de Imblasco (Premiación, Novedades,
+// Línea Cobre, etc.) no se importa.
+const CATEGORIA_FILTRO = "Artículos Publicitarios";
 
 type ImblascoCategoria = { id: number; nombre: string };
 type ImblascoVariantValue = {
@@ -58,7 +62,12 @@ function splitCategoria(full: string): [string, string] {
 }
 
 function normalize(raw: ImblascoRawProduct): Product {
-  const categoriaFull = raw.categorias[0]?.nombre ?? "Imblasco";
+  // Un producto puede venir con varias categorías a la vez — como filtramos
+  // por CATEGORIA_FILTRO en la API, usamos esa entrada específica (no
+  // categorias[0] a ciegas, que a veces es otra categoría en la que también
+  // está metido el producto).
+  const match = raw.categorias.find((c) => c.nombre.startsWith(CATEGORIA_FILTRO));
+  const categoriaFull = match?.nombre ?? raw.categorias[0]?.nombre ?? CATEGORIA_FILTRO;
   const [topCategory, category] = splitCategoria(categoriaFull);
   const image = raw.foto_principal ?? raw.imagenes[0] ?? "";
   const description = raw.descripcion ? stripHtml(raw.descripcion) : "";
@@ -104,7 +113,8 @@ function refresh(): Promise<Product[]> {
     }
 
     try {
-      const res = await fetch(`${API_BASE}?ruta=productos&limit=0`, {
+      const url = `${API_BASE}?ruta=productos&limit=0&categoria=${encodeURIComponent(CATEGORIA_FILTRO)}`;
+      const res = await fetch(url, {
         headers: { "X-Api-Key": apiKey },
       });
       if (!res.ok) {
