@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { products, type Product } from "@/data/products";
 import { siteConfig, waLink } from "@/lib/site-config";
-import { fetchImblascoProducts } from "@/lib/imblasco";
+import { safeFetchImblascoProducts } from "@/lib/imblasco";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { WhatsappFab } from "@/components/site/WhatsappFab";
@@ -15,7 +15,7 @@ const absoluteImage = (image: string) =>
 export const Route = createFileRoute("/productos/$id")({
   loader: async ({ params }) => {
     const localProduct = products.find((p) => p.id === params.id);
-    const pool = localProduct ? products : await fetchImblascoProducts();
+    const pool = localProduct ? products : await safeFetchImblascoProducts();
     const product = localProduct ?? pool.find((p) => p.id === params.id);
     if (!product) throw notFound();
     const related = pool
