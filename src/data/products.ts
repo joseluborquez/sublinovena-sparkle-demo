@@ -30,21 +30,27 @@ export type Product = {
 
 type RawProduct = Omit<Product, "image" | "topCategory"> & { imageFile: string };
 
+// Alineadas con las subcategorías reales de Imblasco (Artículos Publicitarios)
+// donde corresponde, para que los productos propios y los de Imblasco queden
+// mezclados bajo el mismo nombre de categoría. Las que no tienen equivalente
+// en Imblasco quedan con su nombre propio.
 export const categories = [
   "Todos",
-  "Lanyards y Credenciales",
-  "Libretas, Bolígrafos y Llaveros",
-  "Tazones y Mugs",
-  "Botellas y Termos",
+  "Lanyards e Identificación",
+  "Cuadernos-Libretas",
+  "Lápices Plásticos",
+  "Llaveros",
+  "Mugs y Tazones",
+  "Botellas",
   "Vestuario y Ropa de Trabajo",
-  "Jockeys y Gorros",
+  "Jockey - Gorros y Sombreros",
   "Chapitas y Pulseras",
-  "Tarjetas y Flyers",
-  "Impresos Publicitarios",
+  "Papelería",
+  "Carpetas y Portafolios",
   "Pendones y Telas PVC",
   "Bolsas y Basureros para Auto",
   "Bolsas de Algodón",
-  "Mochilas y Morrales",
+  "Mochilas",
 ] as const;
 
 const imageModules = import.meta.glob("../assets/products/*.png", {
@@ -63,7 +69,7 @@ const rawProducts: RawProduct[] = [
     id: "lanyard-sublimado",
     sku: null,
     name: "LANYARD SUBLIMADO",
-    category: "Lanyards y Credenciales",
+    category: "Lanyards e Identificación",
     description:
       "Lanyard de cinta de poliéster suave al tacto, sublimado y personalizado, bordado con hilo de alta resistencia, incluye mosquetón metálico, medidas: 2.5 ancho cm x 50 cm largo. (valor incluye diseño y estampado)",
     tiers: [
@@ -81,7 +87,7 @@ const rawProducts: RawProduct[] = [
     id: "lanyard-sublimado-con-broche-tip-top",
     sku: null,
     name: "LANYARD SUBLIMADO CON BROCHE TIP TOP",
-    category: "Lanyards y Credenciales",
+    category: "Lanyards e Identificación",
     description:
       "Lanyard de cinta de poliéster suave al tacto, sublimado y personalizado, bordado con hilo de alta resistencia, incluye mosquetón metálico y broche tip top de plástico negro, medidas: 2.5 ancho cm x 55 cm largo. (valor incluye diseño y estampado)",
     tiers: [
@@ -99,7 +105,7 @@ const rawProducts: RawProduct[] = [
     id: "lanyard-texturizado",
     sku: null,
     name: "LANYARD TEXTURIZADO",
-    category: "Lanyards y Credenciales",
+    category: "Lanyards e Identificación",
     description:
       "Lanyard de Polyester grueso texturado de 2 cm. de ancho, estampado a un color en serigrafía a una cara. Incluye tip-top plástico negro, mosquetón metálico y cordón negro porta-celular y accesorios. (valor incluye diseño y estampado)",
     tiers: [
@@ -118,7 +124,7 @@ const rawProducts: RawProduct[] = [
     id: "credencial-horizontal-o-vertical",
     sku: null,
     name: "CREDENCIAL HORIZONTAL O VERTICAL",
-    category: "Lanyards y Credenciales",
+    category: "Lanyards e Identificación",
     description:
       "Credencial de PVC con impresión UV directa, personalizadas full color, tamaño 8.5 cm de alto x 5.4 cm de ancho. Valores no incluyen diseño.",
     tiers: [
@@ -136,7 +142,7 @@ const rawProducts: RawProduct[] = [
     id: "portacredencial-horizontal-o-vertical",
     sku: null,
     name: "PORTACREDENCIAL HORIZONTAL O VERTICAL",
-    category: "Lanyards y Credenciales",
+    category: "Lanyards e Identificación",
     description: "Portacredencial de plástico, color negro.",
     tiers: [
       { label: "50 a 99 unidades", price: 400 },
@@ -153,7 +159,7 @@ const rawProducts: RawProduct[] = [
     id: "portacredencial-vertical-premium-de-colores",
     sku: null,
     name: "PORTACREDENCIAL VERTICAL PREMIUM DE COLORES",
-    category: "Lanyards y Credenciales",
+    category: "Lanyards e Identificación",
     description: "Portacredencial de plástico, variedad de colores.",
     tiers: [
       { label: "50 a 99 unidades", price: 400 },
@@ -170,7 +176,7 @@ const rawProducts: RawProduct[] = [
     id: "porta-credencial-de-acrilico",
     sku: null,
     name: "PORTA-CREDENCIAL DE ACRÍLICO",
-    category: "Lanyards y Credenciales",
+    category: "Lanyards e Identificación",
     description:
       "Porta-Credencial de Acrílico, para Credenciales tamaño Tarjeta de Crédito. Visibilidad por un solo lado. Con clip giratorio posterior de doble función, para presentación vertical u horizontal.Tamaño: 9 x 5.6 x 1 cm.",
     tiers: [
@@ -188,7 +194,7 @@ const rawProducts: RawProduct[] = [
     id: "yo-yo-portacredencial",
     sku: null,
     name: "YO-YO PORTACREDENCIAL",
-    category: "Lanyards y Credenciales",
+    category: "Lanyards e Identificación",
     description:
       "Yo-yo Porta-Credencial con extensor y clip metálico de sujeción. Tamaño: Ø 3.1(diámetro) x 1 cm. Variedad de colores.",
     tiers: [
@@ -206,7 +212,7 @@ const rawProducts: RawProduct[] = [
     id: "piochas-corporativas",
     sku: null,
     name: "PIOCHAS CORPORATIVAS",
-    category: "Lanyards y Credenciales",
+    category: "Lanyards e Identificación",
     description:
       "Piochas fabricadas de material ABS, con grabado láser de logotipos y textos de color negro, cada piocha incluye gancho sujetador. Medida 7 x 2 cm.",
     tiers: [
@@ -224,7 +230,7 @@ const rawProducts: RawProduct[] = [
     id: "pin-bandera-chilena",
     sku: null,
     name: "PIN BANDERA CHILENA",
-    category: "Lanyards y Credenciales",
+    category: "Lanyards e Identificación",
     description: "Pin Bandera Chilena con broche. Tamaño 1.7 x 1.6 cm.",
     tiers: [
       { label: "50 a 99 unidades", price: 1000 },
@@ -241,7 +247,7 @@ const rawProducts: RawProduct[] = [
     id: "piochas-corporativas-2",
     sku: null,
     name: "PIOCHAS CORPORATIVAS",
-    category: "Lanyards y Credenciales",
+    category: "Lanyards e Identificación",
     description:
       "Pin cuadrado con broche de 2.5 cm de alto x 2.5 de ancho,, personalizado con gráfica full color y resina protectora de silicona.",
     tiers: [
@@ -259,7 +265,7 @@ const rawProducts: RawProduct[] = [
     id: "pin-redondo-con-broche",
     sku: null,
     name: "PIN REDONDO CON BROCHE",
-    category: "Lanyards y Credenciales",
+    category: "Lanyards e Identificación",
     description:
       "Pin redondo de 2.5 cm de diámetro con broche, personalizado con gráfica full color y resina protectora de silicona.",
     tiers: [
@@ -277,7 +283,7 @@ const rawProducts: RawProduct[] = [
     id: "kit-de-identificacion-n1",
     sku: null,
     name: "KIT DE IDENTIFICACIÓN N°1",
-    category: "Lanyards y Credenciales",
+    category: "Lanyards e Identificación",
     description:
       "Kit de identificación n°1: Incluye lanyard sublimado full color en cinta de poliéster suave al tacto de 2.5 cm de ancho y 50 cm de largo, bordado con hilo de alta resistencia + mosquetón metálico + portacredencial + credencial impresa a una cara. (lanyard sin límite de personalización). Valores no incluyen diseño de la credencial.",
     tiers: [
@@ -295,7 +301,7 @@ const rawProducts: RawProduct[] = [
     id: "kit-de-identificacion-n2",
     sku: null,
     name: "KIT DE IDENTIFICACIÓN N°2",
-    category: "Lanyards y Credenciales",
+    category: "Lanyards e Identificación",
     description:
       "Kit de identificación n°2: Incluye lanyard sublimado full color en cinta de poliéster suave al tacto de 2.5 cm de ancho y 55 cm de largo, bordado con hilo de alta resistencia + mosquetón metálico + broche tip top + portacredencial + credencial impresa a una cara. (lanyard sin límite de personalización). Valores no incluyen diseño de la credencial.",
     tiers: [
@@ -313,7 +319,7 @@ const rawProducts: RawProduct[] = [
     id: "kit-de-identificacion-n3",
     sku: null,
     name: "KIT DE IDENTIFICACIÓN N°3",
-    category: "Lanyards y Credenciales",
+    category: "Lanyards e Identificación",
     description:
       "Kit de identificación n°3: Incluye lanyard texturizado de 2 cm de ancho con broche tip top estampado a un color a una cara + portacredencial + credencial impresa a una cara. (lanyard disponible en 14 colores diferentes). Valores no incluyen diseño de la credencial.",
     tiers: [
@@ -331,7 +337,7 @@ const rawProducts: RawProduct[] = [
     id: "libreta-ecologica-con-boligrafo-9x14-cm",
     sku: null,
     name: "LIBRETA ECOLÓGICA CON BOLÍGRAFO 9X14 CM",
-    category: "Libretas, Bolígrafos y Llaveros",
+    category: "Cuadernos-Libretas",
     description:
       "Libreta Ecológica con tapas de cartón reciclado, 70 hojas interiores blancas (croqueras). Incluye cierre elasticado de color y bolígrafo ecológico al tono. Tamaño: 9 x 14 x 0.8 cm. Incluye estampado a un color en serigrafía. Lápiz no incluye estampado.",
     tiers: [
@@ -349,7 +355,7 @@ const rawProducts: RawProduct[] = [
     id: "libreta-ecologica-con-boligrafo-15x21-cm",
     sku: null,
     name: "LIBRETA ECOLÓGICA CON BOLÍGRAFO 15X21 CM",
-    category: "Libretas, Bolígrafos y Llaveros",
+    category: "Cuadernos-Libretas",
     description:
       "Libreta ecológica grande (tamaño 1/2 oficio) con tapas de cartón reciclado y anillado doble cero, 50 hojas interiores blancas (croqueras). Incluye Bolígrafo ecológico. Tamaño: 15 x 21 x 1 cm. Incluye estampado a un color en serigrafía. Lápiz no incluye estampado.",
     tiers: [
@@ -367,7 +373,7 @@ const rawProducts: RawProduct[] = [
     id: "libreta-ecologica-compost-14-5x21-cm",
     sku: null,
     name: "LIBRETA ECOLÓGICA COMPOST 14.5X21 CM",
-    category: "Libretas, Bolígrafos y Llaveros",
+    category: "Cuadernos-Libretas",
     description:
       "Libreta ecológica compost con banda elástica para cierre color negro y bolígrafo del color de la libreta. Tapa marcada con signo de reciclaje. Anillado metálico doble cero. 70 Hojas de papel beige sin líneas 70 grs. Bolígrafo tinta azul. 14.5 cms. x 21 cms x 1.2 cms. Incluye estampado a un color en serigrafía. Lápiz no incluye estampado.",
     tiers: [
@@ -385,7 +391,7 @@ const rawProducts: RawProduct[] = [
     id: "boligrafo-plastico-wind-color",
     sku: null,
     name: "BOLÍGRAFO PLÁSTICO WIND COLOR",
-    category: "Libretas, Bolígrafos y Llaveros",
+    category: "Lápices Plásticos",
     description:
       "Bolígrafo plástico de color, modelo «Wind Color». Escritura Azul. Tamaño: 14 x Ø 1.2 cm. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -403,7 +409,7 @@ const rawProducts: RawProduct[] = [
     id: "boligrafo-plastico-wind-satin",
     sku: null,
     name: "BOLÍGRAFO PLÁSTICO WIND SATIN",
-    category: "Libretas, Bolígrafos y Llaveros",
+    category: "Lápices Plásticos",
     description:
       "Bolígrafo plástico plateado con goma de color, modelo «Wind Satin». Escritura Azul. El Bolígrafo más famoso del mundo. Tamaño: 14 x Ø 1.2 cm. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -421,7 +427,7 @@ const rawProducts: RawProduct[] = [
     id: "boligrafo-plastico-wind-stella",
     sku: null,
     name: "BOLÍGRAFO PLÁSTICO WIND STELLA",
-    category: "Libretas, Bolígrafos y Llaveros",
+    category: "Lápices Plásticos",
     description:
       "Bolígrafo plástico blanco sólido, modelo «Wind Stella». Escritura Azul. Tamaño: 14 x Ø 1.1 cm. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -439,7 +445,7 @@ const rawProducts: RawProduct[] = [
     id: "llavero-linterna-led",
     sku: null,
     name: "LLAVERO LINTERNA LED",
-    category: "Libretas, Bolígrafos y Llaveros",
+    category: "Llaveros",
     description:
       "Llavero-Linterna de 1 LED, con cuerpo plástico frozen y botón pulsador plateado. Presentación en cajita plateada. Tamaño: Linterna 6 x 2.4 x 0.6 cm / Cajita 2.8 x 7.5 x 1.5 cm. Colores: Plateado Sólido, Blanco Sólido, Azul Frozen, Rojo Frozen, Naranjo Frozen, Amarillo Frozen, Verde Frozen, Negro Frozen, Cyan, Magenta. Usa 2 pilas tipo botón (incluidas). Incluye estampado en DTF UV full color.",
     tiers: [
@@ -457,7 +463,7 @@ const rawProducts: RawProduct[] = [
     id: "llavero-huincha-1-metro",
     sku: null,
     name: "LLAVERO HUINCHA 1 METRO",
-    category: "Libretas, Bolígrafos y Llaveros",
+    category: "Llaveros",
     description:
       "Llavero-huincha de medir (metálica-rígida) de 1 m. Tamaño: 4.3 x 4.3 x 1 cm. Colores:Blanco, Azul, Rojo, Naranjo, Amarillo, Cyan y Magenta. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -475,7 +481,7 @@ const rawProducts: RawProduct[] = [
     id: "llavero-con-porta-foto-acrilico",
     sku: null,
     name: "LLAVERO CON PORTA-FOTO ACRÍLICO",
-    category: "Libretas, Bolígrafos y Llaveros",
+    category: "Llaveros",
     description:
       "Llavero porta-foto de Acrílico transparente. Para insertar papel impreso en compartimento interior. Tamaño: 3.2 x 5.2 x 0.6 cm / Rectángulo interior para impresión 2.7 x 4.6 cm.",
     tiers: [
@@ -493,7 +499,7 @@ const rawProducts: RawProduct[] = [
     id: "tazon-blanco-325cc",
     sku: null,
     name: "TAZÓN BLANCO 325CC",
-    category: "Tazones y Mugs",
+    category: "Mugs y Tazones",
     description:
       "Tazón personalizado, estampado en sublimación full color, capacidad 325cc (11 oz), material cerámica color blanco, incluye caja de color blanco individual.",
     tiers: [
@@ -511,7 +517,7 @@ const rawProducts: RawProduct[] = [
     id: "tazon-mango-y-borde-de-color-325cc",
     sku: null,
     name: "TAZÓN MANGO Y BORDE DE COLOR 325CC",
-    category: "Tazones y Mugs",
+    category: "Mugs y Tazones",
     description:
       "Tazón personalizado, estampado en sublimación full color, capacidad 325cc (11 oz), material de cerámica con mango y borde de color, incluye caja de color blanco individual.",
     tiers: [
@@ -529,7 +535,7 @@ const rawProducts: RawProduct[] = [
     id: "tazon-interior-y-mango-de-color-325cc",
     sku: null,
     name: "TAZÓN INTERIOR Y MANGO DE COLOR 325CC",
-    category: "Tazones y Mugs",
+    category: "Mugs y Tazones",
     description:
       "Tazón personalizado, estampado en sublimación full color, capacidad 325cc (11 oz), material de cerámica con interior y mango de color, incluye caja de color blanco individual.",
     tiers: [
@@ -547,7 +553,7 @@ const rawProducts: RawProduct[] = [
     id: "tazon-clear-325cc",
     sku: null,
     name: "TAZÓN CLEAR 325CC",
-    category: "Tazones y Mugs",
+    category: "Mugs y Tazones",
     description:
       "Tazón personalizado, estampado en DTF UV full color full, capacidad 325cc (11 oz), material vidrio transparente. Tamaño: 9.5 cm alto x 8.2 cm diámetro, incluye caja de color blanco individual.",
     tiers: [
@@ -565,7 +571,7 @@ const rawProducts: RawProduct[] = [
     id: "tazon-glass-empavonado-325cc",
     sku: null,
     name: "TAZÓN GLASS EMPAVONADO 325CC",
-    category: "Tazones y Mugs",
+    category: "Mugs y Tazones",
     description:
       "Tazón personalizado, estampado en sublimación full color, capacidad 325cc (11 oz), material de vidrio empavonado. Tamaño: 9.5 cm alto x 8.2 cm diámetro, incluye caja de color blanco individual",
     tiers: [
@@ -583,7 +589,7 @@ const rawProducts: RawProduct[] = [
     id: "shopero-premium-empavonado-473cc",
     sku: null,
     name: "SHOPERO PREMIUM EMPAVONADO 473CC",
-    category: "Tazones y Mugs",
+    category: "Mugs y Tazones",
     description:
       "Shopero personalizado, estampado en sublimación full color, capacidad 473cc (16 oz), material vidrio empavonado. Tamaño: 15 cm de alto x 8.5 cm de diámetro.",
     tiers: [
@@ -600,7 +606,7 @@ const rawProducts: RawProduct[] = [
     id: "tazon-con-cuchara-320cc-full-color",
     sku: null,
     name: "TAZÓN CON CUCHARA 320CC FULL COLOR",
-    category: "Tazones y Mugs",
+    category: "Mugs y Tazones",
     description:
       "Tazón cerámico con cuchara personalizado, estampado en DTF UV full color. Presentación individual en caja de cartón blanco. • Tamaño: Ø 8.3 x 10.3 cm. Capacidad 320cc.",
     tiers: [
@@ -618,7 +624,7 @@ const rawProducts: RawProduct[] = [
     id: "tazon-con-cuchara-300cc",
     sku: null,
     name: "TAZÓN CON CUCHARA 300CC",
-    category: "Tazones y Mugs",
+    category: "Mugs y Tazones",
     description:
       "Tazón personalizado de cerámico blanco opaco con interior y cuchara de color, personalizado en DTF UV full color. Presentación en caja de cartón blanco. Tamaño: Ø 8.5 x 10.3 cm. Capacidad 300cc. Presentación: En caja",
     tiers: [
@@ -636,7 +642,7 @@ const rawProducts: RawProduct[] = [
     id: "tazon-premium-full-color-pastel-325cc",
     sku: null,
     name: "TAZÓN PREMIUM FULL COLOR PASTEL 325CC",
-    category: "Tazones y Mugs",
+    category: "Mugs y Tazones",
     description:
       "Tazón personalizado, estampado en DTF UV full color, capacidad 325cc (11 oz), material de cerámico color pastel. Tamaño: 9.7 cm alto x 8.2 cm diámetro, incluye caja de color blanco individual",
     tiers: [
@@ -654,7 +660,7 @@ const rawProducts: RawProduct[] = [
     id: "tazon-ceramico-de-color-350-cc",
     sku: null,
     name: "TAZÓN CERÁMICO DE COLOR 350 CC",
-    category: "Tazones y Mugs",
+    category: "Mugs y Tazones",
     description:
       "Tazón Cerámico de Color. Presentación individual en caja de cartón blanco. Tamaño: Ø 8.4 x 9.7 cm. Capacidad: 350cc. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -672,7 +678,7 @@ const rawProducts: RawProduct[] = [
     id: "tazon-ceramico-color-240cc",
     sku: null,
     name: "TAZÓN CERÁMICO COLOR 240CC",
-    category: "Tazones y Mugs",
+    category: "Mugs y Tazones",
     description:
       "Tazón cerámico color. Presentación en caja individual de cartón blanco. Tamaño: Ø 8.1 x 7.9 cm. Capacidad: 240cc. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -690,7 +696,7 @@ const rawProducts: RawProduct[] = [
     id: "taza-de-cafe-con-platillo",
     sku: null,
     name: "TAZA DE CAFÉ CON PLATILLO",
-    category: "Tazones y Mugs",
+    category: "Mugs y Tazones",
     description:
       "Taza de café con platillo y cuchara. Tamaño: 4.9 cm alto x 8.0 diámetro. Capacidad 177 cc. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -708,7 +714,7 @@ const rawProducts: RawProduct[] = [
     id: "tazon-ceramico-330cc-fluorescente",
     sku: null,
     name: "TAZÓN CERÁMICO 330CC FLUORESCENTE",
-    category: "Tazones y Mugs",
+    category: "Mugs y Tazones",
     description:
       "Tazón cerámico de 11oz (330cc) con superficie exterior de color fluorescente, interior blanco. Producto de calidad superior ORCA. Presentación en bolsa plástica translúcida + caja de cartón blanco. Tamaño: Ø8.2 x 9.6 cm. / Ancho con mango: 12.3 cm. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -726,7 +732,7 @@ const rawProducts: RawProduct[] = [
     id: "tazon-enlozado-negro-350cc",
     sku: null,
     name: "TAZÓN ENLOZADO NEGRO 350CC",
-    category: "Tazones y Mugs",
+    category: "Mugs y Tazones",
     description:
       "Tazón de acero enlozado «Enamel» de 350cc. con cobertura negra. Único con borde de acero Inoxidable, que entrega higiene y protección al contacto con tu boca.Tamaño: Ø8.8 x 8 cm. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -744,7 +750,7 @@ const rawProducts: RawProduct[] = [
     id: "tazon-metalico-matt-black-400cc",
     sku: null,
     name: 'TAZÓN METÁLICO "MATT BLACK" 400CC',
-    category: "Tazones y Mugs",
+    category: "Mugs y Tazones",
     description:
       "Tazón de Acero inoxidable 304 SS de 0.6mm de espesor, con superficie lisa y asa en color negro mate (opaco). Producto BPA FREE, para el contacto con líquidos y alimentos. Capacidad 400ml. Presentación en bolsa PP + caja de regalo de cartón negro. Tamaño: D8.2 x H8.7 cm. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -762,7 +768,7 @@ const rawProducts: RawProduct[] = [
     id: "tazon-de-bamboo-350cc",
     sku: null,
     name: "TAZÓN DE BAMBOO 350CC",
-    category: "Tazones y Mugs",
+    category: "Mugs y Tazones",
     description:
       "Tazón de madera de Bamboo 350cc, interior de Acero Inoxidable. Tamaño: Ø 8 x 10.4 cm. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -780,7 +786,7 @@ const rawProducts: RawProduct[] = [
     id: "mug-de-bamboo-con-asa-plastica-400cc",
     sku: null,
     name: "MUG DE BAMBOO CON ASA PLÁSTICA 400CC",
-    category: "Tazones y Mugs",
+    category: "Mugs y Tazones",
     description:
       "Mug de madera de Bamboo con asa plástica negra de 400cc, interior de Acero Inoxidable. Tapa plástica negra con dosificador. Presentación en caja de cartón forrado natural. Tamaño: 13.6 x Ø 8.6 cm. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -798,7 +804,7 @@ const rawProducts: RawProduct[] = [
     id: "mug-termico-bamboo-acero-inoxidable-420cc",
     sku: null,
     name: "MUG TÉRMICO BAMBOO ACERO INOXIDABLE 420CC",
-    category: "Tazones y Mugs",
+    category: "Mugs y Tazones",
     description:
       "Mug de bambú y acero inoxidable de 420cc, con base antideslizante. Presentación en bolsa plástica dentro de caja de cartón color kraft. Tamaño Ø 8,3 cms. x 17,7 cms. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -816,7 +822,7 @@ const rawProducts: RawProduct[] = [
     id: "mug-termico-plastico-400cc",
     sku: null,
     name: "MUG TÉRMICO PLÁSTICO 400CC",
-    category: "Tazones y Mugs",
+    category: "Mugs y Tazones",
     description:
       "Mug térmico 400cc de doble pared aislante con tapa rosca y dosificador. Interior y tapa de PVC negro y exterior de plástico traslúcido. Tamaño: Ø 8 x 17.5 cm. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -834,7 +840,7 @@ const rawProducts: RawProduct[] = [
     id: "mug-de-acero-inoxidable-400cc",
     sku: null,
     name: "MUG DE ACERO INOXIDABLE 400CC",
-    category: "Tazones y Mugs",
+    category: "Mugs y Tazones",
     description:
       "Mug térmico 400cc cónico de doble pared aislante con tapa pull-up de PVC negro y dosificador. Base interior de Acero Inoxidable y pared exterior de PVC. Tamaño: Ø 8.6 x 13 cm. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -852,7 +858,7 @@ const rawProducts: RawProduct[] = [
     id: "mug-de-acero-inoxidable-400cc-2",
     sku: null,
     name: "MUG DE ACERO INOXIDABLE 400CC",
-    category: "Tazones y Mugs",
+    category: "Mugs y Tazones",
     description:
       "Mug térmico 400cc de doble pared aislante con tapa pull-up de PVC negro y dosificador. Base interior de Acero Inoxidable y pared exterior de PVC traslúcido. Tamaño: Ø 8.6 x 11.8 cm. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -870,7 +876,7 @@ const rawProducts: RawProduct[] = [
     id: "coffee-mug-slim-250cc",
     sku: null,
     name: "COFFEE MUG SLIM 250CC",
-    category: "Tazones y Mugs",
+    category: "Mugs y Tazones",
     description:
       "Mini-tazón 250cc para café modelo «Tritan» de Acero inoxidable doble pared aislante, cuerpo exterior color. Tapa de plástico PP negro con dosificador móvil. Tamaño: Ø 5.9 x 13.1 cm. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -888,7 +894,7 @@ const rawProducts: RawProduct[] = [
     id: "mug-metalico-plastico-synna-350cc",
     sku: null,
     name: 'MUG METÁLICO/PLÁSTICO "SYNNA" 350CC',
-    category: "Tazones y Mugs",
+    category: "Mugs y Tazones",
     description:
       "Mug metálico 350cc doble pared aislante, interior plástico PP, exterior Acero inoxidable 201 SS, recubierto con pintura POWDER COAT, modelo «SYNNA». Producto BPA FREE, para el contacto con líquidos y alimentos. Fondo de silicona negra ABS anti-deslizante. Tapa removible de plástico PS Crystal Clear con sello cilíndrico de silicona. Presentación en bolsa PP + caja de regalo de cartón negro. Tamaño: D8.9 x H12.1 cm. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -906,7 +912,7 @@ const rawProducts: RawProduct[] = [
     id: "mug-termico-big-800cc",
     sku: null,
     name: 'MUG TÉRMICO "BIG" 800CC',
-    category: "Tazones y Mugs",
+    category: "Mugs y Tazones",
     description:
       "Mug térmico metálico doble pared aislante, cubierta de Polipropileno (PP) acabado mate, interior Acero inoxidable 304 SS, exterior Acero inoxidable 201 SS, modelo «BIG». Producto BPA FREE, para el contacto con líquidos y alimentos. Tapa removible de plástico PET Crystal Clear con sello cilíndrico de silicona y sistema de cierre/apertura antiderrame. Capacidad 800cc. Presentación en bolsa burbuja + caja de regalo de cartón laminado negro. Tamaño: Caja: 10.5 x 21.2 x 10.4 cm. / Tazón: D7.2 / 10 x H19.4 cm. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -924,7 +930,7 @@ const rawProducts: RawProduct[] = [
     id: "mug-termico-acero-inoxidable-900cc",
     sku: null,
     name: "MUG TÉRMICO ACERO INOXIDABLE 900CC",
-    category: "Tazones y Mugs",
+    category: "Mugs y Tazones",
     description:
       "Mug de acero inoxidable, interior acero inoxidable, tapón de rosca anti derrame de plástico transparente de 900cc. Presentación caja individual color Negra. Doble pared aislante, tapa rosca con dosificador, incluye bombilla. No usar con bebidas carbonatadas. TamañoØ 8,8 cms. x 24,5 cms. Incluye estampado en DTF uv full color",
     tiers: [
@@ -942,7 +948,7 @@ const rawProducts: RawProduct[] = [
     id: "mug-termico-acero-inoxidable-1200cc",
     sku: null,
     name: "MUG TÉRMICO ACERO INOXIDABLE 1200CC",
-    category: "Tazones y Mugs",
+    category: "Mugs y Tazones",
     description:
       "Mug de acero inoxidable, interior acero inoxidable, tapón de rosca anti derrame de plástico transparente de 1200cc. Presentación caja individual color Negra. Doble pared aislante, tapa rosca con dosificador, incluye bombilla. No usar con bebidas carbonatadas. Tamaño Ø 8,8 cms. x 24,5 cms. Incluye estampado en DTF uv full color",
     tiers: [
@@ -960,7 +966,7 @@ const rawProducts: RawProduct[] = [
     id: "mug-termico-acero-inoxidable-650cc",
     sku: null,
     name: "MUG TÉRMICO ACERO INOXIDABLE 650CC",
-    category: "Tazones y Mugs",
+    category: "Mugs y Tazones",
     description:
       "Mug de acero inoxidable 650cc, interior Plástico, tapón de rosca anti derrame de plástico transparente. Acabado mate. Presentación caja individual color Kraft. Doble pared aislante, tapa rosca con dosificador con silicona antiderrame, incluye bombilla. No usar con bebidas carbonatadas. Tamaño Ø 8,6 cms. x 18 cms. Incluye estampado en DTF uv full color.",
     tiers: [
@@ -978,7 +984,7 @@ const rawProducts: RawProduct[] = [
     id: "mug-shaker",
     sku: null,
     name: "MUG SHAKER",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Vaso mezclador para batidos de suplementos 500cc de plástico. Incluye dos compartimientos en base enroscable, uno tipo pastillero y otro para polvo de suplemento alimenticio. Presentación en bolsa plástica. Tamaño Ø8,6 x 25 cms. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -996,7 +1002,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-parker-ii",
     sku: null,
     name: "BOTELLA “PARKER II”",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Tamaño Ø 7 x 23 cm. Capacidad 600 ml. Material PET. Botella de plástico de colores translúcidos. Tapa a rosca en color negro con anillo de silicona y mosquetón de aluminio plata. Ultra liviana, pesa 60g. Estampada en DTF UV full color.",
     tiers: [
@@ -1014,7 +1020,7 @@ const rawProducts: RawProduct[] = [
     id: "vaso-reutilizable-500cc",
     sku: null,
     name: "VASO REUTILIZABLE 500CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Vaso patagonia 500cc reutilizable, material Homopolymere polypropylene, Peso aproximado. 49 grs. medida 13.9 cm de alto, 8.7 cm de diámetro parte superior, 6.3 cm parte inferior. Estampado en serigrafía a un color.",
     tiers: [
@@ -1032,7 +1038,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-sport-650cc",
     sku: null,
     name: "BOTELLA SPORT 650CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella de agua de aluminio personalizada, 650cc de capacidad, tamaño: 23 cm (alto) x 7 cm (largo) x 6.6 cm (ancho), cada botella incluye una caja individual de color blanco.",
     tiers: [
@@ -1050,7 +1056,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-bs-bowling-650cc",
     sku: null,
     name: "BOTELLA BS BOWLING 650CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella personalizada de aluminio, 650cc de capacidad, tamaño: 24 cm (alto) x 7 cm (diámetro), cada botella incluye una caja individual de color blanco.",
     tiers: [
@@ -1068,7 +1074,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-estandar-750cc",
     sku: null,
     name: "BOTELLA ESTÁNDAR 750CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella personalizada de aluminio con tapa rosca y mosquetón, 750cc de capacidad, Tamaño: 26 cm alto x 7.5 cm ancho x 7.5 cm largo, cada botella incluye una caja individual de color blanco.",
     tiers: [
@@ -1086,7 +1092,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-bs-de-aluminio-con-tapa-bombilla-600cc",
     sku: null,
     name: "BOTELLA BS DE ALUMINIO CON TAPA BOMBILLA 600CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella de agua de aluminio personalizada con tapa de color y bombilla, 600cc de capacidad. Tamaño: 7.3 x 21.5 cm, cada botella incluye una caja individual de color blanco.",
     tiers: [
@@ -1104,7 +1110,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-bs-nino-aluminio-500cc",
     sku: null,
     name: "BOTELLA BS NIÑO ALUMINIO 500CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella personalizada de aluminio con tapa bombilla de colores, 500cc de capacidad. Tamaño: 15 cm alto x 7 cm ancho x 7 cm largo, cada botella incluye una caja individual de color blanco.",
     tiers: [
@@ -1122,7 +1128,7 @@ const rawProducts: RawProduct[] = [
     id: "termo-digital-bs-de-acero-inoxidable-de-450cc",
     sku: null,
     name: "TERMO DIGITAL BS DE ACERO INOXIDABLE DE 450CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Termo digital de acero inoxidable con tapa touch y sensor de temperatura, 450cc de capacidad. Tamaño: 22.8x6.5 cm, cada termo incluye una caja individual de color blanco.",
     tiers: [
@@ -1140,7 +1146,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-vidrio-con-funda-500cc",
     sku: null,
     name: "BOTELLA VIDRIO CON FUNDA 500CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella de vidrio con tapa metálica y cinta transportable gris de 500cc. Funda antideslizante en diferentes colores. Presentación en plástico burbuja dentro de caja de cartón negra. Tapa con silicona antiderrame. Tamaño Ø 6,5 cms. x 22,3 cms. Incluye estampado.",
     tiers: [
@@ -1158,7 +1164,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-vidrio-con-tapa-bamboo-500cc",
     sku: null,
     name: "BOTELLA VIDRIO CON TAPA BAMBOO 500CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella de vidrio 500cc con tapa rosca de bambú y cinta transportable de cordón trenzado. Presentación en plástico burbuja dentro de caja de cartón blanca. Incluye silicona antiderrame y cinta transportable de cordón trenzado en la tapa. Tamaño Ø 6,3 cms. x 22,3 cms. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -1176,7 +1182,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-de-vidrio-con-funda-de-silicona-600cc",
     sku: null,
     name: "BOTELLA DE VIDRIO CON FUNDA DE SILICONA 600CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella de vidrio translúcido con funda de silicona de color, con tapa redonda twist-off de Bamboo y asa plástica. Producto BPA FREE, para el contacto con líquidos y alimentos. Capacidad 600cc. Presentación en bolsa plástico burbuja + caja de regalo de cartón kraft. IMPORTANTE: esta botella NO es térmica, apta sólo para líquidos fríos. Tamaño: D6.8 x H24.1 cm. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -1194,7 +1200,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-pet-tapa-bamboo-550cc",
     sku: null,
     name: "BOTELLA PET TAPA BAMBOO 550CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella plástica PET, color translúcido, con tapa redonda twist-off de Bamboo. Producto BPA FREE, para el contacto con líquidos y alimentos. Capacidad 550cc. Presentación en bolsa OPP + caja de regalo de cartón kraft. Tamaño: D6.6 x H20 cm. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -1212,7 +1218,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-pet-tapa-acero-700cc",
     sku: null,
     name: "BOTELLA PET TAPA ACERO 700CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella plástica PET, color translúcido, con fondo y tapa de Acero inoxidable. Producto BPA FREE, para el contacto con líquidos y alimentos. Capacidad 700cc. Presentación en bolsa OPP + caja de regalo de cartón kraft. Tamaño: D7.1 x H25.5 cm. Incluye estampado en DTF UV full color",
     tiers: [
@@ -1230,7 +1236,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-deportiva-plastica-650cc",
     sku: null,
     name: "BOTELLA DEPORTIVA PLÁSTICA 650CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella plástica de cuerpo plástico traslúcido con tapa negra 650cc. Presentación en caja individual negra. Tamaño Ø6,8 cms. x 25,8 cms. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -1248,7 +1254,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-pet-600cc",
     sku: null,
     name: "BOTELLA PET 600CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella plástica PET translúcido, con tapa redonda twist-off PET de color, modelo «LOUIS». Producto BPA FREE, para el contacto con líquidos y alimentos. Capacidad 600cc. Presentación en bolsa OPP + caja de regalo de cartón kraft. IMPORTANTE: esta botella NO es térmica, apta sólo para líquidos fríos. Tamaño: D6.7 x H21.1 cm. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -1266,7 +1272,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-vidrio-borosilicato-tapa-bamboo-500cc",
     sku: null,
     name: "BOTELLA VIDRIO BOROSILICATO, TAPA BAMBOO 500CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella de vidrio borosilicato, para líquidos fríos, con tapa de Bamboo y bombilla plástica empavonada. Capacidad 500cc. Presentación bolsa plástica empavonada + caja de cartón blanco. Calidad Premium ORCA. Tamaño: D6.9 x H18.2 cm. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -1284,7 +1290,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-plastica-700cc",
     sku: null,
     name: "BOTELLA PLÁSTICA 700CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella Plástica deportiva de 700cc. Sólo para líquidos fríos. Contiene una cintura ideal para la mayoría de los porta-botellas de bicicletas. Boquilla ajustable de silicona negra, que evita la filtración de líquido y entrega mayor duración de uso. Material plástico reciclado LDPE, libre de BPA. Presentación en bolsa de polipropileno transparente con orificio para ganchera. Tamaño: Ø 7.1 x 22.5 cm. Estampado en DTF full color.",
     tiers: [
@@ -1302,7 +1308,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-de-acero-inoxidable-750cc",
     sku: null,
     name: "BOTELLA DE ACERO INOXIDABLE 750CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Sport Bottle botella metálica de Acero Inoxidable 304 SS, con tapa rosca de plástico PP negro, asa de sujeción y anillo de silicona, anti-derrame. Producto BPA FREE, para el contacto con líquidos y alimentos. Capacidad 750cc. Presentación en bolsa PP + caja de regalo de cartón lacado color negro. IMPORTANTE: esta botella NO es térmica, apta sólo para líquidos fríos. No recomendable para bebidas soda ni cerveza. Tamaño: Botella: Ø 7.3 x H 23.8 cm. / Caja: 9.5 x 24 x 7.7 cm. Estampada en DTF UV full color.",
     tiers: [
@@ -1320,7 +1326,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-deportiva-aluminio-600cc",
     sku: null,
     name: "BOTELLA DEPORTIVA ALUMINIO 600CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella metálica de aluminio con tapa rosca. Presentación en caja individual negra. Tamaño Ø 6,6 cms. x 23,5 cms. Capacidad 600cc. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -1338,7 +1344,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-deportiva-aluminio-350cc",
     sku: null,
     name: "BOTELLA DEPORTIVA ALUMINIO 350CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella deportiva de aluminio con tapa rosca y gancho mosquetón. Presentación en bolsa plástica dentro de caja de cartón negra. Incluye silicona antiderrame. No refrigerar con lácteos o bebidas gaseosas. Tamaño Ø 6,5 cms. x 17,5 cms. Capacidad 350cc. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -1356,7 +1362,7 @@ const rawProducts: RawProduct[] = [
     id: "termo-acero-inoxidable-botella-500cc",
     sku: null,
     name: "TERMO ACERO INOXIDABLE BOTELLA 500CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella termo de acero inoxidable, con forma de botella en distintos colores. Incluye silicona antiderrame. Presentación en caja de cartón negra. No refrigerar con lácteos o bebidas gaseosas. Tamaño Ø7 cms. x 26,3 cms. Capacidad 500cc. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -1374,7 +1380,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-acero-inoxidable-con-bombilla-750cc",
     sku: null,
     name: "BOTELLA ACERO INOXIDABLE CON BOMBILLA 750CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella de acero inoxidable SS304 con tapa rosca y dosificador. Incluye silicona antiderrame. Acero Inoxidable SS304. Observación: azul y negra son de aluminio. No refrigerar con lácteos o bebidas gaseosas. Tamaño Ø 7 cms. x 27,5 cms. Capacidad 750cc. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -1392,7 +1398,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-deportiva-aluminio-550cc",
     sku: null,
     name: "BOTELLA DEPORTIVA ALUMINIO 550CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella deportiva de aluminio con tapa rosca y gancho mosquetón. Presentación en bolsa plástica dentro de caja de cartón negra. Incluye silicona antiderrame. No refrigerar con lácteos o bebidas gaseosas. Tamaño Ø 6,5 cms. x 21 cms. Capacidad 550cc. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -1410,7 +1416,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-deportiva-aluminio-750cc",
     sku: null,
     name: "BOTELLA DEPORTIVA ALUMINIO 750CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella deportiva de aluminio con tapa rosca y gancho mosquetón. Presentación en bolsa plástica dentro de caja de cartón negra. Incluye silicona antiderrame.No refrigerar con lácteos o bebidas gaseosas. Tamaño Ø 7,3 cms. x 26 cms. Capacidad 750cc. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -1428,7 +1434,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-acero-inoxidable-con-bombilla-750cc-2",
     sku: null,
     name: "BOTELLA ACERO INOXIDABLE CON BOMBILLA 750CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella de aluminio con tapa rosca y dosificador plástico. Presentación en bolsa plástica dentro de caja de cartón negra. Incluye silicona antiderrame. No refrigerar con lácteos o bebidas gaseosas. Tamaño Ø 7,1 cms. x 26,9 cms. Capacidad 750cc. Incluye estampado en DTF UV full color",
     tiers: [
@@ -1446,7 +1452,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-metalica-800cc",
     sku: null,
     name: "BOTELLA METÁLICA 800CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella blanca de aluminio de 800cc. Incluye tapa rosca plástica y mosquetón metálico plateado. IMPORTANTE: sólo para líquidos fríos (no térmico, sin aislante). NO CONGELAR NI LLENAR CON BEBIDAS GASEOSAS O CALIENTES. Tamaño: D7.3 x 25 cm. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -1464,7 +1470,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-bs-de-aluminio-600cc",
     sku: null,
     name: "BOTELLA BS DE ALUMINIO 600CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "La botella BS de 600cc con tapa rosca y mosquetón. Tamaño: 18 cm alto x 7,3 cm diámetro. Incluye estampado en DTF UV full color",
     tiers: [
@@ -1482,7 +1488,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-bs-de-aluminio-tapa-rosca-850cc",
     sku: null,
     name: "BOTELLA BS DE ALUMINIO TAPA ROSCA 850CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella BS de aluminio con tapa rosca de 850cc. Tamaño: 7.3 x 24.1 cm. Incluye estampado en DTF UV full color",
     tiers: [
@@ -1500,7 +1506,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-termo-colmer-acero-inox-750cc",
     sku: null,
     name: "BOTELLA TERMO COLMER ACERO INOX 750CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella termo colmer acero Inox 750cc. Diámetro de 7,5 cm y altura de 27 cm. Para líquidos fríos o calientes. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -1518,7 +1524,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-termica-sibo-acero-inox-800cc",
     sku: null,
     name: "BOTELLA TÉRMICA SIBO ACERO INOX 800CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella térmica Sibo Acero Inox 800cc. Tamaño: 8.5 x 24.5 cm. Para líquidos fríos o calientes. Incluye estampado en DTF UV full color",
     tiers: [
@@ -1536,7 +1542,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-termica-trekka-acero-inox-890cc",
     sku: null,
     name: "BOTELLA TÉRMICA TREKKA ACERO INOX. 890CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella térmica Trekka, capacidad: 890cc, alto: 23,80 cm, largo (con Asa): 9,00 cm, ancho (Diámetro): 10,20 cm, apta para bebidas calientes o frías. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -1554,7 +1560,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-bs-sport-de-aluminio-750cc",
     sku: null,
     name: "BOTELLA BS SPORT DE ALUMINIO 750CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella BS de aluminio de 750cc, Tamaño: 24 cm alto x 7 cm ancho x 7 cm largo. Incluye caja individual de color blanco. Estampada en DTF UV full color.",
     tiers: [
@@ -1572,7 +1578,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-bs-de-aluminio-blanco-con-tapa-de-color-de-650cc",
     sku: null,
     name: "BOTELLA BS DE ALUMINIO BLANCO CON TAPA DE COLOR DE 650CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella BS de aluminio blanco de 650cc con tapa de color, Tamaño: 23.5 cm x 7.2 cm. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -1590,7 +1596,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-bs-750cc-aluminio-tapa-click-c-seguro",
     sku: null,
     name: "BOTELLA BS 750CC ALUMINIO TAPA CLICK C/SEGURO",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella de 750cc fabricada en aluminio duradero, cuenta con una tapa de click que se cierra con seguridad. Tamaño: 7.2 x 25.50 cm. Incluye estampado en DTF full color.",
     tiers: [
@@ -1608,7 +1614,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-bs-de-aluminio-con-tapa-click-de-750cc",
     sku: null,
     name: "BOTELLA BS DE ALUMINIO CON TAPA CLICK DE 750CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella de aluminio con tapa click, capacidad: 750cc, tamaño: 25x7.5x23 cm. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -1626,7 +1632,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-termica-palmer-acero-inox-800cc",
     sku: null,
     name: "BOTELLA TÉRMICA PALMER ACERO INOX 800CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella térmica palmer 800cc, alto: 28,00 cm, diámetro (aprox. Ancho): 8,80 cm. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -1644,7 +1650,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-aluminio-tapa-dentada-sg-800cc",
     sku: null,
     name: "BOTELLA ALUMINIO TAPA DENTADA SG 800CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella de aluminio con tapa dentada de 800cc, dimensiones: 24 cm (alto) x 7 cm (ancho/diámetro). Incluye estampado en DTF UV full color.",
     tiers: [
@@ -1662,7 +1668,7 @@ const rawProducts: RawProduct[] = [
     id: "mug-termico-brena-acero-inox-1-200cc",
     sku: null,
     name: "MUG TÉRMICO BRENA ACERO INOX 1.200CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Mug térmico brena 1.2 L (1.200cc), alto: 26,70 cm, largo (con Asa): 10,00 cm, ancho (diámetro): 14,00 cm, incluye estampado en DTF UV full color.",
     tiers: [
@@ -1680,7 +1686,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-plastica-750-cc",
     sku: null,
     name: "BOTELLA PLÁSTICA 750 CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella plástica con cintas de silicona de distintos colores.Presentación bolsa plástica. Libre BPA. Incluye silicona antiderrame. Tamaño Ø 7,5 cms. x 23,5 cms. Capacidad 750cc. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -1698,7 +1704,7 @@ const rawProducts: RawProduct[] = [
     id: "botella-plastico-800cc",
     sku: null,
     name: "BOTELLA PLÁSTICO 800CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Botella plástica 800cc con cintas de silicona de distintos colores. Presentación en caja de cartón negra. Libre BPA. Incluye silicona antiderrame. Tamaño Ø 7,5 cms. x 23,8 cms. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -1716,7 +1722,7 @@ const rawProducts: RawProduct[] = [
     id: "caramayola-deportiva-acero-inoxidable-800cc",
     sku: null,
     name: "CARAMAYOLA DEPORTIVA ACERO INOXIDABLE 800CC",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Caramayola de acero inoxidable y detalles plásticos en distintos colores de 800cc. Tapa removible del mismo color de la botella. Presentación en bolsa plástica dentro de caja negra. Presentación en bolsa plástica. Incluye silicona antiderrame. Libre de BPA. Tamaño Ø 7,2 cms. x 26,5 cms.",
     tiers: [
@@ -1734,7 +1740,7 @@ const rawProducts: RawProduct[] = [
     id: "vaso-termico-metalico-camp-300cc-con-bombilla-y-grip-de-madera",
     sku: null,
     name: 'VASO TÉRMICO METÁLICO "CAMP" 300CC CON BOMBILLA Y GRIP DE MADERA',
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Vaso térmico metálico «CAMP» doble pared aislante, cubierta de Polipropileno (PP) acabado mate, interior Acero inoxidable 304 SS, exterior Acero inoxidable 201 SS. Capacidad 300ml. Producto BPA FREE, para el contacto con líquidos y alimentos. Incluye bombilla de Acero inoxidable y grip (mango) aislante de madera. Presentación en bolsa de PP translúcido + caja de cartón laminado negro. Tamaño: Vaso Ø7.8 x H8.5 cm. / Caja 9.1 x 8.8 x 13 cm. Incluye estampado en DTF UV.",
     tiers: [
@@ -1752,7 +1758,7 @@ const rawProducts: RawProduct[] = [
     id: "vaso-termico-metalico-mate-300cc-con-bombilla",
     sku: null,
     name: 'VASO TÉRMICO METÁLICO "MATE" 300CC CON BOMBILLA',
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Vaso térmico metálico «MATE» doble pared aislante, cubierta de Polipropileno (PP) acabado mate, interior Acero inoxidable 304 SS, exterior Acero inoxidable 201 SS. Capacidad 300ml. Producto BPA FREE, para el contacto con líquidos y alimentos. Incluye bombilla (cuchara) de Mate de Acero inoxidable. Presentación en plástico burbuja + caja de cartón laminado negro. Tamaño: Vaso Ø8.1 x H10.5 cm. / Bombilla 15.5 x 2.1 x 1 cm. / Caja 9 x 9 x 14 cm. Estampado en DTF UV full color.",
     tiers: [
@@ -1770,7 +1776,7 @@ const rawProducts: RawProduct[] = [
     id: "set-de-tazas-santa-marta",
     sku: null,
     name: "SET DE TAZAS ¨SANTA MARTA¨",
-    category: "Botellas y Termos",
+    category: "Botellas",
     description:
       "Set de 2 tazas de vidrio con asa, ideal para tomar bebidas calientes. Medidas: Ø 8 x 10 cm. Capacidad: 225 ml. Material: Vidrio Presentación: en caja de regalo kraft. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -1929,7 +1935,7 @@ const rawProducts: RawProduct[] = [
     id: "gorro-jockey-malla-ajustable",
     sku: null,
     name: "GORRO JOCKEY MALLA AJUSTABLE",
-    category: "Jockeys y Gorros",
+    category: "Jockey - Gorros y Sombreros",
     description:
       "Gorro (jockey), posee una copa en tejido de rejilla transpirable y cierre solapado de material plástico. Una cinta interior anti-sudoral con cubrecosturas interiores del mismo tono que la prenda y un panel central en color blanco, visera a cuatro costuras y un botón de adorno antioxidable. Tamaño visera: 19 x 7,5 cm (ancho por largo). Circunferencia: 57 cm. Diámetro: 19 cm. Incluye estampado full color.",
     tiers: [
@@ -1947,7 +1953,7 @@ const rawProducts: RawProduct[] = [
     id: "gorro-malla-de-poliester-full-color",
     sku: null,
     name: "GORRO MALLA DE POLIÉSTER FULL COLOR",
-    category: "Jockeys y Gorros",
+    category: "Jockey - Gorros y Sombreros",
     description:
       "Este gorro (jockey) unicolor, posee una copa en tejido de rejilla transpirable que permite una mejor ventilación y cierre solapado de material plástico, con una delantera especial de esponja para estampado y broche posterior ajustable. Visera: 19 x 7,5 cm (ancho por largo), circunferencia: 57 cm y diámetro: 19 cm. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -1965,7 +1971,7 @@ const rawProducts: RawProduct[] = [
     id: "gorro-jockey-algodon-full-color",
     sku: null,
     name: "GORRO JOCKEY ALGODÓN FULL COLOR",
-    category: "Jockeys y Gorros",
+    category: "Jockey - Gorros y Sombreros",
     description:
       "Jockey 5 paneles, 100% Algodón. Panel frontal liso, ideal para impresión. Cierre posterior velcro. Talla única adulto. Colores: Blanco, Azul Rey, Rojo, Naranjo, Amarillo, Verde, Negro, Beige y azul Marino. Incluye estampado en DTF UV full color.",
     tiers: [
@@ -2145,7 +2151,7 @@ const rawProducts: RawProduct[] = [
     id: "tarjeta-de-presentacion",
     sku: null,
     name: "TARJETA DE PRESENTACIÓN",
-    category: "Tarjetas y Flyers",
+    category: "Papelería",
     description:
       "Tarjetas de presentación, impresas en papel couché 350 gr. Medida 9 x 5.5 cm. Diseño no incluido en el valor.",
     tiers: [
@@ -2159,7 +2165,7 @@ const rawProducts: RawProduct[] = [
     id: "tarjeta-de-presentacion-termolaminada",
     sku: null,
     name: "TARJETA DE PRESENTACIÓN TERMOLAMINADA",
-    category: "Tarjetas y Flyers",
+    category: "Papelería",
     description:
       "Tarjetas de presentación termolaminadas, impresas en papel couché 350 gr. Medida 9 x 5.5 cm. Diseño no incluido en el valor.",
     tiers: [
@@ -2173,7 +2179,7 @@ const rawProducts: RawProduct[] = [
     id: "flyer",
     sku: null,
     name: "FLYER",
-    category: "Tarjetas y Flyers",
+    category: "Papelería",
     description:
       "Flayer impresos en papel couché 170 gramos, full color. Diseño no incluido en el valor.",
     tiers: [
@@ -2189,7 +2195,7 @@ const rawProducts: RawProduct[] = [
     id: "afiches",
     sku: null,
     name: "AFICHES",
-    category: "Impresos Publicitarios",
+    category: "Papelería",
     description:
       "Afiches impresos en papel couché 170 o 350 gr. Medida 32 x 47 cm. Impresión digital. Diseño no incluido en el valor.",
     tiers: [
@@ -2203,7 +2209,7 @@ const rawProducts: RawProduct[] = [
     id: "calendarios-taco-de-pared",
     sku: null,
     name: "CALENDARIOS TACO DE PARED",
-    category: "Impresos Publicitarios",
+    category: "Papelería",
     description: "Calendarios taco de pared. Lamina duplex de 50 x 37 cm. Taco 37x27 cm.",
     tiers: [
       { label: "100 unidades", price: 2000 },
@@ -2219,7 +2225,7 @@ const rawProducts: RawProduct[] = [
     id: "mini-calendarios-taco-iman",
     sku: null,
     name: "MINI CALENDARIOS TACO IMÁN",
-    category: "Impresos Publicitarios",
+    category: "Papelería",
     description: "Mini calendarios imán de 7x13 cm, con taco. Diseño no incluido en el valor.",
     tiers: [
       { label: "100 unidades", price: 500 },
@@ -2235,7 +2241,7 @@ const rawProducts: RawProduct[] = [
     id: "carpetas-tamano-carta",
     sku: null,
     name: "CARPETAS TAMAÑO CARTA",
-    category: "Impresos Publicitarios",
+    category: "Carpetas y Portafolios",
     description:
       "Carpeta tamaño carta, impresión full color 4/0. Incluye bolsillo interior. Material papel couché 350 gramos. Medidas: 23x32 cm (cerrada)",
     tiers: [
@@ -2252,7 +2258,7 @@ const rawProducts: RawProduct[] = [
     id: "carpetas-tamano-oficio",
     sku: null,
     name: "CARPETAS TAMAÑO OFICIO",
-    category: "Impresos Publicitarios",
+    category: "Carpetas y Portafolios",
     description:
       "Carpeta tamaño oficio, impresión full color 4/0. Incluye bolsillo interior sin impresión. Material cartón duplex . Medidas: 23x34 cm (cerrada)",
     tiers: [
@@ -2269,7 +2275,7 @@ const rawProducts: RawProduct[] = [
     id: "sticker-adhesivo-promocional",
     sku: null,
     name: "STICKER ADHESIVO PROMOCIONAL",
-    category: "Impresos Publicitarios",
+    category: "Papelería",
     description: "Sticker en vinilo adhesivo impreso promocional. Incluye servicio de troquelado.",
     tiers: [{ label: "Por metro cuadrado", price: 25000 }],
     notes: [
@@ -2715,7 +2721,7 @@ const rawProducts: RawProduct[] = [
     id: "mochila-tipo-morral-de-tnt",
     sku: null,
     name: "MOCHILA TIPO MORRAL DE TNT",
-    category: "Mochilas y Morrales",
+    category: "Mochilas",
     description:
       "Mochila tipo Morral de tela no tejida (TNT) de 80g/m2. Tamaño: 34 x 44 cm. Colores: Blanco, Azul Rey, Rojo, Naranjo, Amarillo, Verde, Gris, Negro, Beige, Celeste, Verde Claro, Azul Marino, Morado, Verde Pistacho y Café Claro. Estampado a una cara y a un color en serigrafía.",
     tiers: [
@@ -2733,7 +2739,7 @@ const rawProducts: RawProduct[] = [
     id: "mochila-tipo-morral-de-poliester",
     sku: null,
     name: "MOCHILA TIPO MORRAL DE POLIÉSTER",
-    category: "Mochilas y Morrales",
+    category: "Mochilas",
     description:
       "Mochila simple de 210D/PU poliéster, con tiras de cordón negro. Tamaño: 34 x 44 cm. Colores: Blanco, Azulino, Rojo, Naranjo, Amarillo, Negro y Verde claro. Estampado a una cara y a un color en serigrafía.",
     tiers: [
@@ -2751,7 +2757,7 @@ const rawProducts: RawProduct[] = [
     id: "mochila-tipo-morral-sublimado",
     sku: null,
     name: "MOCHILA TIPO MORRAL SUBLIMADO",
-    category: "Mochilas y Morrales",
+    category: "Mochilas",
     description:
       "Mochila tipo Morral de tela PET no tejida de 100g/m2. Tamaño: 30 x 40 cm. Color disponible: blanco. Estampado en sublimación full color a una cara.",
     tiers: [
