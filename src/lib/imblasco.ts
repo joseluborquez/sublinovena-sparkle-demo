@@ -61,14 +61,46 @@ function splitCategoria(full: string): [string, string] {
   return [parts[0] ?? full, parts[parts.length - 1] ?? full];
 }
 
-function normalize(raw: ImblascoRawProduct): Product {
-  // Un producto puede venir con varias categorías a la vez — como filtramos
-  // por CATEGORIA_FILTRO en la API, usamos esa entrada específica (no
-  // categorias[0] a ciegas, que a veces es otra categoría en la que también
-  // está metido el producto).
-  const match = raw.categorias.find((c) => c.nombre.startsWith(CATEGORIA_FILTRO));
-  const categoriaFull = match?.nombre ?? raw.categorias[0]?.nombre ?? CATEGORIA_FILTRO;
-  const [topCategory, category] = splitCategoria(categoriaFull);
+// Imblasco etiqueta cada producto con varias subcategorías a la vez, muchas
+// de ellas genéricas (ej. "Accesorios-Herramientas" aparece en casi todo).
+// Entre las etiquetas de un producto, nos quedamos con la MENOS frecuente en
+// todo el catálogo — es la más específica y la que mejor describe el
+// producto, en vez de la primera que aparezca en su lista.
+function pickSubcategoria(raw: ImblascoRawProduct, freq: Map<string, number>): string {
+  const candidates = raw.categorias
+    .filter((c) => c.nombre.startsWith(CATEGORIA_FILTRO))
+    .map((c) => splitCategoria(c.nombre)[1]);
+  if (candidates.length === 0) return CATEGORIA_FILTRO;
+
+  return candidates.reduce((best, candidate) => {
+    const bestFreq = freq.get(best) ?? Infinity;
+    const candidateFreq = freq.get(candidate) ?? Infinity;
+    return candidateFreq < bestFreq ? candidate : best;
+  });
+}
+
+function buildSubcategoriaFrequency(productos: ImblascoRawProduct[]): Map<string, number> {
+  const freq = new Map<string, number>();
+  for (const raw of productos) {
+    const seen = new Set<string>();
+    for (const c of raw.categorias) {
+      if (!c.nombre.startsWith(CATEGORIA_FILTRO)) continue;
+      const sub = splitCategoria(c.nombre)[1];
+      if (seen.has(sub)) continue;
+      seen.add(sub);
+      freq.set(sub, (freq.get(sub) ?? 0) + 1);
+    }
+  }
+  return freq;
+}
+
+function normalize(raw: ImblascoRawProduct, freq: Map<string, number>): Product {
+  // Ya no agrupamos bajo "Artículos Publicitarios" como categoría grande —
+  // cada subcategoría real de Imblasco (Botellas, Llaveros, etc.) pasa a ser
+  // su propia categoría de nivel superior, igual que los productos propios.
+  const subcategoria = pickSubcategoria(raw, freq);
+  const topCategory = subcategoria;
+  const category = subcategoria;
   const image = raw.foto_principal ?? raw.imagenes[0] ?? "";
   const description = raw.descripcion ? stripHtml(raw.descripcion) : "";
   const base = {
@@ -122,7 +154,8 @@ function refresh(): Promise<Product[]> {
         return cache?.data ?? [];
       }
       const json = (await res.json()) as ImblascoApiResponse;
-      const data = json.productos.map(normalize);
+      const freq = buildSubcategoriaFrequency(json.productos);
+      const data = json.productos.map((raw) => normalize(raw, freq));
       cache = { data, fetchedAt: Date.now() };
       return data;
     } catch (error) {

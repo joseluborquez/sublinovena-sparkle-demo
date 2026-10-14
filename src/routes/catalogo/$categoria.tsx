@@ -1,7 +1,7 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { z } from "zod";
 import { categories, products } from "@/data/products";
-import { findTopCategoryBySlug } from "@/lib/catalog-categories";
+import { buildTopCategories } from "@/lib/catalog-categories";
 import { fetchImblascoProducts } from "@/lib/imblasco";
 import { Navbar } from "@/components/site/Navbar";
 import { CatalogCategory } from "@/components/site/CatalogCategory";
@@ -14,15 +14,15 @@ const localCategoryOrder = categories.filter((c) => c !== "Todos");
 export const Route = createFileRoute("/catalogo/$categoria")({
   validateSearch: z.object({
     q: z.string().optional(),
-    sub: z.string().optional(),
   }),
   loader: async ({ params }) => {
     const imblascoProducts = await fetchImblascoProducts();
     const allProducts = [...products, ...imblascoProducts];
-    const topCategory = findTopCategoryBySlug(allProducts, localCategoryOrder, params.categoria);
+    const topCategories = buildTopCategories(allProducts, localCategoryOrder);
+    const topCategory = topCategories.find((c) => c.slug === params.categoria);
     if (!topCategory) throw notFound();
     const categoryProducts = allProducts.filter((p) => p.topCategory === topCategory.name);
-    return { categoryName: topCategory.name, categoryProducts };
+    return { categoryName: topCategory.name, categoryProducts, topCategories };
   },
   head: ({ loaderData }) => {
     if (!loaderData) return {};
@@ -43,13 +43,17 @@ export const Route = createFileRoute("/catalogo/$categoria")({
 });
 
 function CatalogCategoryPage() {
-  const { categoryName, categoryProducts } = Route.useLoaderData();
+  const { categoryName, categoryProducts, topCategories } = Route.useLoaderData();
 
   return (
     <>
       <Navbar />
       <main className="pt-8 lg:pt-10">
-        <CatalogCategory categoryName={categoryName} products={categoryProducts} />
+        <CatalogCategory
+          categoryName={categoryName}
+          products={categoryProducts}
+          topCategories={topCategories}
+        />
       </main>
       <Footer />
       <WhatsappFab />

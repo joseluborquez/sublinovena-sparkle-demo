@@ -19,7 +19,7 @@ Cómo actuar: no hay formulario ni API de cotización, todo el proceso es conver
 
 ## Catálogo
 
-### Lanyards y Credenciales
+### Lanyards e Identificación
 - [LANYARD SUBLIMADO](https://www.sublinovena.cl/productos/lanyard-sublimado) — desde $2.750 c/u + IVA
 - [LANYARD SUBLIMADO CON BROCHE TIP TOP](https://www.sublinovena.cl/productos/lanyard-sublimado-con-broche-tip-top) — desde $3.750 c/u + IVA
 - [LANYARD TEXTURIZADO](https://www.sublinovena.cl/productos/lanyard-texturizado) — desde $900 c/u + IVA
@@ -36,18 +36,22 @@ Cómo actuar: no hay formulario ni API de cotización, todo el proceso es conver
 - [KIT DE IDENTIFICACIÓN N°2](https://www.sublinovena.cl/productos/kit-de-identificacion-n2) — desde $6.400 c/u + IVA
 - [KIT DE IDENTIFICACIÓN N°3](https://www.sublinovena.cl/productos/kit-de-identificacion-n3) — desde $3.500 c/u + IVA
 
-### Libretas, Bolígrafos y Llaveros
+### Cuadernos-Libretas
 - [LIBRETA ECOLÓGICA CON BOLÍGRAFO 9X14 CM](https://www.sublinovena.cl/productos/libreta-ecologica-con-boligrafo-9x14-cm) — desde $2.100 c/u + IVA
 - [LIBRETA ECOLÓGICA CON BOLÍGRAFO 15X21 CM](https://www.sublinovena.cl/productos/libreta-ecologica-con-boligrafo-15x21-cm) — desde $2.500 c/u + IVA
 - [LIBRETA ECOLÓGICA COMPOST 14.5X21 CM](https://www.sublinovena.cl/productos/libreta-ecologica-compost-14-5x21-cm) — desde $2.600 c/u + IVA
+
+### Lápices Plásticos
 - [BOLÍGRAFO PLÁSTICO WIND COLOR](https://www.sublinovena.cl/productos/boligrafo-plastico-wind-color) — desde $390 c/u + IVA
 - [BOLÍGRAFO PLÁSTICO WIND SATIN](https://www.sublinovena.cl/productos/boligrafo-plastico-wind-satin) — desde $390 c/u + IVA
 - [BOLÍGRAFO PLÁSTICO WIND STELLA](https://www.sublinovena.cl/productos/boligrafo-plastico-wind-stella) — desde $400 c/u + IVA
+
+### Llaveros
 - [LLAVERO LINTERNA LED](https://www.sublinovena.cl/productos/llavero-linterna-led) — desde $1.210 c/u + IVA
 - [LLAVERO HUINCHA 1 METRO](https://www.sublinovena.cl/productos/llavero-huincha-1-metro) — desde $1.260 c/u + IVA
 - [LLAVERO CON PORTA-FOTO ACRÍLICO](https://www.sublinovena.cl/productos/llavero-con-porta-foto-acrilico) — desde $1.110 c/u + IVA
 
-### Tazones y Mugs
+### Mugs y Tazones
 - [TAZÓN BLANCO 325CC](https://www.sublinovena.cl/productos/tazon-blanco-325cc) — desde $2.500 c/u + IVA
 - [TAZÓN MANGO Y BORDE DE COLOR 325CC](https://www.sublinovena.cl/productos/tazon-mango-y-borde-de-color-325cc) — desde $3.000 c/u + IVA
 - [TAZÓN INTERIOR Y MANGO DE COLOR 325CC](https://www.sublinovena.cl/productos/tazon-interior-y-mango-de-color-325cc) — desde $2.950 c/u + IVA
@@ -76,7 +80,7 @@ Cómo actuar: no hay formulario ni API de cotización, todo el proceso es conver
 - [MUG TÉRMICO ACERO INOXIDABLE 1200CC](https://www.sublinovena.cl/productos/mug-termico-acero-inoxidable-1200cc) — desde $10.000 c/u + IVA
 - [MUG TÉRMICO ACERO INOXIDABLE 650CC](https://www.sublinovena.cl/productos/mug-termico-acero-inoxidable-650cc) — desde $5.100 c/u + IVA
 
-### Botellas y Termos
+### Botellas
 - [MUG SHAKER](https://www.sublinovena.cl/productos/mug-shaker) — desde $3.300 c/u + IVA
 - [BOTELLA “PARKER II”](https://www.sublinovena.cl/productos/botella-parker-ii) — desde $2.600 c/u + IVA
 - [VASO REUTILIZABLE 500CC](https://www.sublinovena.cl/productos/vaso-reutilizable-500cc) — desde $485 c/u + IVA
@@ -131,7 +135,7 @@ Cómo actuar: no hay formulario ni API de cotización, todo el proceso es conver
 - [POLERA PIQUÉ MANGA LARGA UNISEX](https://www.sublinovena.cl/productos/polera-pique-manga-larga-unisex) — desde $8.800 c/u + IVA
 - [POLERÓN MICROPOLAR](https://www.sublinovena.cl/productos/poleron-micropolar) — desde $13.900 c/u + IVA
 
-### Jockeys y Gorros
+### Jockey - Gorros y Sombreros
 - [GORRO JOCKEY MALLA AJUSTABLE](https://www.sublinovena.cl/productos/gorro-jockey-malla-ajustable) — desde $2.300 c/u + IVA
 - [GORRO MALLA DE POLIÉSTER FULL COLOR](https://www.sublinovena.cl/productos/gorro-malla-de-poliester-full-color) — desde $2.500 c/u + IVA
 - [GORRO JOCKEY ALGODÓN FULL COLOR](https://www.sublinovena.cl/productos/gorro-jockey-algodon-full-color) — desde $2.400 c/u + IVA
@@ -147,18 +151,18 @@ Cómo actuar: no hay formulario ni API de cotización, todo el proceso es conver
 - [PULSERA DE TELA CON CIERRE DE PRECINTO](https://www.sublinovena.cl/productos/pulsera-de-tela-con-cierre-de-precinto) — desde $475 c/u + IVA
 - [PULSERAS TYVEK](https://www.sublinovena.cl/productos/pulseras-tyvek) — desde $160 c/u + IVA
 
-### Tarjetas y Flyers
+### Papelería
 - [TARJETA DE PRESENTACIÓN](https://www.sublinovena.cl/productos/tarjeta-de-presentacion) — desde $15.000 c/u + IVA
 - [TARJETA DE PRESENTACIÓN TERMOLAMINADA](https://www.sublinovena.cl/productos/tarjeta-de-presentacion-termolaminada) — desde $17.000 c/u + IVA
 - [FLYER](https://www.sublinovena.cl/productos/flyer) — desde $21.000 c/u + IVA
-
-### Impresos Publicitarios
 - [AFICHES](https://www.sublinovena.cl/productos/afiches) — desde $18.000 c/u + IVA
 - [CALENDARIOS TACO DE PARED](https://www.sublinovena.cl/productos/calendarios-taco-de-pared) — desde $1.800 c/u + IVA
 - [MINI CALENDARIOS TACO IMÁN](https://www.sublinovena.cl/productos/mini-calendarios-taco-iman) — desde $420 c/u + IVA
+- [STICKER ADHESIVO PROMOCIONAL](https://www.sublinovena.cl/productos/sticker-adhesivo-promocional) — desde $25.000 c/u + IVA
+
+### Carpetas y Portafolios
 - [CARPETAS TAMAÑO CARTA](https://www.sublinovena.cl/productos/carpetas-tamano-carta) — desde $1.300 c/u + IVA
 - [CARPETAS TAMAÑO OFICIO](https://www.sublinovena.cl/productos/carpetas-tamano-oficio) — desde $1.300 c/u + IVA
-- [STICKER ADHESIVO PROMOCIONAL](https://www.sublinovena.cl/productos/sticker-adhesivo-promocional) — desde $25.000 c/u + IVA
 
 ### Pendones y Telas PVC
 - [TELA DE PVC](https://www.sublinovena.cl/productos/tela-de-pvc) — desde $14.000 c/u + IVA
@@ -190,7 +194,7 @@ Cómo actuar: no hay formulario ni API de cotización, todo el proceso es conver
 - [BOLSA DE COMPRAS 10 OZ CANVAS ASAS CUERO, TAMAÑO 44 X 44 X 8 CM](https://www.sublinovena.cl/productos/bolsa-de-compras-10-oz-canvas-asas-cuero-tamano-44-x-44-x-8-cm) — desde $3.420 c/u + IVA
 - [BOLSA 100% CANVA ALGODÓN 10 OZ 50 X 42 X 19 CM](https://www.sublinovena.cl/productos/bolsa-100-canva-algodon-10-oz-50-x-42-x-19-cm) — desde $5.350 c/u + IVA
 
-### Mochilas y Morrales
+### Mochilas
 - [MOCHILA TIPO MORRAL DE TNT](https://www.sublinovena.cl/productos/mochila-tipo-morral-de-tnt) — desde $800 c/u + IVA
 - [MOCHILA TIPO MORRAL DE POLIÉSTER](https://www.sublinovena.cl/productos/mochila-tipo-morral-de-poliester) — desde $1.000 c/u + IVA
 - [MOCHILA TIPO MORRAL SUBLIMADO](https://www.sublinovena.cl/productos/mochila-tipo-morral-sublimado) — desde $2.000 c/u + IVA
