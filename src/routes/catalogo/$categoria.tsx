@@ -2,7 +2,7 @@ import { createFileRoute, notFound } from "@tanstack/react-router";
 import { z } from "zod";
 import { categories, products } from "@/data/products";
 import { buildTopCategories } from "@/lib/catalog-categories";
-import { fetchImblascoProducts } from "@/lib/imblasco";
+import { safeFetchImblascoProducts } from "@/lib/imblasco";
 import { Navbar } from "@/components/site/Navbar";
 import { CatalogCategory } from "@/components/site/CatalogCategory";
 import { Footer } from "@/components/site/Footer";
@@ -16,7 +16,7 @@ export const Route = createFileRoute("/catalogo/$categoria")({
     q: z.string().optional(),
   }),
   loader: async ({ params }) => {
-    const imblascoProducts = await fetchImblascoProducts();
+    const imblascoProducts = await safeFetchImblascoProducts();
     const allProducts = [...products, ...imblascoProducts];
     const topCategories = buildTopCategories(allProducts, localCategoryOrder);
     const topCategory = topCategories.find((c) => c.slug === params.categoria);

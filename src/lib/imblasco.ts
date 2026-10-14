@@ -185,6 +185,18 @@ export const fetchImblascoProducts = createServerFn({ method: "GET" }).handler(
   },
 );
 
+// Wrapper defensivo para usar en loaders de rutas: si el server function
+// falla por cualquier motivo (red, plataforma de hosting, etc.), la página
+// igual debe renderizar con los productos propios en vez de romperse entera.
+export async function safeFetchImblascoProducts(): Promise<Product[]> {
+  try {
+    return await fetchImblascoProducts();
+  } catch (error) {
+    console.error("fetchImblascoProducts falló, se omiten productos de Imblasco:", error);
+    return [];
+  }
+}
+
 // Precalienta el caché apenas arranca el servidor, para que ningún visitante
 // real tenga que esperar el primer fetch completo a la API de Imblasco.
 void refresh();

@@ -5,7 +5,7 @@ import { CatalogHome } from "@/components/site/CatalogHome";
 import { Footer } from "@/components/site/Footer";
 import { WhatsappFab } from "@/components/site/WhatsappFab";
 import { siteConfig } from "@/lib/site-config";
-import { fetchImblascoProducts } from "@/lib/imblasco";
+import { safeFetchImblascoProducts } from "@/lib/imblasco";
 
 const title = `Catálogo de merchandising corporativo | ${siteConfig.name}`;
 const description =
@@ -16,7 +16,7 @@ export const Route = createFileRoute("/catalogo/")({
     q: z.string().optional(),
   }),
   loader: async () => {
-    const imblascoProducts = await fetchImblascoProducts();
+    const imblascoProducts = await safeFetchImblascoProducts();
     return { imblascoProducts };
   },
   head: () => ({
