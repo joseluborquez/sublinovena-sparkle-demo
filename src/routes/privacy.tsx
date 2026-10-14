@@ -68,10 +68,13 @@ function PrivacyPage() {
 
         <h2 className="mt-10 text-2xl font-semibold tracking-tight">Navegación del sitio</h2>
         <p className="mt-4 leading-relaxed text-muted-foreground">
-          Este sitio no usa cookies de seguimiento ni herramientas de analítica de terceros. El
-          hosting (Vercel) puede registrar datos técnicos básicos de las solicitudes (como la
-          dirección IP) por motivos de seguridad y funcionamiento del servicio, de forma estándar
-          para cualquier sitio web.
+          Este sitio no usa cookies. Usamos Vercel Analytics y Speed Insights para entender cuántas
+          personas visitan el sitio y qué tan rápido carga, pero estas herramientas están diseñadas
+          para no usar cookies ni identificar a cada visitante: solo registran datos agregados y
+          anónimos (como qué páginas se visitan más), sin guardar nada en tu navegador. El hosting
+          (Vercel) puede registrar datos técnicos básicos de las solicitudes (como la dirección IP)
+          por motivos de seguridad y funcionamiento del servicio, de forma estándar para cualquier
+          sitio web.
         </p>
 
         <h2 className="mt-10 text-2xl font-semibold tracking-tight">Contacto</h2>

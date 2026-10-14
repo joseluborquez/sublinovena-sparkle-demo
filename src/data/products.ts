@@ -53,7 +53,7 @@ export const categories = [
   "Mochilas",
 ] as const;
 
-const imageModules = import.meta.glob("../assets/products/*.png", {
+const imageModules = import.meta.glob("../assets/products/*.jpg", {
   eager: true,
   import: "default",
 }) as Record<string, string>;
@@ -81,7 +81,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más unidades", price: 2750 },
     ],
     notes: [],
-    imageFile: "lanyard-sublimado.png",
+    imageFile: "lanyard-sublimado.jpg",
   },
   {
     id: "lanyard-sublimado-con-broche-tip-top",
@@ -99,7 +99,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más unidades", price: 3750 },
     ],
     notes: [],
-    imageFile: "lanyard-sublimado-con-broche-tip-top.png",
+    imageFile: "lanyard-sublimado-con-broche-tip-top.jpg",
   },
   {
     id: "lanyard-texturizado",
@@ -118,7 +118,7 @@ const rawProducts: RawProduct[] = [
       { label: "2.000 a más unidades", price: 900 },
     ],
     notes: [],
-    imageFile: "lanyard-texturizado.png",
+    imageFile: "lanyard-texturizado.jpg",
   },
   {
     id: "credencial-horizontal-o-vertical",
@@ -136,7 +136,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más unidades", price: 2750 },
     ],
     notes: ["*Impresión por ambas caras, tiene"],
-    imageFile: "credencial-horizontal-o-vertical.png",
+    imageFile: "credencial-horizontal-o-vertical.jpg",
   },
   {
     id: "portacredencial-horizontal-o-vertical",
@@ -153,7 +153,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 350 },
     ],
     notes: ["un valor adicional de $1.000 c/u"],
-    imageFile: "portacredencial-horizontal-o-vertical.png",
+    imageFile: "portacredencial-horizontal-o-vertical.jpg",
   },
   {
     id: "portacredencial-vertical-premium-de-colores",
@@ -170,7 +170,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 350 },
     ],
     notes: [],
-    imageFile: "portacredencial-vertical-premium-de-colores.png",
+    imageFile: "portacredencial-vertical-premium-de-colores.jpg",
   },
   {
     id: "porta-credencial-de-acrilico",
@@ -188,7 +188,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 570 },
     ],
     notes: [],
-    imageFile: "porta-credencial-de-acrilico.png",
+    imageFile: "porta-credencial-de-acrilico.jpg",
   },
   {
     id: "yo-yo-portacredencial",
@@ -206,7 +206,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 570 },
     ],
     notes: [],
-    imageFile: "yo-yo-portacredencial.png",
+    imageFile: "yo-yo-portacredencial.jpg",
   },
   {
     id: "piochas-corporativas",
@@ -224,7 +224,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 2100 },
     ],
     notes: [],
-    imageFile: "piochas-corporativas.png",
+    imageFile: "piochas-corporativas.jpg",
   },
   {
     id: "pin-bandera-chilena",
@@ -241,7 +241,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 750 },
     ],
     notes: [],
-    imageFile: "pin-bandera-chilena.png",
+    imageFile: "pin-bandera-chilena.jpg",
   },
   {
     id: "piochas-corporativas-2",
@@ -259,7 +259,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 1930 },
     ],
     notes: [],
-    imageFile: "piochas-corporativas-2.png",
+    imageFile: "piochas-corporativas-2.jpg",
   },
   {
     id: "pin-redondo-con-broche",
@@ -277,7 +277,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 1930 },
     ],
     notes: [],
-    imageFile: "pin-redondo-con-broche.png",
+    imageFile: "pin-redondo-con-broche.jpg",
   },
   {
     id: "kit-de-identificacion-n1",
@@ -295,7 +295,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más unidades", price: 5400 },
     ],
     notes: ["*Con credencial impresa a dos caras, se cobra $1.000 adicional por cada KIT."],
-    imageFile: "kit-de-identificacion-n1.png",
+    imageFile: "kit-de-identificacion-n1.jpg",
   },
   {
     id: "kit-de-identificacion-n2",
@@ -313,7 +313,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más unidades", price: 6400 },
     ],
     notes: ["*Con credencial impresa a dos caras, se cobra $1.000 adicional por cada KIT."],
-    imageFile: "kit-de-identificacion-n2.png",
+    imageFile: "kit-de-identificacion-n2.jpg",
   },
   {
     id: "kit-de-identificacion-n3",
@@ -331,7 +331,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 3500 },
     ],
     notes: ["*Con credencial impresa a dos caras, se cobra $1.000 adicional por cada KIT."],
-    imageFile: "kit-de-identificacion-n3.png",
+    imageFile: "kit-de-identificacion-n3.jpg",
   },
   {
     id: "libreta-ecologica-con-boligrafo-9x14-cm",
@@ -349,7 +349,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 2100 },
     ],
     notes: [],
-    imageFile: "libreta-ecologica-con-boligrafo-9x14-cm.png",
+    imageFile: "libreta-ecologica-con-boligrafo-9x14-cm.jpg",
   },
   {
     id: "libreta-ecologica-con-boligrafo-15x21-cm",
@@ -367,7 +367,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 2500 },
     ],
     notes: [],
-    imageFile: "libreta-ecologica-con-boligrafo-15x21-cm.png",
+    imageFile: "libreta-ecologica-con-boligrafo-15x21-cm.jpg",
   },
   {
     id: "libreta-ecologica-compost-14-5x21-cm",
@@ -385,7 +385,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 2600 },
     ],
     notes: [],
-    imageFile: "libreta-ecologica-compost-14-5x21-cm.png",
+    imageFile: "libreta-ecologica-compost-14-5x21-cm.jpg",
   },
   {
     id: "boligrafo-plastico-wind-color",
@@ -403,7 +403,7 @@ const rawProducts: RawProduct[] = [
       { label: "2.000 o más unidades", price: 390 },
     ],
     notes: [],
-    imageFile: "boligrafo-plastico-wind-color.png",
+    imageFile: "boligrafo-plastico-wind-color.jpg",
   },
   {
     id: "boligrafo-plastico-wind-satin",
@@ -421,7 +421,7 @@ const rawProducts: RawProduct[] = [
       { label: "2.000 o más unidades", price: 390 },
     ],
     notes: [],
-    imageFile: "boligrafo-plastico-wind-satin.png",
+    imageFile: "boligrafo-plastico-wind-satin.jpg",
   },
   {
     id: "boligrafo-plastico-wind-stella",
@@ -439,7 +439,7 @@ const rawProducts: RawProduct[] = [
       { label: "2.000 o más unidades", price: 400 },
     ],
     notes: [],
-    imageFile: "boligrafo-plastico-wind-stella.png",
+    imageFile: "boligrafo-plastico-wind-stella.jpg",
   },
   {
     id: "llavero-linterna-led",
@@ -457,7 +457,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 1210 },
     ],
     notes: [],
-    imageFile: "llavero-linterna-led.png",
+    imageFile: "llavero-linterna-led.jpg",
   },
   {
     id: "llavero-huincha-1-metro",
@@ -475,7 +475,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 1260 },
     ],
     notes: [],
-    imageFile: "llavero-huincha-1-metro.png",
+    imageFile: "llavero-huincha-1-metro.jpg",
   },
   {
     id: "llavero-con-porta-foto-acrilico",
@@ -493,7 +493,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 1110 },
     ],
     notes: [],
-    imageFile: "llavero-con-porta-foto-acrilico.png",
+    imageFile: "llavero-con-porta-foto-acrilico.jpg",
   },
   {
     id: "tazon-blanco-325cc",
@@ -511,7 +511,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 2500 },
     ],
     notes: [],
-    imageFile: "tazon-blanco-325cc.png",
+    imageFile: "tazon-blanco-325cc.jpg",
   },
   {
     id: "tazon-mango-y-borde-de-color-325cc",
@@ -529,7 +529,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 3000 },
     ],
     notes: [],
-    imageFile: "tazon-mango-y-borde-de-color-325cc.png",
+    imageFile: "tazon-mango-y-borde-de-color-325cc.jpg",
   },
   {
     id: "tazon-interior-y-mango-de-color-325cc",
@@ -547,7 +547,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 2950 },
     ],
     notes: [],
-    imageFile: "tazon-interior-y-mango-de-color-325cc.png",
+    imageFile: "tazon-interior-y-mango-de-color-325cc.jpg",
   },
   {
     id: "tazon-clear-325cc",
@@ -565,7 +565,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 2950 },
     ],
     notes: [],
-    imageFile: "tazon-clear-325cc.png",
+    imageFile: "tazon-clear-325cc.jpg",
   },
   {
     id: "tazon-glass-empavonado-325cc",
@@ -583,7 +583,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 3250 },
     ],
     notes: [],
-    imageFile: "tazon-glass-empavonado-325cc.png",
+    imageFile: "tazon-glass-empavonado-325cc.jpg",
   },
   {
     id: "shopero-premium-empavonado-473cc",
@@ -600,7 +600,7 @@ const rawProducts: RawProduct[] = [
       { label: "81 o más", price: 6350 },
     ],
     notes: [],
-    imageFile: "shopero-premium-empavonado-473cc.png",
+    imageFile: "shopero-premium-empavonado-473cc.jpg",
   },
   {
     id: "tazon-con-cuchara-320cc-full-color",
@@ -618,7 +618,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 2600 },
     ],
     notes: [],
-    imageFile: "tazon-con-cuchara-320cc-full-color.png",
+    imageFile: "tazon-con-cuchara-320cc-full-color.jpg",
   },
   {
     id: "tazon-con-cuchara-300cc",
@@ -636,7 +636,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 2700 },
     ],
     notes: [],
-    imageFile: "tazon-con-cuchara-300cc.png",
+    imageFile: "tazon-con-cuchara-300cc.jpg",
   },
   {
     id: "tazon-premium-full-color-pastel-325cc",
@@ -654,7 +654,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 2900 },
     ],
     notes: [],
-    imageFile: "tazon-premium-full-color-pastel-325cc.png",
+    imageFile: "tazon-premium-full-color-pastel-325cc.jpg",
   },
   {
     id: "tazon-ceramico-de-color-350-cc",
@@ -672,7 +672,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 2500 },
     ],
     notes: [],
-    imageFile: "tazon-ceramico-de-color-350-cc.png",
+    imageFile: "tazon-ceramico-de-color-350-cc.jpg",
   },
   {
     id: "tazon-ceramico-color-240cc",
@@ -690,7 +690,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 2400 },
     ],
     notes: [],
-    imageFile: "tazon-ceramico-color-240cc.png",
+    imageFile: "tazon-ceramico-color-240cc.jpg",
   },
   {
     id: "taza-de-cafe-con-platillo",
@@ -708,7 +708,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 5500 },
     ],
     notes: [],
-    imageFile: "taza-de-cafe-con-platillo.png",
+    imageFile: "taza-de-cafe-con-platillo.jpg",
   },
   {
     id: "tazon-ceramico-330cc-fluorescente",
@@ -726,7 +726,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 3100 },
     ],
     notes: [],
-    imageFile: "tazon-ceramico-330cc-fluorescente.png",
+    imageFile: "tazon-ceramico-330cc-fluorescente.jpg",
   },
   {
     id: "tazon-enlozado-negro-350cc",
@@ -744,7 +744,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 4200 },
     ],
     notes: ["*Incluye caja negra de Cartón.", "*Incluye caja blanca de Cartón"],
-    imageFile: "tazon-enlozado-negro-350cc.png",
+    imageFile: "tazon-enlozado-negro-350cc.jpg",
   },
   {
     id: "tazon-metalico-matt-black-400cc",
@@ -762,7 +762,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 7100 },
     ],
     notes: [],
-    imageFile: "tazon-metalico-matt-black-400cc.png",
+    imageFile: "tazon-metalico-matt-black-400cc.jpg",
   },
   {
     id: "tazon-de-bamboo-350cc",
@@ -780,7 +780,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 7500 },
     ],
     notes: [],
-    imageFile: "tazon-de-bamboo-350cc.png",
+    imageFile: "tazon-de-bamboo-350cc.jpg",
   },
   {
     id: "mug-de-bamboo-con-asa-plastica-400cc",
@@ -798,7 +798,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 8500 },
     ],
     notes: [],
-    imageFile: "mug-de-bamboo-con-asa-plastica-400cc.png",
+    imageFile: "mug-de-bamboo-con-asa-plastica-400cc.jpg",
   },
   {
     id: "mug-termico-bamboo-acero-inoxidable-420cc",
@@ -816,7 +816,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 7500 },
     ],
     notes: [],
-    imageFile: "mug-termico-bamboo-acero-inoxidable-420cc.png",
+    imageFile: "mug-termico-bamboo-acero-inoxidable-420cc.jpg",
   },
   {
     id: "mug-termico-plastico-400cc",
@@ -834,7 +834,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 3100 },
     ],
     notes: [],
-    imageFile: "mug-termico-plastico-400cc.png",
+    imageFile: "mug-termico-plastico-400cc.jpg",
   },
   {
     id: "mug-de-acero-inoxidable-400cc",
@@ -852,7 +852,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 3700 },
     ],
     notes: [],
-    imageFile: "mug-de-acero-inoxidable-400cc.png",
+    imageFile: "mug-de-acero-inoxidable-400cc.jpg",
   },
   {
     id: "mug-de-acero-inoxidable-400cc-2",
@@ -870,7 +870,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 3700 },
     ],
     notes: [],
-    imageFile: "mug-de-acero-inoxidable-400cc-2.png",
+    imageFile: "mug-de-acero-inoxidable-400cc-2.jpg",
   },
   {
     id: "coffee-mug-slim-250cc",
@@ -888,7 +888,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 3600 },
     ],
     notes: [],
-    imageFile: "coffee-mug-slim-250cc.png",
+    imageFile: "coffee-mug-slim-250cc.jpg",
   },
   {
     id: "mug-metalico-plastico-synna-350cc",
@@ -906,7 +906,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 4100 },
     ],
     notes: [],
-    imageFile: "mug-metalico-plastico-synna-350cc.png",
+    imageFile: "mug-metalico-plastico-synna-350cc.jpg",
   },
   {
     id: "mug-termico-big-800cc",
@@ -924,7 +924,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 9500 },
     ],
     notes: [],
-    imageFile: "mug-termico-big-800cc.png",
+    imageFile: "mug-termico-big-800cc.jpg",
   },
   {
     id: "mug-termico-acero-inoxidable-900cc",
@@ -942,7 +942,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 10000 },
     ],
     notes: [],
-    imageFile: "mug-termico-acero-inoxidable-900cc.png",
+    imageFile: "mug-termico-acero-inoxidable-900cc.jpg",
   },
   {
     id: "mug-termico-acero-inoxidable-1200cc",
@@ -960,7 +960,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 10000 },
     ],
     notes: [],
-    imageFile: "mug-termico-acero-inoxidable-1200cc.png",
+    imageFile: "mug-termico-acero-inoxidable-1200cc.jpg",
   },
   {
     id: "mug-termico-acero-inoxidable-650cc",
@@ -978,7 +978,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 5100 },
     ],
     notes: [],
-    imageFile: "mug-termico-acero-inoxidable-650cc.png",
+    imageFile: "mug-termico-acero-inoxidable-650cc.jpg",
   },
   {
     id: "mug-shaker",
@@ -996,7 +996,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 3300 },
     ],
     notes: [],
-    imageFile: "mug-shaker.png",
+    imageFile: "mug-shaker.jpg",
   },
   {
     id: "botella-parker-ii",
@@ -1014,7 +1014,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 2600 },
     ],
     notes: [],
-    imageFile: "botella-parker-ii.png",
+    imageFile: "botella-parker-ii.jpg",
   },
   {
     id: "vaso-reutilizable-500cc",
@@ -1032,7 +1032,7 @@ const rawProducts: RawProduct[] = [
       { label: "5.000 o más", price: 485 },
     ],
     notes: [],
-    imageFile: "vaso-reutilizable-500cc.png",
+    imageFile: "vaso-reutilizable-500cc.jpg",
   },
   {
     id: "botella-sport-650cc",
@@ -1050,7 +1050,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 3100 },
     ],
     notes: [],
-    imageFile: "botella-sport-650cc.png",
+    imageFile: "botella-sport-650cc.jpg",
   },
   {
     id: "botella-bs-bowling-650cc",
@@ -1068,7 +1068,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 4500 },
     ],
     notes: [],
-    imageFile: "botella-bs-bowling-650cc.png",
+    imageFile: "botella-bs-bowling-650cc.jpg",
   },
   {
     id: "botella-estandar-750cc",
@@ -1086,7 +1086,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 4100 },
     ],
     notes: [],
-    imageFile: "botella-estandar-750cc.png",
+    imageFile: "botella-estandar-750cc.jpg",
   },
   {
     id: "botella-bs-de-aluminio-con-tapa-bombilla-600cc",
@@ -1104,7 +1104,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 4200 },
     ],
     notes: [],
-    imageFile: "botella-bs-de-aluminio-con-tapa-bombilla-600cc.png",
+    imageFile: "botella-bs-de-aluminio-con-tapa-bombilla-600cc.jpg",
   },
   {
     id: "botella-bs-nino-aluminio-500cc",
@@ -1122,7 +1122,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 4500 },
     ],
     notes: [],
-    imageFile: "botella-bs-nino-aluminio-500cc.png",
+    imageFile: "botella-bs-nino-aluminio-500cc.jpg",
   },
   {
     id: "termo-digital-bs-de-acero-inoxidable-de-450cc",
@@ -1140,7 +1140,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 8500 },
     ],
     notes: [],
-    imageFile: "termo-digital-bs-de-acero-inoxidable-de-450cc.png",
+    imageFile: "termo-digital-bs-de-acero-inoxidable-de-450cc.jpg",
   },
   {
     id: "botella-vidrio-con-funda-500cc",
@@ -1158,7 +1158,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 2700 },
     ],
     notes: [],
-    imageFile: "botella-vidrio-con-funda-500cc.png",
+    imageFile: "botella-vidrio-con-funda-500cc.jpg",
   },
   {
     id: "botella-vidrio-con-tapa-bamboo-500cc",
@@ -1176,7 +1176,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 4400 },
     ],
     notes: [],
-    imageFile: "botella-vidrio-con-tapa-bamboo-500cc.png",
+    imageFile: "botella-vidrio-con-tapa-bamboo-500cc.jpg",
   },
   {
     id: "botella-de-vidrio-con-funda-de-silicona-600cc",
@@ -1194,7 +1194,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 4700 },
     ],
     notes: [],
-    imageFile: "botella-de-vidrio-con-funda-de-silicona-600cc.png",
+    imageFile: "botella-de-vidrio-con-funda-de-silicona-600cc.jpg",
   },
   {
     id: "botella-pet-tapa-bamboo-550cc",
@@ -1212,7 +1212,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 3000 },
     ],
     notes: [],
-    imageFile: "botella-pet-tapa-bamboo-550cc.png",
+    imageFile: "botella-pet-tapa-bamboo-550cc.jpg",
   },
   {
     id: "botella-pet-tapa-acero-700cc",
@@ -1230,7 +1230,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 2900 },
     ],
     notes: [],
-    imageFile: "botella-pet-tapa-acero-700cc.png",
+    imageFile: "botella-pet-tapa-acero-700cc.jpg",
   },
   {
     id: "botella-deportiva-plastica-650cc",
@@ -1248,7 +1248,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 2600 },
     ],
     notes: [],
-    imageFile: "botella-deportiva-plastica-650cc.png",
+    imageFile: "botella-deportiva-plastica-650cc.jpg",
   },
   {
     id: "botella-pet-600cc",
@@ -1266,7 +1266,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 3000 },
     ],
     notes: [],
-    imageFile: "botella-pet-600cc.png",
+    imageFile: "botella-pet-600cc.jpg",
   },
   {
     id: "botella-vidrio-borosilicato-tapa-bamboo-500cc",
@@ -1284,7 +1284,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 4700 },
     ],
     notes: [],
-    imageFile: "botella-vidrio-borosilicato-tapa-bamboo-500cc.png",
+    imageFile: "botella-vidrio-borosilicato-tapa-bamboo-500cc.jpg",
   },
   {
     id: "botella-plastica-700cc",
@@ -1302,7 +1302,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 1900 },
     ],
     notes: [],
-    imageFile: "botella-plastica-700cc.png",
+    imageFile: "botella-plastica-700cc.jpg",
   },
   {
     id: "botella-de-acero-inoxidable-750cc",
@@ -1320,7 +1320,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 4300 },
     ],
     notes: [],
-    imageFile: "botella-de-acero-inoxidable-750cc.png",
+    imageFile: "botella-de-acero-inoxidable-750cc.jpg",
   },
   {
     id: "botella-deportiva-aluminio-600cc",
@@ -1338,7 +1338,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 3300 },
     ],
     notes: [],
-    imageFile: "botella-deportiva-aluminio-600cc.png",
+    imageFile: "botella-deportiva-aluminio-600cc.jpg",
   },
   {
     id: "botella-deportiva-aluminio-350cc",
@@ -1356,7 +1356,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 2900 },
     ],
     notes: [],
-    imageFile: "botella-deportiva-aluminio-350cc.png",
+    imageFile: "botella-deportiva-aluminio-350cc.jpg",
   },
   {
     id: "termo-acero-inoxidable-botella-500cc",
@@ -1374,7 +1374,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 7400 },
     ],
     notes: [],
-    imageFile: "termo-acero-inoxidable-botella-500cc.png",
+    imageFile: "termo-acero-inoxidable-botella-500cc.jpg",
   },
   {
     id: "botella-acero-inoxidable-con-bombilla-750cc",
@@ -1392,7 +1392,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 4400 },
     ],
     notes: [],
-    imageFile: "botella-acero-inoxidable-con-bombilla-750cc.png",
+    imageFile: "botella-acero-inoxidable-con-bombilla-750cc.jpg",
   },
   {
     id: "botella-deportiva-aluminio-550cc",
@@ -1410,7 +1410,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 3000 },
     ],
     notes: [],
-    imageFile: "botella-deportiva-aluminio-550cc.png",
+    imageFile: "botella-deportiva-aluminio-550cc.jpg",
   },
   {
     id: "botella-deportiva-aluminio-750cc",
@@ -1428,7 +1428,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 3100 },
     ],
     notes: [],
-    imageFile: "botella-deportiva-aluminio-750cc.png",
+    imageFile: "botella-deportiva-aluminio-750cc.jpg",
   },
   {
     id: "botella-acero-inoxidable-con-bombilla-750cc-2",
@@ -1446,7 +1446,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 4450 },
     ],
     notes: [],
-    imageFile: "botella-acero-inoxidable-con-bombilla-750cc-2.png",
+    imageFile: "botella-acero-inoxidable-con-bombilla-750cc-2.jpg",
   },
   {
     id: "botella-metalica-800cc",
@@ -1464,7 +1464,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 4100 },
     ],
     notes: [],
-    imageFile: "botella-metalica-800cc.png",
+    imageFile: "botella-metalica-800cc.jpg",
   },
   {
     id: "botella-bs-de-aluminio-600cc",
@@ -1482,7 +1482,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 3800 },
     ],
     notes: [],
-    imageFile: "botella-bs-de-aluminio-600cc.png",
+    imageFile: "botella-bs-de-aluminio-600cc.jpg",
   },
   {
     id: "botella-bs-de-aluminio-tapa-rosca-850cc",
@@ -1500,7 +1500,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 3600 },
     ],
     notes: [],
-    imageFile: "botella-bs-de-aluminio-tapa-rosca-850cc.png",
+    imageFile: "botella-bs-de-aluminio-tapa-rosca-850cc.jpg",
   },
   {
     id: "botella-termo-colmer-acero-inox-750cc",
@@ -1518,7 +1518,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 8800 },
     ],
     notes: [],
-    imageFile: "botella-termo-colmer-acero-inox-750cc.png",
+    imageFile: "botella-termo-colmer-acero-inox-750cc.jpg",
   },
   {
     id: "botella-termica-sibo-acero-inox-800cc",
@@ -1536,7 +1536,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 7000 },
     ],
     notes: [],
-    imageFile: "botella-termica-sibo-acero-inox-800cc.png",
+    imageFile: "botella-termica-sibo-acero-inox-800cc.jpg",
   },
   {
     id: "botella-termica-trekka-acero-inox-890cc",
@@ -1554,7 +1554,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 8000 },
     ],
     notes: [],
-    imageFile: "botella-termica-trekka-acero-inox-890cc.png",
+    imageFile: "botella-termica-trekka-acero-inox-890cc.jpg",
   },
   {
     id: "botella-bs-sport-de-aluminio-750cc",
@@ -1572,7 +1572,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 3100 },
     ],
     notes: [],
-    imageFile: "botella-bs-sport-de-aluminio-750cc.png",
+    imageFile: "botella-bs-sport-de-aluminio-750cc.jpg",
   },
   {
     id: "botella-bs-de-aluminio-blanco-con-tapa-de-color-de-650cc",
@@ -1590,7 +1590,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 4700 },
     ],
     notes: [],
-    imageFile: "botella-bs-de-aluminio-blanco-con-tapa-de-color-de-650cc.png",
+    imageFile: "botella-bs-de-aluminio-blanco-con-tapa-de-color-de-650cc.jpg",
   },
   {
     id: "botella-bs-750cc-aluminio-tapa-click-c-seguro",
@@ -1608,7 +1608,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 3600 },
     ],
     notes: [],
-    imageFile: "botella-bs-750cc-aluminio-tapa-click-c-seguro.png",
+    imageFile: "botella-bs-750cc-aluminio-tapa-click-c-seguro.jpg",
   },
   {
     id: "botella-bs-de-aluminio-con-tapa-click-de-750cc",
@@ -1626,7 +1626,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 3600 },
     ],
     notes: [],
-    imageFile: "botella-bs-de-aluminio-con-tapa-click-de-750cc.png",
+    imageFile: "botella-bs-de-aluminio-con-tapa-click-de-750cc.jpg",
   },
   {
     id: "botella-termica-palmer-acero-inox-800cc",
@@ -1644,7 +1644,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 8000 },
     ],
     notes: [],
-    imageFile: "botella-termica-palmer-acero-inox-800cc.png",
+    imageFile: "botella-termica-palmer-acero-inox-800cc.jpg",
   },
   {
     id: "botella-aluminio-tapa-dentada-sg-800cc",
@@ -1662,7 +1662,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 3200 },
     ],
     notes: [],
-    imageFile: "botella-aluminio-tapa-dentada-sg-800cc.png",
+    imageFile: "botella-aluminio-tapa-dentada-sg-800cc.jpg",
   },
   {
     id: "mug-termico-brena-acero-inox-1-200cc",
@@ -1680,7 +1680,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 12000 },
     ],
     notes: [],
-    imageFile: "mug-termico-brena-acero-inox-1-200cc.png",
+    imageFile: "mug-termico-brena-acero-inox-1-200cc.jpg",
   },
   {
     id: "botella-plastica-750-cc",
@@ -1698,7 +1698,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 3400 },
     ],
     notes: [],
-    imageFile: "botella-plastica-750-cc.png",
+    imageFile: "botella-plastica-750-cc.jpg",
   },
   {
     id: "botella-plastico-800cc",
@@ -1716,7 +1716,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 3400 },
     ],
     notes: [],
-    imageFile: "botella-plastico-800cc.png",
+    imageFile: "botella-plastico-800cc.jpg",
   },
   {
     id: "caramayola-deportiva-acero-inoxidable-800cc",
@@ -1734,7 +1734,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 3300 },
     ],
     notes: [],
-    imageFile: "caramayola-deportiva-acero-inoxidable-800cc.png",
+    imageFile: "caramayola-deportiva-acero-inoxidable-800cc.jpg",
   },
   {
     id: "vaso-termico-metalico-camp-300cc-con-bombilla-y-grip-de-madera",
@@ -1752,7 +1752,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 9500 },
     ],
     notes: [],
-    imageFile: "vaso-termico-metalico-camp-300cc-con-bombilla-y-grip-de-madera.png",
+    imageFile: "vaso-termico-metalico-camp-300cc-con-bombilla-y-grip-de-madera.jpg",
   },
   {
     id: "vaso-termico-metalico-mate-300cc-con-bombilla",
@@ -1770,7 +1770,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 8500 },
     ],
     notes: [],
-    imageFile: "vaso-termico-metalico-mate-300cc-con-bombilla.png",
+    imageFile: "vaso-termico-metalico-mate-300cc-con-bombilla.jpg",
   },
   {
     id: "set-de-tazas-santa-marta",
@@ -1788,7 +1788,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 6600 },
     ],
     notes: [],
-    imageFile: "set-de-tazas-santa-marta.png",
+    imageFile: "set-de-tazas-santa-marta.jpg",
   },
   {
     id: "poleron-algodon-unisex-variedad-de-colores",
@@ -1809,7 +1809,7 @@ const rawProducts: RawProduct[] = [
       { label: "300 unidades o más", price: 13900 },
     ],
     notes: ["Tallas: 2-10,XS, S, M, L, XL, 2XL, 3XL"],
-    imageFile: "poleron-algodon-unisex-variedad-de-colores.png",
+    imageFile: "poleron-algodon-unisex-variedad-de-colores.jpg",
   },
   {
     id: "polera-algodon-unisex-variedad-de-colores",
@@ -1834,7 +1834,7 @@ const rawProducts: RawProduct[] = [
       "Disponible en 20 colores diferentes.",
       "Tallas: 2-10,XS, S, M, L, XL, 2XL, 3XL",
     ],
-    imageFile: "polera-algodon-unisex-variedad-de-colores.png",
+    imageFile: "polera-algodon-unisex-variedad-de-colores.jpg",
   },
   {
     id: "polera-deportiva-dry-fit-unisex",
@@ -1859,7 +1859,7 @@ const rawProducts: RawProduct[] = [
       "Tallas: 4-10,XS, S, M, L, XL.",
       "Disponible en 20 colores diferentes.",
     ],
-    imageFile: "polera-deportiva-dry-fit-unisex.png",
+    imageFile: "polera-deportiva-dry-fit-unisex.jpg",
   },
   {
     id: "polera-pique-unisex",
@@ -1880,7 +1880,7 @@ const rawProducts: RawProduct[] = [
       { label: "300 unidades o más", price: 8500 },
     ],
     notes: ["Disponible en 20 colores diferentes.", "Tallas: 4-12,XS, S, M, L, XL y 2XL."],
-    imageFile: "polera-pique-unisex.png",
+    imageFile: "polera-pique-unisex.jpg",
   },
   {
     id: "polera-pique-manga-larga-unisex",
@@ -1905,7 +1905,7 @@ const rawProducts: RawProduct[] = [
       "Disponible en 20 colores diferentes.",
       "Tallas: 4-12,XS, S, M, L, XL y 2XL.",
     ],
-    imageFile: "polera-pique-manga-larga-unisex.png",
+    imageFile: "polera-pique-manga-larga-unisex.jpg",
   },
   {
     id: "poleron-micropolar",
@@ -1929,7 +1929,7 @@ const rawProducts: RawProduct[] = [
       "Disponible en 6 colores diferentes.",
       "Tallas: M, L, XL y 2XL",
     ],
-    imageFile: "poleron-micropolar.png",
+    imageFile: "poleron-micropolar.jpg",
   },
   {
     id: "gorro-jockey-malla-ajustable",
@@ -1947,7 +1947,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 2300 },
     ],
     notes: [],
-    imageFile: "gorro-jockey-malla-ajustable.png",
+    imageFile: "gorro-jockey-malla-ajustable.jpg",
   },
   {
     id: "gorro-malla-de-poliester-full-color",
@@ -1965,7 +1965,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 2500 },
     ],
     notes: [],
-    imageFile: "gorro-malla-de-poliester-full-color.png",
+    imageFile: "gorro-malla-de-poliester-full-color.jpg",
   },
   {
     id: "gorro-jockey-algodon-full-color",
@@ -1983,7 +1983,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 2400 },
     ],
     notes: [],
-    imageFile: "gorro-jockey-algodon-full-color.png",
+    imageFile: "gorro-jockey-algodon-full-color.jpg",
   },
   {
     id: "chapita-con-alfiler-metalico-de-37-56-o-58-mm",
@@ -2001,7 +2001,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 650 },
     ],
     notes: [],
-    imageFile: "chapita-con-alfiler-metalico-de-37-56-o-58-mm.png",
+    imageFile: "chapita-con-alfiler-metalico-de-37-56-o-58-mm.jpg",
   },
   {
     id: "chapita-llavero-y-destapador-56-mm",
@@ -2019,7 +2019,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 1000 },
     ],
     notes: [],
-    imageFile: "chapita-llavero-y-destapador-56-mm.png",
+    imageFile: "chapita-llavero-y-destapador-56-mm.jpg",
   },
   {
     id: "chapita-con-iman-y-destapador",
@@ -2037,7 +2037,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 1070 },
     ],
     notes: [],
-    imageFile: "chapita-con-iman-y-destapador.png",
+    imageFile: "chapita-con-iman-y-destapador.jpg",
   },
   {
     id: "chapita-37-mm-iman-adhesivo",
@@ -2055,7 +2055,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 750 },
     ],
     notes: [],
-    imageFile: "chapita-37-mm-iman-adhesivo.png",
+    imageFile: "chapita-37-mm-iman-adhesivo.jpg",
   },
   {
     id: "chapita-con-iman-de-37-mm-o-56-mm",
@@ -2073,7 +2073,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 700 },
     ],
     notes: [],
-    imageFile: "chapita-con-iman-de-37-mm-o-56-mm.png",
+    imageFile: "chapita-con-iman-de-37-mm-o-56-mm.jpg",
   },
   {
     id: "chapita-espejo-56-mm",
@@ -2091,7 +2091,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 700 },
     ],
     notes: [],
-    imageFile: "chapita-espejo-56-mm.png",
+    imageFile: "chapita-espejo-56-mm.jpg",
   },
   {
     id: "pulsera-de-silicona",
@@ -2109,7 +2109,7 @@ const rawProducts: RawProduct[] = [
       { label: "4.000 o más", price: 600 },
     ],
     notes: [],
-    imageFile: "pulsera-de-silicona.png",
+    imageFile: "pulsera-de-silicona.jpg",
   },
   {
     id: "pulsera-de-tela-con-cierre-de-precinto",
@@ -2127,7 +2127,7 @@ const rawProducts: RawProduct[] = [
       { label: "4.000 o más", price: 475 },
     ],
     notes: [],
-    imageFile: "pulsera-de-tela-con-cierre-de-precinto.png",
+    imageFile: "pulsera-de-tela-con-cierre-de-precinto.jpg",
   },
   {
     id: "pulseras-tyvek",
@@ -2145,7 +2145,7 @@ const rawProducts: RawProduct[] = [
       { label: "4.000 o más", price: 160 },
     ],
     notes: [],
-    imageFile: "pulseras-tyvek.png",
+    imageFile: "pulseras-tyvek.jpg",
   },
   {
     id: "tarjeta-de-presentacion",
@@ -2159,7 +2159,7 @@ const rawProducts: RawProduct[] = [
       { label: "Impresa a dos caras · 100 unidades", price: 17000 },
     ],
     notes: [],
-    imageFile: "tarjeta-de-presentacion.png",
+    imageFile: "tarjeta-de-presentacion.jpg",
   },
   {
     id: "tarjeta-de-presentacion-termolaminada",
@@ -2173,7 +2173,7 @@ const rawProducts: RawProduct[] = [
       { label: "Impresa a dos caras · 100 unidades", price: 19000 },
     ],
     notes: [],
-    imageFile: "tarjeta-de-presentacion-termolaminada.png",
+    imageFile: "tarjeta-de-presentacion-termolaminada.jpg",
   },
   {
     id: "flyer",
@@ -2189,7 +2189,7 @@ const rawProducts: RawProduct[] = [
       { label: "Flyer 21x14 cm · Impresa a dos caras · 100 unidades", price: 30000 },
     ],
     notes: ["VALORES FLYER 10X14 CM + IVA", "VALORES FLYER 21X14 CM + IVA"],
-    imageFile: "flyer.png",
+    imageFile: "flyer.jpg",
   },
   {
     id: "afiches",
@@ -2203,7 +2203,7 @@ const rawProducts: RawProduct[] = [
       { label: "Impresa a dos caras · 10 unidades", price: 20000 },
     ],
     notes: [],
-    imageFile: "afiches.png",
+    imageFile: "afiches.jpg",
   },
   {
     id: "calendarios-taco-de-pared",
@@ -2219,7 +2219,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 unidades", price: 1800 },
     ],
     notes: [],
-    imageFile: "calendarios-taco-de-pared.png",
+    imageFile: "calendarios-taco-de-pared.jpg",
   },
   {
     id: "mini-calendarios-taco-iman",
@@ -2235,7 +2235,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 unidades", price: 420 },
     ],
     notes: [],
-    imageFile: "mini-calendarios-taco-iman.png",
+    imageFile: "mini-calendarios-taco-iman.jpg",
   },
   {
     id: "carpetas-tamano-carta",
@@ -2252,7 +2252,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 unidades", price: 1300 },
     ],
     notes: ["* con bolsillo interior impreso $200 + iva adicional c/u"],
-    imageFile: "carpetas-tamano-carta.png",
+    imageFile: "carpetas-tamano-carta.jpg",
   },
   {
     id: "carpetas-tamano-oficio",
@@ -2269,7 +2269,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 unidades", price: 1300 },
     ],
     notes: [],
-    imageFile: "carpetas-tamano-oficio.png",
+    imageFile: "carpetas-tamano-oficio.jpg",
   },
   {
     id: "sticker-adhesivo-promocional",
@@ -2283,7 +2283,7 @@ const rawProducts: RawProduct[] = [
       "$25.000 el metro cuadrado",
       "*Referencia 400 sticker de 5x5 cm aprox.",
     ],
-    imageFile: "sticker-adhesivo-promocional.png",
+    imageFile: "sticker-adhesivo-promocional.jpg",
   },
   {
     id: "tela-de-pvc",
@@ -2294,7 +2294,7 @@ const rawProducts: RawProduct[] = [
       "Tela de PVC de 13 oz, impresa full color. Valor por metro cuadrado. Valor no incluye diseño.",
     tiers: [{ label: "metro cuadrado", price: 14000 }],
     notes: ["VALOR + IVA", "*pedido mínimo 2 metros cuadrados"],
-    imageFile: "tela-de-pvc.png",
+    imageFile: "tela-de-pvc.jpg",
   },
   {
     id: "tela-de-pvc-sellado-perimetral-ojetillos",
@@ -2305,7 +2305,7 @@ const rawProducts: RawProduct[] = [
       "Tela de PVC de 13 oz, impresa full color + sellado perimetral + ojetillos. Valor por metro cuadrado. Valor no incluye diseño.",
     tiers: [{ label: "metro cuadrado", price: 16000 }],
     notes: ["VALOR + IVA", "*pedido mínimo 2 metros cuadrados"],
-    imageFile: "tela-de-pvc-sellado-perimetral-ojetillos.png",
+    imageFile: "tela-de-pvc-sellado-perimetral-ojetillos.jpg",
   },
   {
     id: "panel-arana-textil-recto-con-laterales",
@@ -2323,7 +2323,7 @@ const rawProducts: RawProduct[] = [
       { label: "6 cuerpos, tamaño 520 x 230 cm", price: 580000 },
     ],
     notes: ["VALOR + IVA"],
-    imageFile: "panel-arana-textil-recto-con-laterales.png",
+    imageFile: "panel-arana-textil-recto-con-laterales.jpg",
   },
   {
     id: "pendon-roller-tela-de-pvc",
@@ -2338,7 +2338,7 @@ const rawProducts: RawProduct[] = [
       { label: "PENDÓN 100X200 CM", price: 60000 },
     ],
     notes: [],
-    imageFile: "pendon-roller-tela-de-pvc.png",
+    imageFile: "pendon-roller-tela-de-pvc.jpg",
   },
   {
     id: "pendon-roller-papel-sintetico",
@@ -2353,7 +2353,7 @@ const rawProducts: RawProduct[] = [
       { label: "PENDÓN 100X200 CM", price: 70000 },
     ],
     notes: [],
-    imageFile: "pendon-roller-papel-sintetico.png",
+    imageFile: "pendon-roller-papel-sintetico.jpg",
   },
   {
     id: "mini-pendon",
@@ -2364,7 +2364,7 @@ const rawProducts: RawProduct[] = [
       "Pendón impreso en papel sintético (liso y sin arrugas, a diferencia de los de tela pvc) incluye soporte de aluminio. Valor no incluye diseño.",
     tiers: [{ label: "MINI PENDÓN 42X27.9 CM", price: 30000 }],
     notes: ["VALOR + IVA"],
-    imageFile: "mini-pendon.png",
+    imageFile: "mini-pendon.jpg",
   },
   {
     id: "basurero-para-vehiculo-de-tnt-18-x-28-cm",
@@ -2385,7 +2385,7 @@ const rawProducts: RawProduct[] = [
       { label: "5000 o más unidades", price: 490 },
     ],
     notes: [],
-    imageFile: "basurero-para-vehiculo-de-tnt-18-x-28-cm.png",
+    imageFile: "basurero-para-vehiculo-de-tnt-18-x-28-cm.jpg",
   },
   {
     id: "basurero-para-vehiculo-de-tnt-con-fuelle-25-x-35-x-10-cm",
@@ -2406,7 +2406,7 @@ const rawProducts: RawProduct[] = [
       { label: "5000 o más unidades", price: 630 },
     ],
     notes: [],
-    imageFile: "basurero-para-vehiculo-de-tnt-con-fuelle-25-x-35-x-10-cm.png",
+    imageFile: "basurero-para-vehiculo-de-tnt-con-fuelle-25-x-35-x-10-cm.jpg",
   },
   {
     id: "bolsa-tnt-reutilizable-25-x-20-x-8-cm",
@@ -2427,7 +2427,7 @@ const rawProducts: RawProduct[] = [
       { label: "5000 o más unidades", price: 630 },
     ],
     notes: [],
-    imageFile: "bolsa-tnt-reutilizable-25-x-20-x-8-cm.png",
+    imageFile: "bolsa-tnt-reutilizable-25-x-20-x-8-cm.jpg",
   },
   {
     id: "bolsa-tnt-reutilizable-30-x-38-x-8-5-cm",
@@ -2448,7 +2448,7 @@ const rawProducts: RawProduct[] = [
       { label: "5000 o más unidades", price: 630 },
     ],
     notes: [],
-    imageFile: "bolsa-tnt-reutilizable-30-x-38-x-8-5-cm.png",
+    imageFile: "bolsa-tnt-reutilizable-30-x-38-x-8-5-cm.jpg",
   },
   {
     id: "bolsa-tnt-reutilizable-36-x-40-x-10-cm",
@@ -2469,7 +2469,7 @@ const rawProducts: RawProduct[] = [
       { label: "5000 o más unidades", price: 680 },
     ],
     notes: [],
-    imageFile: "bolsa-tnt-reutilizable-36-x-40-x-10-cm.png",
+    imageFile: "bolsa-tnt-reutilizable-36-x-40-x-10-cm.jpg",
   },
   {
     id: "bolsa-tnt-reutilizable-25-x-30-x-8-cm",
@@ -2490,7 +2490,7 @@ const rawProducts: RawProduct[] = [
       { label: "5000 o más unidades", price: 580 },
     ],
     notes: [],
-    imageFile: "bolsa-tnt-reutilizable-25-x-30-x-8-cm.png",
+    imageFile: "bolsa-tnt-reutilizable-25-x-30-x-8-cm.jpg",
   },
   {
     id: "bolsa-tnt-reutilizable-30-x-40-x-12-cm",
@@ -2511,7 +2511,7 @@ const rawProducts: RawProduct[] = [
       { label: "5000 o más unidades", price: 580 },
     ],
     notes: [],
-    imageFile: "bolsa-tnt-reutilizable-30-x-40-x-12-cm.png",
+    imageFile: "bolsa-tnt-reutilizable-30-x-40-x-12-cm.jpg",
   },
   {
     id: "bolsa-tnt-reutilizable-40-x-30-x-11-cm",
@@ -2532,7 +2532,7 @@ const rawProducts: RawProduct[] = [
       { label: "5000 o más unidades", price: 580 },
     ],
     notes: [],
-    imageFile: "bolsa-tnt-reutilizable-40-x-30-x-11-cm.png",
+    imageFile: "bolsa-tnt-reutilizable-40-x-30-x-11-cm.jpg",
   },
   {
     id: "bolsa-tnt-reutilizable-45-x-38-x-20-cm",
@@ -2553,7 +2553,7 @@ const rawProducts: RawProduct[] = [
       { label: "5000 o más unidades", price: 780 },
     ],
     notes: [],
-    imageFile: "bolsa-tnt-reutilizable-45-x-38-x-20-cm.png",
+    imageFile: "bolsa-tnt-reutilizable-45-x-38-x-20-cm.jpg",
   },
   {
     id: "bolsa-reutilizable-sublimada-34-x-44-cm",
@@ -2571,7 +2571,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 1730 },
     ],
     notes: [],
-    imageFile: "bolsa-reutilizable-sublimada-34-x-44-cm.png",
+    imageFile: "bolsa-reutilizable-sublimada-34-x-44-cm.jpg",
   },
   {
     id: "bolsa-reutilizable-sublimada-30-x-40-x-11-cm",
@@ -2589,7 +2589,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 1730 },
     ],
     notes: [],
-    imageFile: "bolsa-reutilizable-sublimada-30-x-40-x-11-cm.png",
+    imageFile: "bolsa-reutilizable-sublimada-30-x-40-x-11-cm.jpg",
   },
   {
     id: "basurero-para-vehiculo-sublimado-18-x-28-cm",
@@ -2607,7 +2607,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 1330 },
     ],
     notes: [],
-    imageFile: "basurero-para-vehiculo-sublimado-18-x-28-cm.png",
+    imageFile: "basurero-para-vehiculo-sublimado-18-x-28-cm.jpg",
   },
   {
     id: "bolsa-100-algodon-35-x-40-cm",
@@ -2625,7 +2625,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 1730 },
     ],
     notes: [],
-    imageFile: "bolsa-100-algodon-35-x-40-cm.png",
+    imageFile: "bolsa-100-algodon-35-x-40-cm.jpg",
   },
   {
     id: "bolsa-100-algodon-color-38-x-44-cm",
@@ -2643,7 +2643,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 1730 },
     ],
     notes: [],
-    imageFile: "bolsa-100-algodon-color-38-x-44-cm.png",
+    imageFile: "bolsa-100-algodon-color-38-x-44-cm.jpg",
   },
   {
     id: "bolsa-100-algodon-10-oz-40-x-40-x-20-cm",
@@ -2661,7 +2661,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 1330 },
     ],
     notes: [],
-    imageFile: "bolsa-100-algodon-10-oz-40-x-40-x-20-cm.png",
+    imageFile: "bolsa-100-algodon-10-oz-40-x-40-x-20-cm.jpg",
   },
   {
     id: "bolsa-100-algodon-60-x-40-x-19-cm",
@@ -2679,7 +2679,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 2320 },
     ],
     notes: [],
-    imageFile: "bolsa-100-algodon-60-x-40-x-19-cm.png",
+    imageFile: "bolsa-100-algodon-60-x-40-x-19-cm.jpg",
   },
   {
     id: "bolsa-de-compras-10-oz-canvas-asas-cuero-tamano-44-x-44-x-8-cm",
@@ -2697,7 +2697,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 3420 },
     ],
     notes: [],
-    imageFile: "bolsa-de-compras-10-oz-canvas-asas-cuero-tamano-44-x-44-x-8-cm.png",
+    imageFile: "bolsa-de-compras-10-oz-canvas-asas-cuero-tamano-44-x-44-x-8-cm.jpg",
   },
   {
     id: "bolsa-100-canva-algodon-10-oz-50-x-42-x-19-cm",
@@ -2715,7 +2715,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 5350 },
     ],
     notes: [],
-    imageFile: "bolsa-100-canva-algodon-10-oz-50-x-42-x-19-cm.png",
+    imageFile: "bolsa-100-canva-algodon-10-oz-50-x-42-x-19-cm.jpg",
   },
   {
     id: "mochila-tipo-morral-de-tnt",
@@ -2733,7 +2733,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 800 },
     ],
     notes: [],
-    imageFile: "mochila-tipo-morral-de-tnt.png",
+    imageFile: "mochila-tipo-morral-de-tnt.jpg",
   },
   {
     id: "mochila-tipo-morral-de-poliester",
@@ -2751,7 +2751,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 1000 },
     ],
     notes: [],
-    imageFile: "mochila-tipo-morral-de-poliester.png",
+    imageFile: "mochila-tipo-morral-de-poliester.jpg",
   },
   {
     id: "mochila-tipo-morral-sublimado",
@@ -2769,7 +2769,7 @@ const rawProducts: RawProduct[] = [
       { label: "500 o más", price: 2000 },
     ],
     notes: [],
-    imageFile: "mochila-tipo-morral-sublimado.png",
+    imageFile: "mochila-tipo-morral-sublimado.jpg",
   },
 ];
 
