@@ -11,6 +11,10 @@ const CACHE_TTL_MS = 30 * 60 * 1000;
 // Línea Cobre, etc.) no se importa.
 const CATEGORIA_FILTRO = "Artículos Publicitarios";
 
+// SKUs de Imblasco que se ocultan del catálogo: Sublinovena ya los ofrece en
+// su catálogo propio (src/data/products.ts), así que no deben repetirse.
+const SKUS_OCULTOS = new Set(["601055447"]);
+
 type ImblascoCategoria = { id: number; nombre: string };
 type ImblascoVariantValue = {
   sku: string;
