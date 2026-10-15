@@ -3,6 +3,7 @@
 // cliente: todo el fetch ocurre dentro de este server function.
 import { createServerFn } from "@tanstack/react-start";
 import type { Product } from "@/data/products";
+import k75Override from "@/assets/products/imblasco-601055446.jpg";
 
 const API_BASE = "https://api.imblasco.cl/";
 const CACHE_TTL_MS = 30 * 60 * 1000;
@@ -14,6 +15,12 @@ const CATEGORIA_FILTRO = "Artículos Publicitarios";
 // SKUs de Imblasco que se ocultan del catálogo: Sublinovena ya los ofrece en
 // su catálogo propio (src/data/products.ts), así que no deben repetirse.
 const SKUS_OCULTOS = new Set(["601055447"]);
+
+// Imágenes locales que reemplazan la foto de Imblasco para un SKU dado
+// (p. ej. mockup con el logo de Sublinovena aplicado).
+const IMAGENES_OVERRIDE: Record<string, string> = {
+  "601055446": k75Override,
+};
 
 type ImblascoCategoria = { id: number; nombre: string };
 type ImblascoVariantValue = {
@@ -105,7 +112,8 @@ function normalize(raw: ImblascoRawProduct, freq: Map<string, number>): Product 
   const subcategoria = pickSubcategoria(raw, freq);
   const topCategory = subcategoria;
   const category = subcategoria;
-  const image = raw.foto_principal ?? raw.imagenes[0] ?? "";
+  const image =
+    IMAGENES_OVERRIDE[raw.sku] ?? raw.foto_principal ?? raw.imagenes[0] ?? "";
   const description = raw.descripcion ? stripHtml(raw.descripcion) : "";
   const base = {
     id: `imblasco-${raw.sku}`,
