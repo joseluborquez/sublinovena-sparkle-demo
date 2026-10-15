@@ -112,7 +112,8 @@ function normalize(raw: ImblascoRawProduct, freq: Map<string, number>): Product 
   const subcategoria = pickSubcategoria(raw, freq);
   const topCategory = subcategoria;
   const category = subcategoria;
-  const image = raw.foto_principal ?? raw.imagenes[0] ?? "";
+  const image =
+    IMAGENES_OVERRIDE[raw.sku] ?? raw.foto_principal ?? raw.imagenes[0] ?? "";
   const description = raw.descripcion ? stripHtml(raw.descripcion) : "";
   const base = {
     id: `imblasco-${raw.sku}`,
