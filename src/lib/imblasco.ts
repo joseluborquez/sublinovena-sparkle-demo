@@ -11,6 +11,10 @@ const CACHE_TTL_MS = 30 * 60 * 1000;
 // Línea Cobre, etc.) no se importa.
 const CATEGORIA_FILTRO = "Artículos Publicitarios";
 
+// SKUs de Imblasco que se ocultan del catálogo: Sublinovena ya los ofrece en
+// su catálogo propio (src/data/products.ts), así que no deben repetirse.
+const SKUS_OCULTOS = new Set(["601055447"]);
+
 type ImblascoCategoria = { id: number; nombre: string };
 type ImblascoVariantValue = {
   sku: string;
@@ -154,8 +158,9 @@ function refresh(): Promise<Product[]> {
         return cache?.data ?? [];
       }
       const json = (await res.json()) as ImblascoApiResponse;
-      const freq = buildSubcategoriaFrequency(json.productos);
-      const data = json.productos.map((raw) => normalize(raw, freq));
+      const propios = json.productos.filter((raw) => !SKUS_OCULTOS.has(raw.sku));
+      const freq = buildSubcategoriaFrequency(propios);
+      const data = propios.map((raw) => normalize(raw, freq));
       cache = { data, fetchedAt: Date.now() };
       return data;
     } catch (error) {
