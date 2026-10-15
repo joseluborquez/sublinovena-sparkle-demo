@@ -158,8 +158,9 @@ function refresh(): Promise<Product[]> {
         return cache?.data ?? [];
       }
       const json = (await res.json()) as ImblascoApiResponse;
-      const freq = buildSubcategoriaFrequency(json.productos);
-      const data = json.productos.map((raw) => normalize(raw, freq));
+      const propios = json.productos.filter((raw) => !SKUS_OCULTOS.has(raw.sku));
+      const freq = buildSubcategoriaFrequency(propios);
+      const data = propios.map((raw) => normalize(raw, freq));
       cache = { data, fetchedAt: Date.now() };
       return data;
     } catch (error) {
