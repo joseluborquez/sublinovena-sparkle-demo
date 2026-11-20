@@ -5,7 +5,7 @@ import { GoogleIcon } from "./GoogleIcon";
 import { siteConfig } from "@/lib/site-config";
 
 export const googleRating = 5.0;
-export const googleReviewCount = 57;
+export const googleReviewCount = 60;
 
 export const reviews = [
   {

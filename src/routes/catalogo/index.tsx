@@ -5,7 +5,7 @@ import { CatalogHome } from "@/components/site/CatalogHome";
 import { Footer } from "@/components/site/Footer";
 import { WhatsappFab } from "@/components/site/WhatsappFab";
 import { siteConfig } from "@/lib/site-config";
-import { safeFetchImblascoProducts } from "@/lib/imblasco";
+import { safeFetchExternalProducts } from "@/lib/external-products";
 
 const title = `Catálogo de merchandising corporativo | ${siteConfig.name}`;
 const description =
@@ -16,8 +16,8 @@ export const Route = createFileRoute("/catalogo/")({
     q: z.string().optional(),
   }),
   loader: async () => {
-    const imblascoProducts = await safeFetchImblascoProducts();
-    return { imblascoProducts };
+    const externalProducts = await safeFetchExternalProducts();
+    return { externalProducts };
   },
   head: () => ({
     meta: [
@@ -34,13 +34,13 @@ export const Route = createFileRoute("/catalogo/")({
 });
 
 function CatalogoPage() {
-  const { imblascoProducts } = Route.useLoaderData();
+  const { externalProducts } = Route.useLoaderData();
 
   return (
     <>
       <Navbar />
       <main className="pt-8 lg:pt-10">
-        <CatalogHome imblascoProducts={imblascoProducts} />
+        <CatalogHome externalProducts={externalProducts} />
       </main>
       <Footer />
       <WhatsappFab />

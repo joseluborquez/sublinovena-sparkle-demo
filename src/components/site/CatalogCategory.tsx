@@ -6,6 +6,7 @@ import type { TopCategory } from "@/lib/catalog-categories";
 import { Reveal } from "./Reveal";
 import { ProductCard } from "./ProductCard";
 import { BackButton } from "./BackButton";
+import { productMatches } from "@/lib/product-search";
 
 export function CatalogCategory({
   categoryName,
@@ -38,14 +39,7 @@ export function CatalogCategory({
   }
 
   const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    return categoryProducts.filter(
-      (p) =>
-        q === "" ||
-        p.name.toLowerCase().includes(q) ||
-        p.category.toLowerCase().includes(q) ||
-        (p.sku?.toLowerCase().includes(q) ?? false),
-    );
+    return categoryProducts.filter((p) => productMatches(p, query));
   }, [categoryProducts, query]);
 
   return (

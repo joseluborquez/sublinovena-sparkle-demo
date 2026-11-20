@@ -12,7 +12,7 @@ import {
 const clp = (n: number) => n.toLocaleString("es-CL");
 
 export function ProductCard({ product: p, delay = 0 }: { product: Product; delay?: number }) {
-  const showPrices = p.source !== "imblasco";
+  const showPrices = p.source === "sublinovena";
   const fromPrice = p.tiers.reduce(
     (min, t) => (t.price < min ? t.price : min),
     p.tiers[0]?.price ?? 0,

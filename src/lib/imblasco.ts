@@ -6,10 +6,26 @@ import type { Product } from "@/data/products";
 
 const API_BASE = "https://api.imblasco.cl/";
 const CACHE_TTL_MS = 30 * 60 * 1000;
-// Por ahora solo traemos esta categoría grande (la más alineada al rubro de
-// Sublinovena) — el resto del catálogo de Imblasco (Premiación, Novedades,
-// Línea Cobre, etc.) no se importa.
-const CATEGORIA_FILTRO = "Artículos Publicitarios";
+// Categorías grandes de Imblasco que importamos. El resto del catálogo
+// (Novedades, Ofertas, Línea Cobre, etc.) no se importa.
+type Grupo = {
+  // Prefijo de categoría en Imblasco; también es el valor del filtro `categoria` de la API.
+  filtro: string;
+  // Si se define, todos los productos del grupo caen bajo esta categoría grande
+  // y la subcategoría real de Imblasco queda como `category`. Si no, cada
+  // subcategoría pasa a ser su propia categoría de nivel superior.
+  topCategory?: string;
+  // Subárboles de Imblasco que no se importan (los productos solo etiquetados ahí se omiten).
+  excluir?: string[];
+};
+const GRUPOS: Grupo[] = [
+  { filtro: "Artículos Publicitarios" },
+  {
+    filtro: "Artículos Premiación",
+    topCategory: "Trofeos y Premios",
+    excluir: ["Artículos Premiación > Insumos"],
+  },
+];
 
 type ImblascoCategoria = { id: number; nombre: string };
 type ImblascoVariantValue = {
@@ -61,16 +77,25 @@ function splitCategoria(full: string): [string, string] {
   return [parts[0] ?? full, parts[parts.length - 1] ?? full];
 }
 
+// Etiquetas de un producto que pertenecen al grupo y no están excluidas.
+function etiquetasDelGrupo(raw: ImblascoRawProduct, grupo: Grupo): string[] {
+  return raw.categorias
+    .map((c) => c.nombre)
+    .filter((n) => n.startsWith(grupo.filtro) && !grupo.excluir?.some((ex) => n.startsWith(ex)));
+}
+
 // Imblasco etiqueta cada producto con varias subcategorías a la vez, muchas
 // de ellas genéricas (ej. "Accesorios-Herramientas" aparece en casi todo).
 // Entre las etiquetas de un producto, nos quedamos con la MENOS frecuente en
 // todo el catálogo — es la más específica y la que mejor describe el
 // producto, en vez de la primera que aparezca en su lista.
-function pickSubcategoria(raw: ImblascoRawProduct, freq: Map<string, number>): string {
-  const candidates = raw.categorias
-    .filter((c) => c.nombre.startsWith(CATEGORIA_FILTRO))
-    .map((c) => splitCategoria(c.nombre)[1]);
-  if (candidates.length === 0) return CATEGORIA_FILTRO;
+function pickSubcategoria(
+  raw: ImblascoRawProduct,
+  freq: Map<string, number>,
+  grupo: Grupo,
+): string {
+  const candidates = etiquetasDelGrupo(raw, grupo).map((n) => splitCategoria(n)[1]);
+  if (candidates.length === 0) return grupo.filtro;
 
   return candidates.reduce((best, candidate) => {
     const bestFreq = freq.get(best) ?? Infinity;
@@ -79,13 +104,15 @@ function pickSubcategoria(raw: ImblascoRawProduct, freq: Map<string, number>): s
   });
 }
 
-function buildSubcategoriaFrequency(productos: ImblascoRawProduct[]): Map<string, number> {
+function buildSubcategoriaFrequency(
+  productos: ImblascoRawProduct[],
+  grupo: Grupo,
+): Map<string, number> {
   const freq = new Map<string, number>();
   for (const raw of productos) {
     const seen = new Set<string>();
-    for (const c of raw.categorias) {
-      if (!c.nombre.startsWith(CATEGORIA_FILTRO)) continue;
-      const sub = splitCategoria(c.nombre)[1];
+    for (const n of etiquetasDelGrupo(raw, grupo)) {
+      const sub = splitCategoria(n)[1];
       if (seen.has(sub)) continue;
       seen.add(sub);
       freq.set(sub, (freq.get(sub) ?? 0) + 1);
@@ -94,12 +121,12 @@ function buildSubcategoriaFrequency(productos: ImblascoRawProduct[]): Map<string
   return freq;
 }
 
-function normalize(raw: ImblascoRawProduct, freq: Map<string, number>): Product {
-  // Ya no agrupamos bajo "Artículos Publicitarios" como categoría grande —
-  // cada subcategoría real de Imblasco (Botellas, Llaveros, etc.) pasa a ser
-  // su propia categoría de nivel superior, igual que los productos propios.
-  const subcategoria = pickSubcategoria(raw, freq);
-  const topCategory = subcategoria;
+function normalize(raw: ImblascoRawProduct, freq: Map<string, number>, grupo: Grupo): Product {
+  // Sin `topCategory` en el grupo, cada subcategoría real de Imblasco (Botellas,
+  // Llaveros, etc.) pasa a ser su propia categoría de nivel superior, igual que
+  // los productos propios. Con `topCategory` (Trofeos y Premios) se agrupan todas.
+  const subcategoria = pickSubcategoria(raw, freq, grupo);
+  const topCategory = grupo.topCategory ?? subcategoria;
   const category = subcategoria;
   const image = raw.foto_principal ?? raw.imagenes[0] ?? "";
   const description = raw.descripcion ? stripHtml(raw.descripcion) : "";
@@ -132,6 +159,19 @@ function normalize(raw: ImblascoRawProduct, freq: Map<string, number>): Product 
   };
 }
 
+async function fetchGrupo(apiKey: string, grupo: Grupo): Promise<Product[]> {
+  const url = `${API_BASE}?ruta=productos&limit=0&categoria=${encodeURIComponent(grupo.filtro)}`;
+  const res = await fetch(url, { headers: { "X-Api-Key": apiKey } });
+  if (!res.ok) throw new Error(`Imblasco API respondió ${res.status} (${grupo.filtro})`);
+  const json = (await res.json()) as ImblascoApiResponse;
+  // Si el grupo excluye subárboles, se omiten los productos que solo estaban ahí.
+  const productos = grupo.excluir
+    ? json.productos.filter((raw) => etiquetasDelGrupo(raw, grupo).length > 0)
+    : json.productos;
+  const freq = buildSubcategoriaFrequency(productos, grupo);
+  return productos.map((raw) => normalize(raw, freq, grupo));
+}
+
 // Hace el fetch real contra Imblasco. Si ya hay uno en curso, lo reutiliza en
 // vez de disparar requests duplicadas en paralelo.
 function refresh(): Promise<Product[]> {
@@ -145,17 +185,14 @@ function refresh(): Promise<Product[]> {
     }
 
     try {
-      const url = `${API_BASE}?ruta=productos&limit=0&categoria=${encodeURIComponent(CATEGORIA_FILTRO)}`;
-      const res = await fetch(url, {
-        headers: { "X-Api-Key": apiKey },
+      const porGrupo = await Promise.all(GRUPOS.map((g) => fetchGrupo(apiKey, g)));
+      // Un producto puede estar en ambos grupos: gana el primero (orden de GRUPOS).
+      const seen = new Set<string>();
+      const data = porGrupo.flat().filter((p) => {
+        if (seen.has(p.id)) return false;
+        seen.add(p.id);
+        return true;
       });
-      if (!res.ok) {
-        console.error(`Imblasco API respondió ${res.status}`);
-        return cache?.data ?? [];
-      }
-      const json = (await res.json()) as ImblascoApiResponse;
-      const freq = buildSubcategoriaFrequency(json.productos);
-      const data = json.productos.map((raw) => normalize(raw, freq));
       cache = { data, fetchedAt: Date.now() };
       return data;
     } catch (error) {

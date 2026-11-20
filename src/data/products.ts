@@ -25,7 +25,7 @@ export type Product = {
   image: string;
   // Galería adicional (sin incluir `image`) — hoy solo la trae el catálogo de Imblasco.
   images?: string[];
-  source?: "sublinovena" | "imblasco";
+  source?: "sublinovena" | "imblasco" | "stocksur" | "zecat";
 };
 
 type RawProduct = Omit<Product, "image" | "topCategory"> & { imageFile: string };

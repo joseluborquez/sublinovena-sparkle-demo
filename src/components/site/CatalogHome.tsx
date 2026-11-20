@@ -6,13 +6,14 @@ import { buildTopCategories } from "@/lib/catalog-categories";
 import { Reveal } from "./Reveal";
 import { ProductCard } from "./ProductCard";
 import { BackButton } from "./BackButton";
+import { productMatches } from "@/lib/product-search";
 
-export function CatalogHome({ imblascoProducts }: { imblascoProducts: Product[] }) {
+export function CatalogHome({ externalProducts }: { externalProducts: Product[] }) {
   const navigate = useNavigate({ from: "/catalogo/" });
   const urlSearch = useSearch({ from: "/catalogo/" });
   const [query, setQuery] = useState(urlSearch.q ?? "");
 
-  const allProducts = useMemo(() => [...products, ...imblascoProducts], [imblascoProducts]);
+  const allProducts = useMemo(() => [...products, ...externalProducts], [externalProducts]);
 
   const topCategories = useMemo(
     () =>
@@ -34,13 +35,7 @@ export function CatalogHome({ imblascoProducts }: { imblascoProducts: Product[] 
   const trimmedQuery = query.trim().toLowerCase();
   const searchResults = useMemo(() => {
     if (!trimmedQuery) return [];
-    return allProducts.filter(
-      (p) =>
-        p.name.toLowerCase().includes(trimmedQuery) ||
-        p.category.toLowerCase().includes(trimmedQuery) ||
-        p.topCategory.toLowerCase().includes(trimmedQuery) ||
-        (p.sku?.toLowerCase().includes(trimmedQuery) ?? false),
-    );
+    return allProducts.filter((p) => productMatches(p, trimmedQuery));
   }, [allProducts, trimmedQuery]);
 
   return (
